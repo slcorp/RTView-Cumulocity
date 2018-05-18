@@ -1,0 +1,169 @@
+{
+    "modifiedDate": "2018-05-18T18:56:29.903Z",
+    "viewport": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+    },
+    "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 800,
+        "height": 600,
+        "resizable": false
+    },
+    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAB+0lEQVR4Xu3TsW3DABTEUHkFIU32yzDZNL1qFdnBeDHOAdWbPpH6j6NnysBjak1jjoKMfQQFKciYgbE5XUhBxgyMzelCCjJmYGxOF1KQMQNjc7qQgowZGJvThRRkzMDYnC6kIGMGxuZ0IQUZMzA2pwspyJiBsTldSEHGDIzN6UIKMmZgbM67XMjncRw/Y+7+ZM67BHn65a/r+rjv++s8z++nIS/84b8P8kKX5K8KQjQ6SEGcS0IqCNHoIAVxLgmpIESjgxTEuSSkghCNDlIQ55KQCkI0OkhBnEtCKgjR6CAFcS4JqSBEo4MUxLkkpIIQjQ5SEOeSkApCNDpIQZxLQioI0eggBXEuCakgRKODFMS5JKSCEI0OUhDnkpAKQjQ6SEGcS0IqCNHoIAVxLgmpIESjgxTEuSSkghCNDlIQ55KQCkI0OkhBnEtCKgjR6CAFcS4JqSBEo4MUxLkkpIIQjQ5SEOeSkApCNDpIQZxLQioI0eggBXEuCakgRKODFMS5JKSCEI0OUhDnkpAKQjQ6SEGcS0IqCNHoIAVxLgmpIESjgxTEuSSkghCNDlIQ55KQCkI0OkhBnEtCKgjR6CAFcS4JqSBEo4MUxLkkpIIQjQ5SEOeSkApCNDpIQZxLQioI0eggBXEuCakgRKODFMS5JKSCEI0OUhDnkpB+AazpCGVwsD0ZAAAAAElFTkSuQmCC",
+    "localVars": {},
+    "styleSheet": {},
+    "linksRoute": "Angled",
+    "layout": "",
+    "version": "1.37.0",
+    "nodeDataArray": [
+        {
+            "key": -9007199254740990,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "getDevices",
+            "func": "sort",
+            "args": {
+                "sortColumns": "id",
+                "direction": "a"
+            },
+            "bindings": {
+                "args.table": {
+                    "url": "CUM-IOT-DATA",
+                    "cache": "CumDevice",
+                    "table": "current",
+                    "value": "",
+                    "timeRange": -1,
+                    "type": "cache_advanced"
+                }
+            }
+        },
+        {
+            "key": -9007199254740988,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "getDeviceCount",
+            "func": "count",
+            "args": {},
+            "bindings": {
+                "args.table": {
+                    "name": "getDevices",
+                    "value": "*",
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": 4,
+            "category": "extern-custom-table",
+            "bgVisible": true,
+            "size": "781 529",
+            "rowSeriesFlag": true,
+            "bgBorderVisible": true,
+            "bgBorderColor": "#d0f4ea",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0,
+            "pos": "400.5 324.5",
+            "bindings": {
+                "component": {
+                    "name": "getDevices",
+                    "value": "*",
+                    "type": "function"
+                }
+            },
+            "columns": {
+                "id": {
+                    "title": "Device ID",
+                    "width": 150
+                },
+                "type": {
+                    "title": "Device Type",
+                    "width": 150
+                },
+                "name": {
+                    "title": "Name",
+                    "width": 150
+                },
+                "model": {
+                    "title": "Model",
+                    "width": 150
+                },
+                "serialnumber": {
+                    "title": "Serial #",
+                    "width": 150
+                },
+                "status": {
+                    "title": "Status",
+                    "width": 150
+                },
+                "owner": {
+                    "title": "Owner",
+                    "width": 150
+                }
+            },
+            "drilldown": {
+                "name": "cum_dms_air_quality_trends.json",
+                "vars": {
+                    "device_id": {
+                        "column": "id"
+                    },
+                    "room_name": {
+                        "column": "name"
+                    }
+                }
+            }
+        },
+        {
+            "key": 1,
+            "size": "80 24",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Cumulocity Devices",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal normal 14pt sans-serif",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "346 38"
+        },
+        {
+            "key": 5,
+            "size": "53 24",
+            "figure": "Rectangle",
+            "category": "General",
+            "bgColor": "#ededed",
+            "bgVisible": true,
+            "bgBorderColor": "#444",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "Count:",
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "#,###",
+            "valueAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "pos": "762.14 41",
+            "bindings": {
+                "valueText": {
+                    "name": "getDeviceCount",
+                    "type": "function"
+                }
+            }
+        }
+    ],
+    "linkDataArray": []
+}

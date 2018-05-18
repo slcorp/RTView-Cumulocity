@@ -1,0 +1,549 @@
+{
+    "modifiedDate": "2018-05-18T18:57:14.831Z",
+    "viewport": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+    },
+    "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 650,
+        "resizable": false,
+        "margin": 20
+    },
+    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAADZElEQVR4Xu2X30tTYQCG32+/cJuBN/NuiSxBbLO8aIh0UWuMBPsbusk/QC+9sG68HXQThH9GUN3owojwkP1Ag6DyBFKxxCgUhXm2L84RgwKZ4Di8g3dXCuN8z3me8x7RQB8qA4aKRjBQELKHQEEUhMwAGY4WoiBkBshwtBAFITNAhqOFKAiZATIcLURByAyQ4WghCkJmgAxHC1EQMgNkOFqIgpAZIMPRQhSEzAAZjhaiIGQGyHCYF5K21mYADPzn7DeALwAutXH5zhjzi8x3WxzmILDW3svn83c3NjaCG1lcXMTe3t7mzMzMcwC3j++uUqlgZWUFU1NTmJubQyqVwvDw8HVjzLO2Bsi+QB3kJFfW2muO49Ty+Xwg3/80m03Mz89jYWEBnuchFospSFgP28GhLb155SyNFi7i67c6Pm5uYWLiKh4+uI/p6TtIp9PwrL1xLhlfDoupU+d05UK2dg5vfv7w/snr1WWUy2UUCgV4zRa81tHtrK+vY2RktNybNEudEhXWdboyyPErq1gsolqtYnZ2NvDlui56+gaQiDbRkzDl3mRcQcJ4kvwgq6tOLZGIY2xs7O+R29vbyGQyOGwC9Z/eZLY//jQMnk6e0ZUL2T2wpRcv15YunO9DLpcLfFhrYczR7ShIJx+RU1zr03dv8oe79nh8/EoQoV6vo9FoIJvNYn9/HyYSw85uYjLbb7SQU/g881f8VxaAWqvVQiQSCa7n/+yvJBqNBr97HkrxuKmd+bCQL9CVryw/iOu6Nf//jaGhoX+U+X/Y/c/g4KD+DwnrYTpeyEnnOY6DYrGoICEGuQzgUZvzbhlj3obF1KlzuvKV1ambZ7yOgpBVURAFITNAhqOFKAiZATIcLURByAyQ4WghCkJmgAxHC1EQMgNkOFqIgpAZIMPRQhSEzAAZjhaiIGQGyHC0EAUhM0CGo4UoCJkBMhwtREHIDJDhaCEKQmaADEcLURAyA2Q4WoiCkBkgw9FCFITMABmOFqIgZAbIcLQQBSEzQIajhSgImQEyHC1EQcgMkOFoIQpCZoAMRwtREDIDZDhaiIKQGSDD0UIUhMwAGY4WoiBkBshwtBAFITNAhqOFKAiZATIcLURByAyQ4WghCkJmgAxHC1EQMgNkOFqIgpAZIMPRQhSEzAAZzh8F3sJlVa/pwQAAAABJRU5ErkJggg==",
+    "localVars": {
+        "air_laser": "310868",
+        "air_metalshop": "310870",
+        "air_shared": "310867",
+        "air_woodshop": "310869",
+        "name_woodshop": "Woodshop",
+        "name_shared": "Shared",
+        "name_metalshop": "Metalshop",
+        "name_laser": "Lasers"
+    },
+    "styleSheet": {},
+    "linksRoute": "Angled",
+    "portsLayout": "Edge",
+    "layout": "",
+    "version": "1.37.0",
+    "nodeDataArray": [
+        {
+            "key": -9007199254740990,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "getAlertStatusByRoom",
+            "description": "get max alert severity for each room",
+            "func": "groupBy",
+            "args": {
+                "indexColumns": "source_id",
+                "aggregateColumns": "severity",
+                "aggregateTypes": "max"
+            },
+            "bindings": {
+                "args.table": {
+                    "url": "CUM-IOT-DATA",
+                    "cache": "CumAlarm",
+                    "table": "current",
+                    "value": "*",
+                    "timeRange": -1,
+                    "filter": {
+                        "status": "ACTIVE"
+                    },
+                    "type": "cache_advanced"
+                }
+            }
+        },
+        {
+            "key": -13,
+            "size": "456 637",
+            "fixedAspect": true,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images-DMS/7f5c2e2d-c7ff-4a09-a659-e1304a072096/450px-DMS_Floor_Plan.jpg",
+            "pos": "600 328",
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": 32,
+            "category": "extern-json-object",
+            "bgVisible": true,
+            "size": "330 210",
+            "rowSeriesFlag": false,
+            "pos": "185 415",
+            "dispName": "cum_sub_metrics.json",
+            "localVars": {
+                "device_id": "$air_woodshop",
+                "room_name": "Woodshop"
+            },
+            "bindings": {
+                "localVars.device_id": {
+                    "name": "air_woodshop",
+                    "type": "variable"
+                }
+            },
+            "drilldown": {
+                "name": "cum_dms_air_quality_trends.json",
+                "vars": {
+                    "device_id": 310869,
+                    "room_name": "Woodshop"
+                }
+            },
+            "bgBorderVisible": false,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": -6,
+            "category": "extern-json-object",
+            "bgVisible": true,
+            "size": "330 210",
+            "rowSeriesFlag": false,
+            "pos": "185 195",
+            "dispName": "cum_sub_metrics.json",
+            "localVars": {
+                "device_id": "$air_woodshop",
+                "room_name": "Metalshop"
+            },
+            "bindings": {
+                "localVars.device_id": {
+                    "name": "air_metalshop",
+                    "type": "variable"
+                },
+                "localVars.room_name": {
+                    "name": "name_metalshop",
+                    "type": "variable"
+                }
+            },
+            "drilldown": {
+                "name": "cum_dms_air_quality_trends.json",
+                "vars": {
+                    "device_id": 310870,
+                    "room_name": "Metalshop"
+                }
+            },
+            "bgBorderVisible": false,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": -7,
+            "category": "extern-json-object",
+            "bgVisible": true,
+            "size": "330 210",
+            "rowSeriesFlag": false,
+            "pos": "999 184",
+            "dispName": "cum_sub_metrics.json",
+            "localVars": {
+                "device_id": 310868,
+                "room_name": "Laser area"
+            },
+            "bindings": {
+                "localVars.room_name": {
+                    "name": "name_laser",
+                    "type": "variable"
+                }
+            },
+            "drilldown": {
+                "name": "cum_dms_air_quality_trends.json",
+                "vars": {
+                    "device_id": 310868,
+                    "room_name": "Lasers"
+                }
+            },
+            "localVars.device_id": 310868,
+            "bgBorderVisible": false,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": -8,
+            "category": "extern-json-object",
+            "bgVisible": true,
+            "size": "330 210",
+            "rowSeriesFlag": false,
+            "pos": "1008 432",
+            "dispName": "cum_sub_metrics.json",
+            "localVars": {
+                "device_id": "$air_woodshop",
+                "room_name": "Shared area"
+            },
+            "bindings": {
+                "localVars.device_id": {
+                    "name": "air_shared",
+                    "type": "variable"
+                },
+                "localVars.room_name": {
+                    "name": "name_shared",
+                    "type": "variable"
+                }
+            },
+            "drilldown": {
+                "name": "cum_dms_air_quality_trends.json",
+                "vars": {
+                    "device_id": 310867,
+                    "room_name": "Shared"
+                }
+            },
+            "bgBorderVisible": false,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": 21,
+            "size": "454 632",
+            "fixedAspect": true,
+            "category": "Image",
+            "imgVisible": false,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images-DMS/7f5c2e2d-c7ff-4a09-a659-e1304a072096/450px-DMS_Floor_Plan.jpg",
+            "pos": "610 340",
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": -12,
+            "size": "270 56",
+            "fixedAspect": true,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images-DMS/30709af4-fd90-477a-bbed-8651dac81ff5/dms_logo_56_wide2.png",
+            "pos": "180 40",
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": 12,
+            "size": "207 60",
+            "category": "General",
+            "bgBorderRadius": 0,
+            "bgVisible": true,
+            "bgColor": "#ffffff",
+            "pos": "460 50",
+            "bgBorderVisible": false
+        },
+        {
+            "key": 1,
+            "size": "80 24",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Air Quality\nMeasurement Devices",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal bold 13pt sans-serif",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "460 50"
+        },
+        {
+            "key": -14,
+            "size": "80 24",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "IoT Device Data stored in Cumulocity",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "italic normal 12pt sans-serif",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "190 560",
+            "labelColor": "#000066"
+        },
+        {
+            "key": -15,
+            "size": "80 24",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Dynamic Graphics powered by SL RTView\nwww.sl.com",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "italic normal 12pt sans-serif",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "190 600",
+            "labelColor": "#000066"
+        },
+        {
+            "key": 30,
+            "category": "extern-metric",
+            "size": "27 36",
+            "dispName": "metric_card",
+            "labelText": "",
+            "labelAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "imgVisible": true,
+            "imgSrc": "assets/images/symlib/Lights/light_green_24.png",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "alerts": [
+                    {
+                        "value": "WARNING",
+                        "comp": "=",
+                        "imgSrc": "assets/images/symlib/Lights/light_yellow_24.png"
+                    },
+                    {
+                        "value": "MAJOR",
+                        "comp": "=",
+                        "imgSrc": "assets/images/symlib/Lights/light_orange_24.png"
+                    },
+                    {
+                        "value": "CRITICAL",
+                        "comp": "=",
+                        "imgSrc": "assets/images/symlib/Lights/light_red_24.png"
+                    }
+                ]
+            },
+            "pos": "455.5 359",
+            "bgVisible": true,
+            "bgBorderWidth": 0.5,
+            "bgBorderRadius": 5,
+            "bindings": {
+                "valueText": {
+                    "name": "getAlertStatusByRoom",
+                    "value": "severity",
+                    "filter": {
+                        "source_id": "310869"
+                    },
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": -18,
+            "category": "extern-metric",
+            "size": "27 36",
+            "dispName": "metric_card",
+            "labelText": "",
+            "labelAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "imgVisible": true,
+            "imgSrc": "assets/images/symlib/Lights/light_green_24.png",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "alerts": [
+                    {
+                        "value": "WARNING",
+                        "comp": "=",
+                        "imgSrc": "assets/images/symlib/Lights/light_yellow_24.png"
+                    },
+                    {
+                        "value": "MAJOR",
+                        "comp": "=",
+                        "imgSrc": "assets/images/symlib/Lights/light_orange_24.png"
+                    },
+                    {
+                        "value": "CRITICAL",
+                        "comp": "=",
+                        "imgSrc": "assets/images/symlib/Lights/light_red_24.png"
+                    }
+                ]
+            },
+            "pos": "452.5 186",
+            "bgVisible": true,
+            "bgBorderWidth": 0.5,
+            "bgBorderRadius": 5,
+            "bindings": {
+                "valueText": {
+                    "name": "getAlertStatusByRoom",
+                    "value": "severity",
+                    "filter": {
+                        "source_id": "310870"
+                    },
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": -19,
+            "category": "extern-metric",
+            "size": "27 36",
+            "dispName": "metric_card",
+            "labelText": "",
+            "labelAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "imgVisible": true,
+            "imgSrc": "assets/images/symlib/Lights/light_green_24.png",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "alerts": [
+                    {
+                        "value": "WARNING",
+                        "comp": "=",
+                        "imgSrc": "assets/images/symlib/Lights/light_yellow_24.png"
+                    },
+                    {
+                        "value": "MAJOR",
+                        "comp": "=",
+                        "imgSrc": "assets/images/symlib/Lights/light_orange_24.png"
+                    },
+                    {
+                        "value": "CRITICAL",
+                        "comp": "=",
+                        "imgSrc": "assets/images/symlib/Lights/light_red_24.png"
+                    }
+                ]
+            },
+            "pos": "512.5 151",
+            "bgVisible": true,
+            "bgBorderWidth": 0.5,
+            "bgBorderRadius": 5,
+            "bindings": {
+                "valueText": {
+                    "name": "getAlertStatusByRoom",
+                    "value": "severity",
+                    "filter": {
+                        "source_id": "310868"
+                    },
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": -20,
+            "category": "extern-metric",
+            "size": "26 36",
+            "dispName": "metric_card",
+            "labelText": "",
+            "labelAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "imgVisible": true,
+            "imgSrc": "assets/images/symlib/Lights/light_green_24.png",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "alerts": [
+                    {
+                        "value": "WARNING",
+                        "comp": "=",
+                        "imgSrc": "assets/images/symlib/Lights/light_yellow_24.png"
+                    },
+                    {
+                        "value": "MAJOR",
+                        "comp": "=",
+                        "imgSrc": "assets/images/symlib/Lights/light_orange_24.png"
+                    },
+                    {
+                        "value": "CRITICAL",
+                        "comp": "=",
+                        "imgSrc": "assets/images/symlib/Lights/light_red_24.png"
+                    }
+                ]
+            },
+            "pos": "688 262",
+            "bgVisible": true,
+            "bgBorderWidth": 0.5,
+            "bgBorderRadius": 5,
+            "bindings": {
+                "valueText": {
+                    "name": "getAlertStatusByRoom",
+                    "value": "severity",
+                    "filter": {
+                        "source_id": "310867"
+                    },
+                    "type": "function"
+                }
+            }
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": -7,
+            "to": -19,
+            "fromPort": "L",
+            "toPort": "R",
+            "points": [
+                "834 184",
+                "816 184",
+                "635 184",
+                "635 151",
+                "544 151",
+                "526 151"
+            ],
+            "customRouted": true,
+            "strokeColor": "#497ee7",
+            "strokeWidth": 4
+        },
+        {
+            "from": 32,
+            "to": 30,
+            "fromPort": "R",
+            "toPort": "L",
+            "points": [
+                "350 415",
+                "368 415",
+                "396 415",
+                "396 359",
+                "424 359",
+                "442 359"
+            ],
+            "strokeColor": "#497ee7",
+            "strokeWidth": 4
+        },
+        {
+            "from": -6,
+            "to": -18,
+            "fromPort": "R",
+            "toPort": "L",
+            "points": [
+                "350 195",
+                "368 195",
+                "394.5 195",
+                "394.5 186",
+                "421 186",
+                "439 186"
+            ],
+            "strokeColor": "#497ee7",
+            "strokeWidth": 4
+        },
+        {
+            "from": -8,
+            "to": -20,
+            "fromPort": "L",
+            "toPort": "R",
+            "points": [
+                "843 432",
+                "825 432",
+                "819 432",
+                "819 262",
+                "719 262",
+                "701 262"
+            ],
+            "customRouted": true,
+            "strokeWidth": 4,
+            "strokeColor": "#497ee7"
+        }
+    ]
+}

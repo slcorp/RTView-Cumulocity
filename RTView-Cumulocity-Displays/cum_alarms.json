@@ -1,0 +1,170 @@
+{
+    "modifiedDate": "2018-05-18T18:56:11.786Z",
+    "viewport": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+    },
+    "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 800,
+        "height": 600,
+        "resizable": false
+    },
+    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAABmElEQVR4Xu3TsQ3CMBgF4Z8NIlFBx/6rMAcDBOoIUVKm4iI+17Z0uvM7jZMycErRgBlBYp9AEEFiBmI4FiJIzEAMx0IEiRmI4ViIIDEDMRwLESRmIIZjIYLEDMRwLESQmIEYjoUIEjMQw7EQQWIGYjgWIkjMQAzHQgSJGYjhHGUhl5l5zsxrr791Xc/btt2WZbnvffuL+0cJ8nFznZnHXkmC7DXm/peBIy3kL9IJEsssiCAxAzEcCxEkZiCGYyGCxAzEcCxEkJiBGI6FCBIzEMOxEEFiBmI4FiJIzEAMx0IEiRmI4ViIIDEDMRwLESRmIIZjIYLEDMRwLESQmIEYjoUIEjMQw7EQQWIGYjgWIkjMQAzHQgSJGYjhWIggMQMxHAsRJGYghmMhgsQMxHAsRJCYgRiOhQgSMxDDsRBBYgZiOBYiSMxADMdCBIkZiOFYiCAxAzEcCxEkZiCGYyGCxAzEcCxEkJiBGI6FCBIzEMOxEEFiBmI4FiJIzEAMx0IEiRmI4ViIIDEDMRwLESRmIIZjIYLEDMRw3gewEWVKKOj5AAAAAElFTkSuQmCC",
+    "localVars": {
+        "showActiveOnly": "*"
+    },
+    "styleSheet": {},
+    "linksRoute": "Angled",
+    "layout": "",
+    "version": "1.37.0",
+    "nodeDataArray": [
+        {
+            "key": 1,
+            "size": "80 24",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Cumulocity Alarms",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal normal 14pt sans-serif",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "381 27"
+        },
+        {
+            "key": -9007199254740990,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "getCurrentAlerts",
+            "func": "reference",
+            "args": {},
+            "bindings": {
+                "args.table": {
+                    "url": "CUM-IOT-DATA",
+                    "cache": "CumAlarm",
+                    "table": "current",
+                    "value": "*",
+                    "timeRange": -1,
+                    "filter": {
+                        "status": "$showActiveOnly"
+                    },
+                    "type": "cache_advanced"
+                }
+            }
+        },
+        {
+            "key": -9007199254740988,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "getAlertCount",
+            "func": "count",
+            "args": {},
+            "bindings": {
+                "args.table": {
+                    "name": "getCurrentAlerts",
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": 23,
+            "category": "extern-ctrl",
+            "size": "30 30",
+            "dispName": "checkbox",
+            "localVars": {
+                "valueToSetChecked": "ACTIVE",
+                "valueToSetUnchecked": "*",
+                "varToSet": ""
+            },
+            "pos": "40 30",
+            "bindings": {
+                "localVars.varToSet": {
+                    "name": "showActiveOnly",
+                    "type": "variable"
+                }
+            }
+        },
+        {
+            "key": -4,
+            "size": "80 24",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Active only",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal normal 12pt sans-serif",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "98 31"
+        },
+        {
+            "key": 5,
+            "size": "53 24",
+            "figure": "Rectangle",
+            "category": "General",
+            "bgColor": "#ededed",
+            "bgVisible": true,
+            "bgBorderColor": "#444",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "Count:",
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "#,###",
+            "valueAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "pos": "755.5 27",
+            "bindings": {
+                "valueText": {
+                    "name": "getAlertCount",
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": 4,
+            "category": "extern-custom-table",
+            "bgVisible": true,
+            "size": "767 531",
+            "rowSeriesFlag": true,
+            "bgBorderVisible": true,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0,
+            "pos": "400 318.5",
+            "bindings": {
+                "component": {
+                    "name": "getCurrentAlerts",
+                    "value": "*",
+                    "type": "function"
+                }
+            },
+            "columns": {
+                "text": {
+                    "width": 350
+                }
+            }
+        }
+    ],
+    "linkDataArray": []
+}

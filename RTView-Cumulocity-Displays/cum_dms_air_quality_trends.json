@@ -1,0 +1,616 @@
+{
+    "modifiedDate": "2018-05-18T18:56:54.330Z",
+    "viewport": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+    },
+    "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 960,
+        "height": 620,
+        "resizable": false,
+        "margin": 20
+    },
+    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAACUUlEQVR4Xu2YQUoCYRxH/wom4qpFa3HbAewCwhxLu5E3aOcF2ricwFW7DBENx5ggmARF/UZ44WvVYubr53u9RmuEXygCDdQax4RCYL8EClEIjABsjoUoBEYANsdCFAIjAJtjIQqBEYDNsRCFwAjA5liIQmAEYHMsRCEwArA5FqIQGAHYHAtRCIwAbI6FKARGADbHQhRyHoHJZPKYZdnDeXcdvPqt0+nkNZ11lWPwhSyXy/F0Oh0Nh8M/AHa7XaxWq4NQXl6/4v2jiPK6+7vPyJ5+nD53u93xVUjWdOi/EBIRo0tf73a7jfl8Hr1eTyGXQqzeVxZSCmk2m9FqtWK9XqccayEp9Mp7f4WU35dSiqJIOVIhKfSqQhaLRcxmsxgMBilHKiSFXlVI+XDebDbRbrdTjlRICr19IXmeR7/fTzlSISn09p8hqWf5trcGgtV3WeWfq2OfPU74cRZyAqSjl/guK5VgzfdbSM1AU4+rFpJ6ls+QGgje2hH4/2Up5NYIwF6vhSgERgA2x0IUAiMAm2MhCoERgM2xEIXACMDmWIhCYARgcyxEITACsDkWohAYAdgcC1EIjABsjoUoBEYANsdCFAIjAJtjIQqBEYDNsRCFwAjA5liIQmAEYHMsRCEwArA5FqIQGAHYHAtRCIwAbI6FKARGADbHQhQCIwCbYyEKgRGAzbEQhcAIwOZYiEJgBGBzLEQhMAKwORaiEBgB2BwLUQiMAGyOhSgERgA2x0IUAiMAm2MhCoERgM2xEIXACMDmWIhCYARgcyxEITACsDnfvX17ZQ7QPokAAAAASUVORK5CYII=",
+    "localVars": {
+        "device_id": "310870",
+        "room_name": "Workshop"
+    },
+    "styleSheet": {},
+    "linksRoute": "Angled",
+    "portsLayout": "Edge",
+    "layout": "",
+    "version": "1.37.0",
+    "nodeDataArray": [
+        {
+            "key": 14,
+            "size": "956 616",
+            "category": "General",
+            "bgBorderRadius": 8,
+            "bgVisible": true,
+            "bgColor": "#f5f5f5",
+            "pos": "480 310",
+            "bgBorderVisible": true,
+            "bgBorderColor": "#969696"
+        },
+        {
+            "key": 21,
+            "size": "46 46",
+            "fixedAspect": true,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images/abc4d48f-c6a0-4486-ac66-24072b137a35/humidity_rwlcla.png",
+            "pos": "140 250",
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": -2,
+            "size": "31 31",
+            "fixedAspect": true,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images/d1d869bd-d810-4b79-8c40-92acc40111e7/i_decibel.png",
+            "pos": "140 340",
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": -3,
+            "size": "53 53",
+            "fixedAspect": true,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images/3df3581a-ef69-4c47-8bc8-20c470d2e0ef/i_pm10_5.png",
+            "pos": "140 440",
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": -4,
+            "size": "55 55",
+            "fixedAspect": true,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images/ec7cbffc-a446-41f7-922d-0f8afaf91a8e/i_pm2.5_5.png",
+            "pos": "140 540",
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": -5,
+            "size": "52 52",
+            "fixedAspect": true,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images/4b142855-313d-4f44-88c3-e4163c670f1d/temperature_nppxgr.png",
+            "pos": "140 150",
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": 7,
+            "figure": "Rectangle",
+            "size": "220 24",
+            "category": "General",
+            "bgColor": "#f5f5f5",
+            "bgVisible": true,
+            "bgBorderColor": "#cccccc",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "Device Id:",
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "",
+            "valueAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "pos": "180 600",
+            "bindings": {
+                "valueText": {
+                    "name": "device_id",
+                    "type": "variable"
+                }
+            },
+            "labelFont": "normal normal 9pt sans-serif",
+            "valueFont": "normal normal 9pt sans-serif",
+            "valueColor": "#636363",
+            "labelColor": "#636363"
+        },
+        {
+            "key": -9,
+            "figure": "Rectangle",
+            "size": "180 24",
+            "category": "General",
+            "bgColor": "#f5f5f5",
+            "bgVisible": true,
+            "bgBorderColor": "#cccccc",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "Location:",
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "",
+            "valueAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "pos": "520 70",
+            "bindings": {
+                "valueText": {
+                    "name": "room_name",
+                    "type": "variable"
+                }
+            },
+            "labelFont": "normal normal 10pt sans-serif",
+            "valueFont": "normal bold 11pt sans-serif"
+        },
+        {
+            "key": -12,
+            "figure": "Rectangle",
+            "size": "60 24",
+            "category": "General",
+            "bgColor": "#f5f5f5",
+            "bgVisible": true,
+            "bgBorderColor": "#adadad",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "dB",
+            "labelAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "#,###.0",
+            "valueAlignment": {
+                "horizontal": "InsideRight",
+                "vertical": "Center"
+            },
+            "pos": "200 340",
+            "bindings": {
+                "valueText": {
+                    "name": "deviceStreamData",
+                    "value": "value",
+                    "filter": {
+                        "name": "noise"
+                    },
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": -11,
+            "figure": "Rectangle",
+            "size": "60 24",
+            "category": "General",
+            "bgColor": "#f5f5f5",
+            "bgVisible": true,
+            "bgBorderColor": "#adadad",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": " µg/m³",
+            "labelAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "#,###.0",
+            "valueAlignment": {
+                "horizontal": "InsideRight",
+                "vertical": "Center"
+            },
+            "pos": "200 540",
+            "bindings": {
+                "valueText": {
+                    "name": "deviceStreamData",
+                    "value": "value",
+                    "filter": {
+                        "name": "pm2_5"
+                    },
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": -13,
+            "figure": "Rectangle",
+            "size": "60 24",
+            "category": "General",
+            "bgColor": "#f5f5f5",
+            "bgVisible": true,
+            "bgBorderColor": "#adadad",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": " µg/m³",
+            "labelAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "#,###.0",
+            "valueAlignment": {
+                "horizontal": "InsideRight",
+                "vertical": "Center"
+            },
+            "pos": "200 440",
+            "bindings": {
+                "valueText": {
+                    "name": "deviceStreamData",
+                    "value": "value",
+                    "filter": {
+                        "name": "pm10"
+                    },
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": -14,
+            "figure": "Rectangle",
+            "size": "60 24",
+            "category": "General",
+            "bgColor": "#f5f5f5",
+            "bgVisible": true,
+            "bgBorderColor": "#adadad",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "%",
+            "labelAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "#,###.0",
+            "valueAlignment": {
+                "horizontal": "InsideRight",
+                "vertical": "Center"
+            },
+            "pos": "200 250",
+            "bindings": {
+                "valueText": {
+                    "name": "deviceStreamData",
+                    "value": "value",
+                    "filter": {
+                        "name": "humidity"
+                    },
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": -15,
+            "figure": "Rectangle",
+            "size": "60 24",
+            "category": "General",
+            "bgColor": "#f5f5f5",
+            "bgVisible": true,
+            "bgBorderColor": "#adadad",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "°C",
+            "labelAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "#,###.0",
+            "valueAlignment": {
+                "horizontal": "InsideRight",
+                "vertical": "Center"
+            },
+            "pos": "200 150",
+            "bindings": {
+                "valueText": {
+                    "name": "deviceStreamData",
+                    "value": "value",
+                    "filter": {
+                        "name": "c8y_TemperatureMeasurement"
+                    },
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": 1,
+            "size": "80 24",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Air Quality Trends",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal bold 14pt sans-serif",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "480 30"
+        },
+        {
+            "key": 16,
+            "category": "extern-timectrl",
+            "bgVisible": true,
+            "size": "40 40",
+            "timeRange": "43200",
+            "pos": "850 68",
+            "dispName": "timectrl"
+        },
+        {
+            "key": 12,
+            "category": "extern-trendchart",
+            "bgVisible": true,
+            "size": "600 98",
+            "fillFlag": true,
+            "legendVisFlag": false,
+            "legendPos": "right",
+            "scrollFlag": false,
+            "stripFlag": false,
+            "pos": "590 440",
+            "bgBorderVisible": true,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0,
+            "bindings": {
+                "component": {
+                    "url": "CUM-IOT-DATA",
+                    "cache": "CumMeasurement",
+                    "table": "history",
+                    "value": "time_stamp;value",
+                    "timeRange": -1,
+                    "filter": {
+                        "id": "$device_id",
+                        "name": "pm10"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "imgSrc": "$assets/binders/images/default.png",
+            "miscProps": {
+                "tableName": "history",
+                "xAxis": {
+                    "labels": {
+                        "enabled": false
+                    }
+                }
+            }
+        },
+        {
+            "key": -19,
+            "size": "172 25",
+            "category": "General",
+            "bgBorderRadius": 10,
+            "bgVisible": true,
+            "bgColor": "#497ee7",
+            "pos": "780 30",
+            "bgBorderVisible": false,
+            "drilldown": "cum_dms_floorplan.json",
+            "labelText": "Back to DMS Floor Plan",
+            "labelVisible": true,
+            "bgBorderColor": "#9700a3",
+            "labelColor": "#ffffff",
+            "labelFont": "normal bold 10pt sans-serif"
+        },
+        {
+            "key": -20,
+            "category": "extern-trendchart",
+            "bgVisible": true,
+            "size": "600 98",
+            "fillFlag": true,
+            "legendVisFlag": false,
+            "legendPos": "right",
+            "scrollFlag": false,
+            "stripFlag": false,
+            "pos": "590 340",
+            "bgBorderVisible": true,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0,
+            "bindings": {
+                "component": {
+                    "url": "CUM-IOT-DATA",
+                    "cache": "CumMeasurement",
+                    "table": "history",
+                    "value": "time_stamp;value",
+                    "timeRange": -1,
+                    "filter": {
+                        "id": "$device_id",
+                        "name": "noise"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "imgSrc": "$assets/binders/images/default.png",
+            "miscProps": {
+                "tableName": "history",
+                "xAxis": {
+                    "labels": {
+                        "enabled": false
+                    }
+                }
+            }
+        },
+        {
+            "key": -21,
+            "category": "extern-trendchart",
+            "bgVisible": true,
+            "size": "600 98",
+            "fillFlag": true,
+            "legendVisFlag": false,
+            "legendPos": "right",
+            "scrollFlag": false,
+            "stripFlag": false,
+            "pos": "590 240",
+            "bgBorderVisible": true,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0,
+            "bindings": {
+                "component": {
+                    "url": "CUM-IOT-DATA",
+                    "cache": "CumMeasurement",
+                    "table": "history",
+                    "value": "time_stamp;value",
+                    "timeRange": -1,
+                    "filter": {
+                        "id": "$device_id",
+                        "name": "humidity"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "imgSrc": "$assets/binders/images/default.png",
+            "miscProps": {
+                "tableName": "history",
+                "xAxis": {
+                    "labels": {
+                        "enabled": false
+                    }
+                }
+            }
+        },
+        {
+            "key": -22,
+            "category": "extern-trendchart",
+            "bgVisible": true,
+            "size": "600 98",
+            "fillFlag": true,
+            "legendVisFlag": false,
+            "legendPos": "right",
+            "scrollFlag": false,
+            "stripFlag": false,
+            "pos": "590 140",
+            "bgBorderVisible": true,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0,
+            "bindings": {
+                "component": {
+                    "url": "CUM-IOT-DATA",
+                    "cache": "CumMeasurement",
+                    "table": "history",
+                    "value": "time_stamp;value",
+                    "timeRange": -1,
+                    "filter": {
+                        "id": "$device_id",
+                        "name": "c8y_TemperatureMeasurement"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "imgSrc": "$assets/binders/images/default.png",
+            "miscProps": {
+                "tableName": "history",
+                "xAxis": {
+                    "labels": {
+                        "enabled": false
+                    }
+                }
+            }
+        },
+        {
+            "key": -23,
+            "category": "extern-trendchart",
+            "bgVisible": true,
+            "size": "600 128",
+            "fillFlag": true,
+            "legendVisFlag": false,
+            "legendPos": "right",
+            "scrollFlag": false,
+            "stripFlag": false,
+            "pos": "590 554",
+            "bgBorderVisible": true,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0,
+            "bindings": {
+                "component": {
+                    "url": "CUM-IOT-DATA",
+                    "cache": "CumMeasurement",
+                    "table": "history",
+                    "value": "time_stamp;value",
+                    "timeRange": -1,
+                    "filter": {
+                        "id": "$device_id",
+                        "name": "pm2_5"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "imgSrc": "$assets/binders/images/default.png",
+            "miscProps": {
+                "tableName": "history",
+                "xAxis": {
+                    "labels": {
+                        "enabled": true
+                    }
+                }
+            }
+        },
+        {
+            "key": -24,
+            "size": "80 24",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Select Time Range:",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "italic normal 9pt sans-serif",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "770 70"
+        },
+        {
+            "key": -25,
+            "size": "270 56",
+            "fixedAspect": true,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images-DMS/30709af4-fd90-477a-bbed-8651dac81ff5/dms_logo_56_wide2.png",
+            "pos": "180 40",
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": -9007199254740990,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "deviceStreamData",
+            "description": "protect if cumulocity query returns two measurements per sensor",
+            "func": "firstRows",
+            "args": {
+                "indexColumns": "id;name",
+                "rowCount": "1"
+            },
+            "bindings": {
+                "args.table": {
+                    "cache": "CumMeasurement",
+                    "value": "id;name;value",
+                    "url": "CUM-IOT-DATA",
+                    "table": "current",
+                    "filter": {
+                        "id": "$device_id"
+                    },
+                    "type": "cache"
+                }
+            }
+        }
+    ],
+    "linkDataArray": []
+}

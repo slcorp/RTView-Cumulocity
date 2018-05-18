@@ -1,0 +1,287 @@
+{
+    "modifiedDate": "2018-05-18T18:57:35.284Z",
+    "viewport": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+    },
+    "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 800,
+        "height": 600,
+        "resizable": false
+    },
+    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAABdElEQVR4Xu3TUQkAIBTF0Gcs+39YyxTCEWYAmZt3TYcysCiaYKYg2CcoSEEwAxhOCykIZgDDaSEFwQxgOC2kIJgBDKeFFAQzgOG0kIJgBjCcFlIQzACG00IKghnAcFpIQTADGE4LKQhmAMNpIQXBDGA4vyxkz8zB3D3B+SXIk8eLlxYEq1KQgmAGMJwWUhDMAIbTQgqCGcBwWkhBMAMYTgspCGYAw2khBcEMYDgtpCCYAQynhRQEM4DhtJCCYAYwnBZSEMwAhtNCCoIZwHBaSEEwAxhOCykIZgDDaSEFwQxgOC2kIJgBDKeFFAQzgOG0kIJgBjCcFlIQzACG00IKghnAcFpIQTADGE4LKQhmAMNpIQXBDGA4LaQgmAEMp4UUBDOA4bSQgmAGMJwWUhDMAIbTQgqCGcBwWkhBMAMYTgspCGYAw2khBcEMYDgtpCCYAQynhRQEM4DhtJCCYAYwnBZSEMwAhtNCCoIZwHBaSEEwAxjOBVuOAWUTT4l+AAAAAElFTkSuQmCC",
+    "localVars": {
+        "cumSelectedDevice": "",
+        "cumSelectedType": ""
+    },
+    "styleSheet": {},
+    "linksRoute": "Angled",
+    "layout": "",
+    "version": "1.37.0",
+    "nodeDataArray": [
+        {
+            "key": 4,
+            "category": "extern-custom-table",
+            "bgVisible": true,
+            "size": "781 510",
+            "rowSeriesFlag": true,
+            "bgBorderVisible": true,
+            "bgBorderColor": "#d0f4ea",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0,
+            "pos": "400.5 334",
+            "bindings": {
+                "component": {
+                    "name": "getEvents",
+                    "value": "*",
+                    "type": "function"
+                }
+            },
+            "columns": {
+                "time_stamp": {
+                    "title": "Timestamp"
+                },
+                "id": {
+                    "title": "Event ID"
+                },
+                "type": {
+                    "title": "Event Type",
+                    "width": 150
+                },
+                "source_id": {
+                    "title": "Source ID"
+                },
+                "text": {
+                    "title": "Event Text",
+                    "width": 300
+                },
+                "creationTime": {
+                    "title": "Creation Time"
+                }
+            },
+            "dockLayer": false,
+            "isAnchored": false
+        },
+        {
+            "key": 1,
+            "size": "80 24",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Cumulocity Events",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal normal 14pt sans-serif",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "343 61"
+        },
+        {
+            "key": 21,
+            "category": "extern-ctrl",
+            "size": "123 30",
+            "dispName": "combo",
+            "localVars": {
+                "values": "Value1;Value2",
+                "varToSet": ""
+            },
+            "pos": "141.5 21",
+            "bindings": {
+                "localVars.values": {
+                    "name": "getDevices",
+                    "value": "id",
+                    "type": "function"
+                },
+                "localVars.varToSet": {
+                    "name": "cumSelectedDevice",
+                    "type": "variable"
+                }
+            }
+        },
+        {
+            "key": -8,
+            "size": "80 24",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Source:",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal normal 12pt sans-serif",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "48 22"
+        },
+        {
+            "key": -11,
+            "size": "80 24",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Type:",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal normal 12pt sans-serif",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "266.5 22"
+        },
+        {
+            "key": -10,
+            "category": "extern-ctrl",
+            "size": "123 30",
+            "dispName": "combo",
+            "localVars": {
+                "values": "c8y_Motion;c8y_LocationUpdate",
+                "varToSet": ""
+            },
+            "pos": "360 21",
+            "bindings": {
+                "localVars.varToSet": {
+                    "name": "cumSelectedType",
+                    "type": "variable"
+                }
+            }
+        },
+        {
+            "key": -9007199254740988,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "getEventCount",
+            "func": "count",
+            "args": {},
+            "bindings": {
+                "args.table": {
+                    "name": "getEvents",
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": -9007199254740990,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "getEvents",
+            "func": "sort",
+            "args": {
+                "sortColumns": "time_stamp",
+                "direction": "d"
+            },
+            "bindings": {
+                "args.table": {
+                    "url": "CUM-IOT-DATA",
+                    "cache": "CumEvent",
+                    "table": "current",
+                    "value": "*",
+                    "timeRange": -1,
+                    "filter": {
+                        "source_id": "$cumSelectedDevice",
+                        "type": "$cumSelectedType"
+                    },
+                    "type": "cache_advanced"
+                }
+            }
+        },
+        {
+            "key": -9007199254740970,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "getTypes",
+            "func": "groupBy",
+            "args": {
+                "indexColumns": "type",
+                "aggregateColumns": "",
+                "aggregateTypes": "count"
+            },
+            "bindings": {
+                "args.table": {
+                    "name": "getDevices",
+                    "value": "type",
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": -9007199254740976,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "validateType",
+            "func": "validateVarValue",
+            "args": {
+                "setIfInvalid": "1"
+            },
+            "bindings": {
+                "args.name": {
+                    "name": "cumSelectedType",
+                    "type": "variable"
+                },
+                "args.values": {
+                    "name": "getDevices",
+                    "value": "itype",
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": -9007199254740965,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "getDevices",
+            "func": "sort",
+            "args": {
+                "sortColumns": "time_stamp",
+                "direction": "d"
+            },
+            "bindings": {
+                "args.table": {
+                    "url": "CUM-IOT-DATA",
+                    "cache": "CumDevice",
+                    "table": "current",
+                    "value": "id",
+                    "timeRange": -1,
+                    "type": "cache_advanced"
+                }
+            }
+        },
+        {
+            "key": -13,
+            "category": "extern-custom-table",
+            "bgVisible": true,
+            "size": "224 114",
+            "rowSeriesFlag": true,
+            "bgBorderVisible": true,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0,
+            "pos": "370 670",
+            "bindings": {
+                "component": {
+                    "name": "getDevices",
+                    "value": "id",
+                    "type": "function"
+                }
+            }
+        }
+    ],
+    "linkDataArray": []
+}
