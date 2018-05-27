@@ -1,2 +1,2 @@
 # RTView-Cumulocity
-Software AG Cumulocity - Internet of Things
+Software AG Cumulocity - IoT Device Management
