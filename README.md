@@ -52,14 +52,14 @@ On the RTView Cloud top menu bar, select Data.
 Select the Add RTView Server button.
 In the Add RTView Server dialog enter:
 
-	Name:       CUM-IOT-SERVER
+	Name:       CUM-IOT-DATA
 	Host/URL:   http://localhost:3270/rtvquery
 
 Click on Save Added Servers.
 ```
 * Test that the connection is successful:
 ```
-Click on the green magnifying glass icon next to the CUM-IOT-SERVER entry.
+Click on the green magnifying glass icon next to the CUM-IOT-DATA entry.
 This will invoke the RTView DataServer - Cache Tables dialog.
 Verify that you see "Connected" under Connection Status. 
 Verify that you see CUM-IoTCache in the CacheTable.
