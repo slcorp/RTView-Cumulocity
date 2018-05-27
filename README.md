@@ -62,7 +62,7 @@ Click on Save Added Servers.
 Click on the green magnifying glass icon next to the CUM-IOT-DATA entry.
 This will invoke the RTView DataServer - Cache Tables dialog.
 Verify that you see "Connected" under Connection Status. 
-Verify that you see CUM-IoTCache in the CacheTable.
+Verify that you see CumDevice and other similar cache tables in the Cache Table display.
 Close the dialog.
 ```
 * Import the sample displays:
