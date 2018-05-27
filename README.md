@@ -10,7 +10,7 @@ By following the steps described below you will:
 
 * Create an account on RTView Cloud.
 * Run a Node.js connector program that enables access to Cumulocity device and event data from RTView Cloud.
-* Import into RTView Cloud a few sample displays showing real-time data coming from ATT-IoT.
+* Import into RTView Cloud a few sample displays showing real-time and historical data coming from Cumulocity.
 
 ## Requirements
 To run this project, you will need to have installed on your computer:
