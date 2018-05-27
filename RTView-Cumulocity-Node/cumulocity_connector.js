@@ -212,12 +212,12 @@ rtvproxy.run(getData);
 // **********************************************************************
 // Cumulocity variables and support
 
-var username = "slcorptest/ckominczak@sl.com";
-var password = "slc0rpt3st";
+var username = "myaccount/myname@myemail";
+var password = "mypassword";
+//var baseURL = "https://" + username + ":" + password + "@myaccount.cumulocity.com";
+var baseURL = "https://myaccount.cumulocity.com";
 
-var baseURL = "https://" + username + ":" + password + "@slcorptest.cumulocity.com";
 
-var baseURL = "https://slcorptest.cumulocity.com";
 var auth = "Basic " + new Buffer(username + ":" + password).toString("base64");
 
 var hasProperty = function(obj,prop) {
