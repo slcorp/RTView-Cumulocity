@@ -29,6 +29,8 @@ Note that you are automatically placed into your own private organization (e.g. 
 
 Clone this RTView-Cumulocity project to your local computer and follow the steps below to install and run the RTView Cumulocity connector program. This simple Node.js program provides access from RTView Cloud to current and historical device data in Cumulocity.
 
+(Note: In the future, SL may provide this connector as a standard feature of RTView Cloud. For now, it must be run locally in order to connect to Cumulocity with your credentials.)
+
 To install the connector program, be sure you have Node.js version 6 or higher installed on your computer, and then do the following:
 ```
 cd RTView-Cumulocity-Node
@@ -45,7 +47,7 @@ To start the program:
 ```
 node cumulocity_connector.js
 ```
-The connector program should start and open port 3270. RTView Cloud will be configured in the next section to access your data via this connector.
+The connector program should start and open http port 3270 on your machine. RTView Cloud will be configured in the next section to access your data via this connector process.
 
 ## Import and view the sample RTView-Cumulocity displays
 
