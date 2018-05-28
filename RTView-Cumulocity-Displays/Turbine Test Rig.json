@@ -1,5 +1,5 @@
 {
-    "modifiedDate": "2018-05-18T18:58:42.311Z",
+    "modifiedDate": "2018-05-22T17:56:27.801Z",
     "viewport": {
         "x": 0,
         "y": 0,
@@ -19,7 +19,7 @@
     "linksRoute": "Angled",
     "portsLayout": "Edge",
     "layout": "",
-    "version": "1.37.0",
+    "version": "1.38.0",
     "nodeDataArray": [
         {
             "key": 21,
