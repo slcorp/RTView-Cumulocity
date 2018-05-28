@@ -13,7 +13,8 @@ By following the steps described below you will:
 * Import into RTView Cloud a few sample displays showing real-time and historical data coming from your devices. 
 * See how to create new dashboards showing your device data in customized views.
 
-For convenience, SL Corporation provides several demo devices that you can view in RTView Cloud.  Instructions for connecting to these are presented at the end of this README.
+For convenience, SL Corporation provides several demo devices that you can view in RTView Cloud.
+Instructions for connecting to these are presented at the end of this README.
 
 ## Create an RTView Cloud account
 An RTView Cloud account provides the tools for creating, viewing and publishing rich graphical displays connected to real-time data sources.
