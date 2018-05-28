@@ -11,7 +11,7 @@ By following the steps described below you will:
 * Create an account on RTView Cloud.
 * Run a small Node.js connector program that enables access from RTView Cloud to Cumulocity device and event data.
 * Import into RTView Cloud a few sample displays showing real-time and historical data coming from your devices. 
-* See how to creat your own dashboards showing your data in customized views.
+* See how to create new dashboards showing your device data in customized views.
 
 For convenience, SL Corporation provides several demo devices that you can view in RTView Cloud.  Instructions for connecting to these are presented at the end of this README.
 
