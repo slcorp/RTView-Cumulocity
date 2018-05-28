@@ -1,5 +1,5 @@
 # RTView-Cumulocity Project
-Software AG Cumulocity - IoT Device Management
+Using RTView with Software AG Cumulocity - IoT Device Management
 
 ## Overview
 This project provides tools and examples that show how to use RTView Cloud with the Software AG Cumulocity IoT Device Management Platform to readily create and deploy rich graphical displays connected to real-time and historical Cumulocity data. 
@@ -13,9 +13,6 @@ By following the steps described below you will:
 * Import into RTView Cloud a few sample displays showing real-time and historical data coming from your devices. 
 * See how to create new dashboards showing your device data in customized views.
 
-For convenience, SL Corporation provides several demo devices that you can view in RTView Cloud.
-Instructions for connecting to these are presented at the end of this README.
-
 ## Create an RTView Cloud account
 An RTView Cloud account provides the tools for creating, viewing and publishing rich graphical displays connected to real-time data sources.
 
@@ -24,8 +21,11 @@ An RTView Cloud account provides the tools for creating, viewing and publishing 
 * Login to your RTView Cloud account.
 
 Note that you are automatically placed into your own private organization (e.g. JohnSPrivateOrg).
+
+In the next two sections, you will learn how to connect to your own device data in Cumulocity.
+If you do not have a Cumulocity account, SL Corporation provides several devices in a demo account that can be viewed in RTView Cloud. You can skip to the instructions at the end of this README for connecting to these demo devices.
 	
-## Run the RTView Cumulocity connector 
+## Install and run the RTView Cumulocity connector
 
 Clone this RTView-Cumulocity project to your local computer and follow the steps below to install and run the RTView Cumulocity connector program. This simple Node.js program provides access from RTView Cloud to current and historical device data in Cumulocity.
 
@@ -53,7 +53,7 @@ The connector program should start and open http port 3270 on your machine. RTVi
 
 * In a browser, go to [RTView Cloud](http://rtviewcloud.sl.com/).
 
-* Define a connection to the RTView DataServer running on your local system:
+* Define a connection to the RTView Cumulocity Connector running on your local system:
 ```
 On the RTView Cloud top menu bar, select Data.
 Select the Add RTView Server button.
@@ -87,12 +87,28 @@ Double click the name of the display you would like to open and view in real-tim
 The sample displays are configured to connect to your local RTView data server and present data changing in real-time.
 You can experiment with the editing features of RTDraw to make changes to these displays or create your own.
 
+## How to view the RTView-Cumulocity demo devices
+
+For convenience, SL Corporation provides several demo devices that you can view in RTView Cloud, even if you do not have your own Cumulocity account or interesting device data stored there.
+
+Follow the instructions in the previous section titled "Import and view the sample RTView-Cumulocity displays".
+Instead of defining the the CUM-IOT-DATA to be on localhost, use the following URL to reference the demo devices provided by SL Corporation:
+```
+In the Add RTView Server dialog enter:
+
+	Name:       CUM-IOT-DATA
+	Host/URL:   http://sl-iot-server-4.slsandbox.com/cumulocity_rtvproxy
+
+Click on Save Added Servers.
+```
+In this case, the provided displays will show data coming from the demo devices provided by SL Corporation.
+
 ## Achieved Goals
 
 In this RTView-Cumulocity project you will have achieved the following: 
 
 * Seen how easy it is to display Cumulocity topics in graphical and highly configurable displays in the Cloud.
-* Launched the simple node program used to send data to RTView, subscribing to topics of interest.
+* Launched the simple node program used to access device data in Cumulocity, subscribing to devices of interest.
 * Seen how users are able to view or enhance the sample RTView displays or create new displays.
 
 **Feel free to experiment with, modify or enhance this project, and share your experience, comments and suggestions with us. Please fork this repo and submit a pull request for any changes you would like to suggest.**
