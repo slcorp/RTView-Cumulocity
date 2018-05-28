@@ -4,7 +4,7 @@ Software AG Cumulocity - IoT Device Management
 ## Overview
 This project provides tools and examples that show how to use RTView Cloud with the Software AG Cumulocity IoT Device Management Platform to readily create and deploy rich graphical displays connected to real-time and historical Cumulocity data. 
 
-![](Images/MixingPlantA.jpg)
+![](Images/cum_turbine_test_rig_sm.png)
 
 By following the steps described below you will:
 
