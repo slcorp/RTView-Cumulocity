@@ -212,10 +212,19 @@ rtvproxy.run(getData);
 // **********************************************************************
 // Cumulocity variables and support
 
-var username = "myaccount/myname@myemail";
-var password = "mypassword";
-//var baseURL = "https://" + username + ":" + password + "@myaccount.cumulocity.com";
-var baseURL = "https://myaccount.cumulocity.com";
+console.log('\nGet User Info -> USERINFO.json\n');
+
+var userinfo = require("./USERINFO.json");
+console.log('... userinfo = ' + JSON.stringify(userinfo));
+var username = userinfo.username;
+var password = userinfo.password;
+var baseURL = userinfo.baseURL;
+
+// remove  this line and the next 4 lines, after Tom' Review
+// var username = "myaccount/myname@myemail";
+// var password = "mypassword";
+// //var baseURL = "https://" + username + ":" + password + "@myaccount.cumulocity.com";
+// var baseURL = "https://myaccount.cumulocity.com";
 
 
 var auth = "Basic " + new Buffer(username + ":" + password).toString("base64");
