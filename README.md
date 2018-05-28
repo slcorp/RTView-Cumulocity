@@ -11,16 +11,11 @@ By following the steps described below you will:
 * Create an account on RTView Cloud.
 * Import into RTView Cloud a few sample displays showing real-time and historical data coming from a few demo devices managed in Cumulocity.
 
-If you have your own Cumulocity account, you can use RTView Cloud to access your device data and construct custom dashboards, with the following steps:
+If you have a Cumulocity account, you can use RTView Cloud to access your own device data with these additional steps:
 
-* Run a Node.js connector program that enables access from RTView Cloud to Cumulocity device and event data.
-* View yor device data in several sample displays and construct your own custom dashboards.
+* Run a small Node.js connector program that enables access from RTView Cloud to Cumulocity device and event data.
+* View your device data in several sample displays and construct your own custom dashboards.
 
-## Requirements
-To run this project, you will need to have installed on your computer:
-```
-Node.js version 6 or higher
-```
 ## Create an RTView Cloud account
 An RTView Cloud account provides the tools for creating, viewing and publishing rich graphical displays connected to real-time data sources.
 
@@ -34,7 +29,7 @@ Note that you are automatically placed into your own private organization (e.g. 
 
 Clone this RTView-Cumulocity project to your local computer and follow the steps below to install and run the RTView Cumulocity connector program. This simple Node.js program provides access to public demo devices and events provided by Cumulocity, which provides current and historical caching of device metric values.
 
-To install the connector program:
+To install the connector program, be sure you have Node.js version 6 or higher installed on your computer, and then do the following:
 ```
 cd RTView-Cumulocity-Node
 
