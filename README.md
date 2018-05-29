@@ -76,7 +76,7 @@ Close the dialog.
 ```
 On the RTView Cloud top menu bar, click on Design to invoke the RTDraw visual editing tool.
 Select the File dropdown menu and click on Import... 
-In the file browser, navigate to the RTView-CUM-IoT-Displays directory within this project.
+In the file browser, navigate to the RTView-Cumulocity-Displays directory within this project.
 Select all displays and click Open.
 ```
 * View or edit the sample displays:
@@ -84,7 +84,7 @@ Select all displays and click Open.
 Select the File dropdown menu and click on Open...
 Double click the name of the display you would like to open and view in real-time.
 ```
-The sample displays are configured to connect to your local RTView data server and present data changing in real-time.
+The sample displays are configured to connect to an RTView Data Server, named CUM-IOT-DATA, which you have already set up in a previous step. These displays present data, changing in real-time.
 You can experiment with the editing features of RTDraw to make changes to these displays or create your own custom displays and dashboards.
 
 ## How to view the RTView-Cumulocity demo devices
