@@ -1,0 +1,5 @@
+{
+    "username": "myaccount/myname@myemail",
+    "password": "mypassword",
+    "baseURL": "https://myaccount.cumulocity.com"
+}
