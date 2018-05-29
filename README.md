@@ -39,15 +39,15 @@ npm install
 ```
 Edit the following lines in the USERINFO.json configuration file, replacing 'myaccount', 'myemail', and 'mypassword' with your valid credentials:
 ```
-var username = "myaccount/myname@myemail";
-var password = "mypassword";
-var baseURL = "https://myaccount.cumulocity.com";
+"username": "myaccount/myname@myemail",
+"password": "mypassword",
+"baseURL": "https://myaccount.cumulocity.com"
 ```
 To start the program:
 ```
 node cumulocity_connector.js
 ```
-The connector program should start and open http port 3270 on your machine. RTView Cloud will be configured in the next section to access your data via this connector process.
+The connector program should start and open http port 8081 on your machine. RTView Cloud will be configured in the next section to access your data via this connector process.
 
 ## Import and view the sample RTView-Cumulocity displays
 
@@ -60,7 +60,7 @@ Select the Add RTView Server button.
 In the Add RTView Server dialog enter:
 
 	Name:       CUM-IOT-DATA
-	Host/URL:   http://localhost:3270/rtvquery
+	Host/URL:   http://localhost:8081/rtvquery
 
 Click on Save Added Servers.
 ```
