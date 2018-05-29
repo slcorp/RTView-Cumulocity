@@ -1,5 +1,5 @@
 {
-    "modifiedDate": "2018-05-22T17:53:20.099Z",
+    "modifiedDate": "2018-05-28T16:40:31.155Z",
     "viewport": {
         "x": 0,
         "y": 0,
@@ -9,11 +9,11 @@
         "x": 0,
         "y": 0,
         "width": 1200,
-        "height": 650,
+        "height": 640,
         "resizable": false,
         "margin": 20
     },
-    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAADZElEQVR4Xu2X30tTYQCG32+/cJuBN/NuiSxBbLO8aIh0UWuMBPsbusk/QC+9sG68HXQThH9GUN3owojwkP1Ag6DyBFKxxCgUhXm2L84RgwKZ4Di8g3dXCuN8z3me8x7RQB8qA4aKRjBQELKHQEEUhMwAGY4WoiBkBshwtBAFITNAhqOFKAiZATIcLURByAyQ4WghCkJmgAxHC1EQMgNkOFqIgpAZIMPRQhSEzAAZjhaiIGQGyHCYF5K21mYADPzn7DeALwAutXH5zhjzi8x3WxzmILDW3svn83c3NjaCG1lcXMTe3t7mzMzMcwC3j++uUqlgZWUFU1NTmJubQyqVwvDw8HVjzLO2Bsi+QB3kJFfW2muO49Ty+Xwg3/80m03Mz89jYWEBnuchFospSFgP28GhLb155SyNFi7i67c6Pm5uYWLiKh4+uI/p6TtIp9PwrL1xLhlfDoupU+d05UK2dg5vfv7w/snr1WWUy2UUCgV4zRa81tHtrK+vY2RktNybNEudEhXWdboyyPErq1gsolqtYnZ2NvDlui56+gaQiDbRkzDl3mRcQcJ4kvwgq6tOLZGIY2xs7O+R29vbyGQyOGwC9Z/eZLY//jQMnk6e0ZUL2T2wpRcv15YunO9DLpcLfFhrYczR7ShIJx+RU1zr03dv8oe79nh8/EoQoV6vo9FoIJvNYn9/HyYSw85uYjLbb7SQU/g881f8VxaAWqvVQiQSCa7n/+yvJBqNBr97HkrxuKmd+bCQL9CVryw/iOu6Nf//jaGhoX+U+X/Y/c/g4KD+DwnrYTpeyEnnOY6DYrGoICEGuQzgUZvzbhlj3obF1KlzuvKV1ambZ7yOgpBVURAFITNAhqOFKAiZATIcLURByAyQ4WghCkJmgAxHC1EQMgNkOFqIgpAZIMPRQhSEzAAZjhaiIGQGyHC0EAUhM0CGo4UoCJkBMhwtREHIDJDhaCEKQmaADEcLURAyA2Q4WoiCkBkgw9FCFITMABmOFqIgZAbIcLQQBSEzQIajhSgImQEyHC1EQcgMkOFoIQpCZoAMRwtREDIDZDhaiIKQGSDD0UIUhMwAGY4WoiBkBshwtBAFITNAhqOFKAiZATIcLURByAyQ4WghCkJmgAxHC1EQMgNkOFqIgpAZIMPRQhSEzAAZzh8F3sJlVa/pwQAAAABJRU5ErkJggg==",
+    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAADTklEQVR4Xu2XwYsSYRjG31FmSU0kZLuIrWBgtEKdhL2VdWgPHYO91am7x0Coi3+F/4VBBWIGe3LYqAUPCdGGQlFUJLksOqPTO0MTESxz2GF4hOcDl1GG+Z75/b7nmx1DOKAIGFBpGEYoBGwRUAiFgBEAi8OGUAgYAbA4bAiFgBEAi8OGUAgYAbA4bAiFgBEAi8OGUAgYAbA4bAiFgBEAi8OGUAgYAbA4bAiFgBEAi8OGUAgYAbA4yA3JuK67qby2/mM21e8f9XMthOWhYRg/wXiHxkEWIirkSbVafTwcDv0babfbMpvNPjQajX39ev/fu5vP55JIJGS1WslisZBsNntThbwKJQB2ArSQ01ipqBuWZfVVlqTTaf80/U2azaa0Wi3/WGVQSFyL7cR2628OrN721Ssy+fRNipdKsly6ktow5Ph4Jp1OR+7t7d3KpsyXcWWKap61bMjku33n6N3h88rlouTzeUkmk7JyRRaO/tExHo+lUNi6fT5l9KICFdd11lJIsGXVajWxbVtM0xTHcWQymUhusyTuypFzG4YKMSkkjpXkCRkMvGfItmQymb9TTqdTyeVyYi9FvvxwdosXzRdx5IlyjrVsyK8Ttz6wDnqlwgUpl8s+j6Ap/jGFRLlGwq/1/rOz+/Xo9bOdnZp/8mg0kkql4h93u11RWfLg4SNtiMGGhOM8+xnelqVX6Qet8P7N9Yb3DuI94L2hj5S6aRr9s88W7xXWcsvyhOinH4jwXgiDEfzG95AYF1LQkNOm/LOF8cUwLicq5LrO9TRkvrvakrdxZYpqnrXcsqK6ecTrUAiYFQqhEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHF+AzgjxWXdVlrQAAAAAElFTkSuQmCC",
     "localVars": {
         "air_laser": "310868",
         "air_metalshop": "310870",
@@ -64,7 +64,7 @@
             "category": "Image",
             "imgVisible": true,
             "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images-DMS/7f5c2e2d-c7ff-4a09-a659-e1304a072096/450px-DMS_Floor_Plan.jpg",
-            "pos": "600 328",
+            "pos": "600 332",
             "bgBorderVisible": false,
             "bgBorderRadius": 0
         },
@@ -245,7 +245,7 @@
             "valueVisible": false,
             "labelFont": "normal bold 13pt sans-serif",
             "valueFont": "normal normal 12pt sans-serif",
-            "pos": "460 50"
+            "pos": "460 46"
         },
         {
             "key": -14,
@@ -263,7 +263,7 @@
             "valueVisible": false,
             "labelFont": "italic normal 12pt sans-serif",
             "valueFont": "normal normal 12pt sans-serif",
-            "pos": "190 560",
+            "pos": "190 550",
             "labelColor": "#000066"
         },
         {
@@ -282,7 +282,7 @@
             "valueVisible": false,
             "labelFont": "italic normal 12pt sans-serif",
             "valueFont": "normal normal 12pt sans-serif",
-            "pos": "190 600",
+            "pos": "190 590",
             "labelColor": "#000066"
         },
         {

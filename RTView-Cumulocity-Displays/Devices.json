@@ -1,5 +1,5 @@
 {
-    "modifiedDate": "2018-05-22T17:54:44.108Z",
+    "modifiedDate": "2018-05-29T03:51:24.808Z",
     "viewport": {
         "x": 0,
         "y": 0,
@@ -8,14 +8,18 @@
     "bounds": {
         "x": 0,
         "y": 0,
-        "width": 800,
-        "height": 600,
-        "resizable": false
+        "width": 1140,
+        "height": 614,
+        "resizable": false,
+        "margin": 0
     },
-    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAB+0lEQVR4Xu3TsW3DABTEUHkFIU32yzDZNL1qFdnBeDHOAdWbPpH6j6NnysBjak1jjoKMfQQFKciYgbE5XUhBxgyMzelCCjJmYGxOF1KQMQNjc7qQgowZGJvThRRkzMDYnC6kIGMGxuZ0IQUZMzA2pwspyJiBsTldSEHGDIzN6UIKMmZgbM67XMjncRw/Y+7+ZM67BHn65a/r+rjv++s8z++nIS/84b8P8kKX5K8KQjQ6SEGcS0IqCNHoIAVxLgmpIESjgxTEuSSkghCNDlIQ55KQCkI0OkhBnEtCKgjR6CAFcS4JqSBEo4MUxLkkpIIQjQ5SEOeSkApCNDpIQZxLQioI0eggBXEuCakgRKODFMS5JKSCEI0OUhDnkpAKQjQ6SEGcS0IqCNHoIAVxLgmpIESjgxTEuSSkghCNDlIQ55KQCkI0OkhBnEtCKgjR6CAFcS4JqSBEo4MUxLkkpIIQjQ5SEOeSkApCNDpIQZxLQioI0eggBXEuCakgRKODFMS5JKSCEI0OUhDnkpAKQjQ6SEGcS0IqCNHoIAVxLgmpIESjgxTEuSSkghCNDlIQ55KQCkI0OkhBnEtCKgjR6CAFcS4JqSBEo4MUxLkkpIIQjQ5SEOeSkApCNDpIQZxLQioI0eggBXEuCakgRKODFMS5JKSCEI0OUhDnkpB+AazpCGVwsD0ZAAAAAElFTkSuQmCC",
-    "localVars": {},
+    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAABr0lEQVR4Xu3TsW2DUAAGYb8NIoSySOZI7aFcek9coBRUxBRewDLSVxwSJU/37vjHpYcyMCiaYC4FwX6CghQEM4DhtJCCYAYwnBZSEMwAhtNCCoIZwHBaSEEwAxhOCykIZgDDaSEFwQxgOC2kIJgBDKeFFAQzgOG0kIJgBjAceSEH29fzfWDOTsWRgxwXP/j2TxhY1/V727brPM/3T5x31hl6kLPuzZ5bECxNQQqCGcBwWkhB3jOwLMvvvu8/r6/HGH/TNN3eO839qoVgbQpSEMwAhtNCCoIZwHBaSEEwAxhOCykIZgDDaSEFwQxgOC2kIJgBDKeFFAQzgOG0kIJgBjCcFlIQzACG00IKghnAcFpIQTADGE4LKQhmAMNpIQXBDGA4LaQgmAEMp4UUBDOA4bSQgmAGMJwWUhDMAIbTQgqCGcBwWkhBMAMYTgspCGYAw2khBcEMYDgtpCCYAQynhRQEM4DhtJCCYAYwnBZSEMwAhtNCCoIZwHBaSEEwAxhOCykIZgDDaSEFwQxgOC2kIJgBDKeFFAQzgOG0kIJgBjCcFlIQzACG00IKghnAcP4B4MYRZS/wrTEAAAAASUVORK5CYII=",
+    "localVars": {
+        "device_id": "310868"
+    },
     "styleSheet": {},
     "linksRoute": "Angled",
+    "portsLayout": "Edge",
     "layout": "",
     "version": "1.38.0",
     "nodeDataArray": [
@@ -61,13 +65,13 @@
             "key": 4,
             "category": "extern-custom-table",
             "bgVisible": true,
-            "size": "781 529",
+            "size": "1040 264",
             "rowSeriesFlag": true,
             "bgBorderVisible": true,
-            "bgBorderColor": "#d0f4ea",
+            "bgBorderColor": "#cccccc",
             "bgBorderWidth": 1,
             "bgBorderRadius": 0,
-            "pos": "400.5 324.5",
+            "pos": "570 190",
             "bindings": {
                 "component": {
                     "name": "getDevices",
@@ -77,11 +81,11 @@
             },
             "columns": {
                 "id": {
-                    "title": "Device ID",
+                    "title": "Device<br>ID",
                     "width": 150
                 },
                 "type": {
-                    "title": "Device Type",
+                    "title": "Device<br>Type",
                     "width": 150
                 },
                 "name": {
@@ -102,17 +106,16 @@
                 },
                 "owner": {
                     "title": "Owner",
-                    "width": 150
+                    "width": 150,
+                    "hidden": true
                 }
             },
+            "miscProps": {},
             "drilldown": {
-                "name": "cum_dms_air_quality_trends.json",
+                "name": ".",
                 "vars": {
                     "device_id": {
                         "column": "id"
-                    },
-                    "room_name": {
-                        "column": "name"
                     }
                 }
             }
@@ -127,13 +130,14 @@
             "labelVisible": true,
             "labelText": "Cumulocity Devices",
             "labelAlignment": {
-                "horizontal": "Center",
+                "horizontal": "InsideLeft",
                 "vertical": "Center"
             },
             "valueVisible": false,
-            "labelFont": "normal normal 14pt sans-serif",
+            "labelFont": "normal bold 14pt external:\"Open Sans\"",
             "valueFont": "normal normal 12pt sans-serif",
-            "pos": "346 38"
+            "pos": "140 30",
+            "labelColor": "#4c4c4c"
         },
         {
             "key": 5,
@@ -142,7 +146,7 @@
             "category": "General",
             "bgColor": "#ededed",
             "bgVisible": true,
-            "bgBorderColor": "#444",
+            "bgBorderColor": "#969696",
             "bgBorderVisible": true,
             "labelVisible": true,
             "labelText": "Count:",
@@ -156,13 +160,70 @@
                 "horizontal": "InsideLeft",
                 "vertical": "Center"
             },
-            "pos": "762.14 41",
+            "pos": "1060 30",
             "bindings": {
                 "valueText": {
                     "name": "getDeviceCount",
                     "type": "function"
                 }
             }
+        },
+        {
+            "key": -7,
+            "category": "extern-custom-table",
+            "bgVisible": true,
+            "size": "1040 230",
+            "rowSeriesFlag": true,
+            "bgBorderVisible": true,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0,
+            "pos": "570 490",
+            "bindings": {
+                "component": {
+                    "cache": "CumMeasurement",
+                    "url": "CUM-IOT-DATA",
+                    "table": "current",
+                    "filter": {
+                        "id": "$device_id",
+                        "name": "*"
+                    },
+                    "type": "cache"
+                }
+            }
+        },
+        {
+            "key": 7,
+            "figure": "Rectangle",
+            "size": "236 24",
+            "category": "General",
+            "bgColor": "#ededed",
+            "bgVisible": true,
+            "bgBorderColor": "#444",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "Selected Device ID:",
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "",
+            "valueAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "pos": "290 350",
+            "labelFont": "normal normal 10pt external:\"Open Sans\"",
+            "valueFont": "normal bold 10pt external:\"Open Sans\"",
+            "bindings": {
+                "valueText": {
+                    "name": "device_id",
+                    "type": "variable"
+                }
+            },
+            "labelColor": "#7a7a7a",
+            "valueColor": "#4c4c4c"
         }
     ],
     "linkDataArray": []

@@ -1,5 +1,5 @@
 {
-    "modifiedDate": "2018-05-22T17:54:25.115Z",
+    "modifiedDate": "2018-05-29T04:00:55.231Z",
     "viewport": {
         "x": 0,
         "y": 0,
@@ -8,16 +8,18 @@
     "bounds": {
         "x": 0,
         "y": 0,
-        "width": 800,
-        "height": 600,
-        "resizable": false
+        "width": 1140,
+        "height": 614,
+        "resizable": false,
+        "margin": 0
     },
-    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAABmElEQVR4Xu3TsQ3CMBgF4Z8NIlFBx/6rMAcDBOoIUVKm4iI+17Z0uvM7jZMycErRgBlBYp9AEEFiBmI4FiJIzEAMx0IEiRmI4ViIIDEDMRwLESRmIIZjIYLEDMRwLESQmIEYjoUIEjMQw7EQQWIGYjgWIkjMQAzHQgSJGYjhHGUhl5l5zsxrr791Xc/btt2WZbnvffuL+0cJ8nFznZnHXkmC7DXm/peBIy3kL9IJEsssiCAxAzEcCxEkZiCGYyGCxAzEcCxEkJiBGI6FCBIzEMOxEEFiBmI4FiJIzEAMx0IEiRmI4ViIIDEDMRwLESRmIIZjIYLEDMRwLESQmIEYjoUIEjMQw7EQQWIGYjgWIkjMQAzHQgSJGYjhWIggMQMxHAsRJGYghmMhgsQMxHAsRJCYgRiOhQgSMxDDsRBBYgZiOBYiSMxADMdCBIkZiOFYiCAxAzEcCxEkZiCGYyGCxAzEcCxEkJiBGI6FCBIzEMOxEEFiBmI4FiJIzEAMx0IEiRmI4ViIIDEDMRwLESRmIIZjIYLEDMRw3gewEWVKKOj5AAAAAElFTkSuQmCC",
+    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAABoUlEQVR4Xu3TMQ6CQAAFUSnsLYiNB/NgntHaggor2TOQTZ7JkGzJZpjhL5ceysBC0QRzKQj2ExSkIJgBDKeFFAQzgOG0kIJgBjCcFlIQzACG00IKghnAcFpIQTADGE4LKQhmAMNpIQXBDGA4LaQgmAEMp4UUBDOA4cgLGWy343wwZ1Nx5CDjwwff9TjfqRagy/UgQ9XjOO+zzrZtu+/7/lzX9XX2rpnv/0OQmd/P3V0QLElBCoIZwHBaSEEwAxhOCykIZgDDaSEFwQxgOC2kIJgBDKeFFAQzgOG0kIJgBjCcFlIQzACG00IKghnAcFpIQTADGE4LKQhmAMNpIQXBDGA4LaQgmAEMp4UUBDOA4bSQgmAGMJwWUhDMAIbTQgqCGcBwWkhBMAMYTgspCGYAw2khBcEMYDgtpCCYAQynhRQEM4DhtJCCYAYwnBZSEMwAhtNCCoIZwHBaSEEwAxhOCykIZgDDaSEFwQxgOC2kIJgBDKeFFAQzgOG0kIJgBjCcFlIQzACG00IKghnAcFpIQTADGE4LKQhmAMNpIQXBDGA4P9u8CmV/vmeuAAAAAElFTkSuQmCC",
     "localVars": {
         "showActiveOnly": "*"
     },
     "styleSheet": {},
     "linksRoute": "Angled",
+    "portsLayout": "Edge",
     "layout": "",
     "version": "1.38.0",
     "nodeDataArray": [
@@ -31,13 +33,14 @@
             "labelVisible": true,
             "labelText": "Cumulocity Alarms",
             "labelAlignment": {
-                "horizontal": "Center",
+                "horizontal": "InsideLeft",
                 "vertical": "Center"
             },
             "valueVisible": false,
-            "labelFont": "normal normal 14pt sans-serif",
+            "labelFont": "normal bold 14pt external:\"Open Sans\"",
             "valueFont": "normal normal 12pt sans-serif",
-            "pos": "381 27"
+            "pos": "140 30",
+            "labelColor": "#4c4c4c"
         },
         {
             "key": -9007199254740990,
@@ -86,7 +89,7 @@
                 "valueToSetUnchecked": "*",
                 "varToSet": ""
             },
-            "pos": "40 30",
+            "pos": "70 68",
             "bindings": {
                 "localVars.varToSet": {
                     "name": "showActiveOnly",
@@ -110,7 +113,7 @@
             "valueVisible": false,
             "labelFont": "normal normal 12pt sans-serif",
             "valueFont": "normal normal 12pt sans-serif",
-            "pos": "98 31"
+            "pos": "130 70"
         },
         {
             "key": 5,
@@ -133,7 +136,7 @@
                 "horizontal": "InsideLeft",
                 "vertical": "Center"
             },
-            "pos": "755.5 27",
+            "pos": "1060 70",
             "bindings": {
                 "valueText": {
                     "name": "getAlertCount",
@@ -145,13 +148,13 @@
             "key": 4,
             "category": "extern-custom-table",
             "bgVisible": true,
-            "size": "767 531",
+            "size": "1040 484",
             "rowSeriesFlag": true,
             "bgBorderVisible": true,
             "bgBorderColor": "#cccccc",
             "bgBorderWidth": 1,
             "bgBorderRadius": 0,
-            "pos": "400 318.5",
+            "pos": "570 342",
             "bindings": {
                 "component": {
                     "name": "getCurrentAlerts",
@@ -161,7 +164,38 @@
             },
             "columns": {
                 "text": {
-                    "width": 350
+                    "width": 350,
+                    "title": "Alert<br>Text"
+                },
+                "id": {
+                    "title": "Alarm<br>ID",
+                    "width": 80
+                },
+                "type": {
+                    "title": "Alarm<br>Type",
+                    "width": 154
+                },
+                "source_id": {
+                    "title": "Device<br>ID",
+                    "width": 84
+                },
+                "severity": {
+                    "title": "Severity",
+                    "width": 100
+                },
+                "count": {
+                    "title": "Count",
+                    "width": 64
+                },
+                "time_stamp": {
+                    "title": "Time"
+                },
+                "status": {
+                    "title": "Status",
+                    "width": 80
+                },
+                "firstOccurrenceTime": {
+                    "title": "First<br>Occurrence"
                 }
             }
         }
