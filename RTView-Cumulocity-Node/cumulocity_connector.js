@@ -5,6 +5,13 @@ console.log('\n--- Cumulocity IoT / RTView Connector ---\n');
 
 var request = require('request');
 var rtvproxy = require('./rtview_cacheproxy.js');
+var userinfo = require("./USERINFO.json");
+//console.log('... userinfo = ' + JSON.stringify(userinfo));
+var username = userinfo.username;
+var password = userinfo.password;
+var baseURL = userinfo.baseURL;
+
+var auth = "Basic " + new Buffer(username + ":" + password).toString("base64");
 
 // Cache definitions for data requested from Cumulocity IoT Server
 // and returned to RTView.
@@ -211,16 +218,6 @@ rtvproxy.run(getData);
 
 // **********************************************************************
 // Cumulocity variables and support
-
-//console.log('\nGet User Info -> USERINFO.json\n');
-
-var userinfo = require("./USERINFO.json");
-console.log('... userinfo = ' + JSON.stringify(userinfo));
-var username = userinfo.username;
-var password = userinfo.password;
-var baseURL = userinfo.baseURL;
-
-var auth = "Basic " + new Buffer(username + ":" + password).toString("base64");
 
 var hasProperty = function(obj,prop) {
     return Object.prototype.hasOwnProperty.call(obj,prop);
