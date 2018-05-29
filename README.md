@@ -85,7 +85,7 @@ Select the File dropdown menu and click on Open...
 Double click the name of the display you would like to open and view in real-time.
 ```
 The sample displays are configured to connect to your local RTView data server and present data changing in real-time.
-You can experiment with the editing features of RTDraw to make changes to these displays or create your own.
+You can experiment with the editing features of RTDraw to make changes to these displays or create your own custom displays and dashboards.
 
 ## How to view the RTView-Cumulocity demo devices
 
