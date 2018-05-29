@@ -1,5 +1,5 @@
 {
-    "modifiedDate": "2018-05-29T04:30:43.600Z",
+    "modifiedDate": "2018-05-29T13:34:32.863Z",
     "viewport": {
         "x": 0,
         "y": 0,
@@ -13,7 +13,7 @@
         "resizable": false,
         "margin": 0
     },
-    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAB+UlEQVR4Xu2TsQ3DMBDE5IW8/xqZKIZGYEHgCqYmch8yek6fKQPP1DUdcwoy9icoSEHGDIyd0wspyJiBsXN6IQUZMzB2Ti+kIGMGxs7phRRkzMDYOb2QgowZGDunF1KQMQNj5/RCCjJmYOycXkhBxgyMndMLKciYgbFzll/Ive095/zGnKnnLAe5P/ze91cNjH35epAxXf45BfEdo4WCIF0+XBDfMVooCNLlwwXxHaOFgiBdPlwQ3zFaKAjS5cMF8R2jhYIgXT5cEN8xWigI0uXDBfEdo4WCIF0+XBDfMVooCNLlwwXxHaOFgiBdPlwQ3zFaKAjS5cMF8R2jhYIgXT5cEN8xWigI0uXDBfEdo4WCIF0+XBDfMVooCNLlwwXxHaOFgiBdPlwQ3zFaKAjS5cMF8R2jhYIgXT5cEN8xWigI0uXDBfEdo4WCIF0+XBDfMVooCNLlwwXxHaOFgiBdPlwQ3zFaKAjS5cMF8R2jhYIgXT5cEN8xWigI0uXDBfEdo4WCIF0+XBDfMVooCNLlwwXxHaOFgiBdPlwQ3zFaKAjS5cMF8R2jhYIgXT5cEN8xWigI0uXDBfEdo4WCIF0+XBDfMVooCNLlwwXxHaOFgiBdPlwQ3zFaKAjS5cMF8R2jhYIgXT5cEN8xWigI0uXDBfEdo4WCIF0+/AH0hQJl+Up8PwAAAABJRU5ErkJggg==",
+    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAB+0lEQVR4Xu2TsY3DQBDEpIbcfxuqSPKVwIDABDTw2cBck3/31WfKwD11TcdcBRn7JyhIQcYMjJ3TCynImIGxc3ohBRkzMHZOL6QgYwbGzumFFGTMwNg5vZCCjBkYO6cXUpAxA2Pn9EIKMmZg7JxeSEHGDIyd0wspyJiBsXOWX8i57ff/e8acqecsBzk//Nz3qgbGvnw9yJgu/5yC+I4RoSBIlz8uiO8YEQqCdPnjgviOEaEgSJc/LojvGBEKgnT544L4jhGhIEiXPy6I7xgRCoJ0+eOC+I4RoSBIlz8uiO8YEQqCdPnjgviOEaEgSJc/LojvGBEKgnT544L4jhGhIEiXPy6I7xgRCoJ0+eOC+I4RoSBIlz8uiO8YEQqCdPnjgviOEaEgSJc/LojvGBEKgnT544L4jhGhIEiXPy6I7xgRCoJ0+eOC+I4RoSBIlz8uiO8YEQqCdPnjgviOEaEgSJc/LojvGBEKgnT544L4jhGhIEiXPy6I7xgRCoJ0+eOC+I4RoSBIlz8uiO8YEQqCdPnjgviOEaEgSJc/LojvGBEKgnT544L4jhGhIEiXPy6I7xgRCoJ0+eOC+I4RoSBIlz8uiO8YEQqCdPnjgviOEaEgSJc/LojvGBEKgnT544L4jhGhIEiXPy6I7xgRCoJ0+eOC+I4RoSBIlz/+APSFAmUHB7K3AAAAAElFTkSuQmCC",
     "localVars": {
         "cumSelectedDevice": "",
         "cumSelectedType": ""
@@ -31,7 +31,7 @@
             "size": "1040 480",
             "rowSeriesFlag": true,
             "bgBorderVisible": true,
-            "bgBorderColor": "#cccccc",
+            "bgBorderColor": "#bcbcbc",
             "bgBorderWidth": 1,
             "bgBorderRadius": 0,
             "pos": "570 340",
@@ -147,13 +147,13 @@
         {
             "key": -10,
             "category": "extern-ctrl",
-            "size": "124 30",
+            "size": "160 30",
             "dispName": "combo",
             "localVars": {
                 "values": "c8y_Motion;c8y_LocationUpdate",
                 "varToSet": ""
             },
-            "pos": "420 70",
+            "pos": "440 70",
             "bindings": {
                 "localVars.varToSet": {
                     "name": "cumSelectedType",
@@ -252,13 +252,10 @@
             "name": "validateDevices",
             "func": "validateVarValue",
             "args": {
+                "name": "cumSelectedDevice",
                 "setIfInvalid": "1"
             },
             "bindings": {
-                "args.name": {
-                    "name": "cumSelectedDevice",
-                    "type": "variable"
-                },
                 "args.values": {
                     "name": "getDevices",
                     "value": "id",
@@ -274,19 +271,11 @@
             "name": "validateType",
             "func": "validateVarValue",
             "args": {
-                "setIfInvalid": "0"
+                "name": "cumSelectedType",
+                "values": "c8y_Motion;c8y_LocationUpdate",
+                "setIfInvalid": "1"
             },
-            "bindings": {
-                "args.name": {
-                    "name": "cumSelectedType",
-                    "type": "variable"
-                },
-                "args.values": {
-                    "name": "getDevices",
-                    "value": "id",
-                    "type": "function"
-                }
-            }
+            "bindings": {}
         }
     ],
     "linkDataArray": []
