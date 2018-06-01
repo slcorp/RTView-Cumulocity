@@ -425,22 +425,31 @@ var getCacheData = function(arrayName, url, var_meta, var_map, tableName, res, q
 };
 
 var dataRow = function(row, row_meta, row_map) {
+    //console.log('... row: ' + JSON.stringify(row, 0, 2));
+    //console.log('... row_meta: ' + JSON.stringify(row_meta, 0, 2));
+    //console.log('... row_map: ' + JSON.stringify(row_map, 0, 2));
     function getRowVal(varpath) {
         var path = varpath[1].split('.');
         var type = row_meta[varpath[0]];
-        var value;
+        var value, value0, value1, value2;
         switch(path.length) {
             case 1: 
                 value = row[path[0]];
                 break;
-            case 2:  
-                value =  row[path[0]][path[1]];
+            case 2:
+                value0 = row[path[0]];
+                if (value0) value = value0[path[1]];
                 break;
             case 3:  
-                value =  row[path[0]][path[1]][path[2]];
+                value0 = row[path[0]];
+                if (value0) value1 = value0[path[1]];
+                if (value1) value =  value1[path[2]];
                 break;
             default:  
-                value =  row[path[0]][path[1]][path[2]][path[3]];
+                value0 = row[path[0]];
+                if (value0) value1 = value0[path[1]];
+                if (value1) value2 =  value1[path[2]];
+                if (value2) value = value2[path[3]];
                 break;
         }
 
