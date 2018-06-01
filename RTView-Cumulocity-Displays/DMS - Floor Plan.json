@@ -1,5 +1,5 @@
 {
-    "modifiedDate": "2018-05-28T16:40:31.155Z",
+    "modifiedDate": "2018-05-30T00:20:41.839Z",
     "viewport": {
         "x": 0,
         "y": 0,
@@ -13,7 +13,7 @@
         "resizable": false,
         "margin": 20
     },
-    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAADTklEQVR4Xu2XwYsSYRjG31FmSU0kZLuIrWBgtEKdhL2VdWgPHYO91am7x0Coi3+F/4VBBWIGe3LYqAUPCdGGQlFUJLksOqPTO0MTESxz2GF4hOcDl1GG+Z75/b7nmx1DOKAIGFBpGEYoBGwRUAiFgBEAi8OGUAgYAbA4bAiFgBEAi8OGUAgYAbA4bAiFgBEAi8OGUAgYAbA4bAiFgBEAi8OGUAgYAbA4bAiFgBEAi8OGUAgYAbA4yA3JuK67qby2/mM21e8f9XMthOWhYRg/wXiHxkEWIirkSbVafTwcDv0babfbMpvNPjQajX39ev/fu5vP55JIJGS1WslisZBsNntThbwKJQB2ArSQ01ipqBuWZfVVlqTTaf80/U2azaa0Wi3/WGVQSFyL7cR2628OrN721Ssy+fRNipdKsly6ktow5Ph4Jp1OR+7t7d3KpsyXcWWKap61bMjku33n6N3h88rlouTzeUkmk7JyRRaO/tExHo+lUNi6fT5l9KICFdd11lJIsGXVajWxbVtM0xTHcWQymUhusyTuypFzG4YKMSkkjpXkCRkMvGfItmQymb9TTqdTyeVyYi9FvvxwdosXzRdx5IlyjrVsyK8Ttz6wDnqlwgUpl8s+j6Ap/jGFRLlGwq/1/rOz+/Xo9bOdnZp/8mg0kkql4h93u11RWfLg4SNtiMGGhOM8+xnelqVX6Qet8P7N9Yb3DuI94L2hj5S6aRr9s88W7xXWcsvyhOinH4jwXgiDEfzG95AYF1LQkNOm/LOF8cUwLicq5LrO9TRkvrvakrdxZYpqnrXcsqK6ecTrUAiYFQqhEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHHYEAoBIwAWhw2hEDACYHF+AzgjxWXdVlrQAAAAAElFTkSuQmCC",
+    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAADSUlEQVR4Xu2XMWsTcRyG33/DFdM0BCntUmIDESI2oFOgm9YOdnAUuunknlEI6JJP0W8RQYVSIzglRLTQwYJYSUBRVAymlCSX/OQOT0QoGRqON/DeFErIPXmeey89Bx1UBhwVjWCgIGQXgYIoCJkBMhwtREHIDJDhaCEKQmaADEcLURAyA2Q4WoiCkBkgw9FCFITMABmOFqIgZAbIcLQQBSEzQIajhSgImQEyHC1EQcgMkOEwLyRlZssA1v5z1gXwEcC1CS4PnHM/yXxPxGEOAjN7XCwWHx0eHoZfZHd3F71e70O5XH4F4N6/367f72Nubg7j8RiDwQDpdPqmc+7lRANkb6AOcpYrM7vRbDbrxWIRCwsL4dvMDJVKBdVqNXztnFOQuC6206Ftvmk199evXkHn0zdkL+UwGhmS8w4nJz3UajXc3dm5lU56L+JimtZ5ZnIhne/D28fvDp4VLmextLSERCKBsQED30Iv7XYbq6trW4tJtz8tUXF9zkwGiW5ZpVIJw+EQnufB9310Oh1klnOwsY8L825rMekpSBxXUhCk0Qh+Q9aRSqX+nrLb7SKTyWA4Ar788LezK97zOHimeY6ZXMivU9tsNFv7udWLyOfzoY9oKeFrBZnmNTL5s95/9re/Hr9+urFRCt98dHSEQqEQvt7b20Oj2cL9Bw+3sytOC5ms8/zvCG5ZAOrRKoJ/c4MjeAYJfuCDw/ex6Xmufv6zxfsJM3nLCoKYWT0KETwQRkf0Nz2HxHghRQs565R/bmF6MIyriZldB/BkwvnuOOfexsU0rfPM5C1rWl+e8XMUhKyKgigImQEyHC1EQcgMkOFoIQpCZoAMRwtREDIDZDhaiIKQGSDD0UIUhMwAGY4WoiBkBshwtBAFITNAhqOFKAiZATIcLURByAyQ4WghCkJmgAxHC1EQMgNkOFqIgpAZIMPRQhSEzAAZjhaiIGQGyHC0EAUhM0CGo4UoCJkBMhwtREHIDJDhaCEKQmaADEcLURAyA2Q4WoiCkBkgw9FCFITMABmOFqIgZAbIcLQQBSEzQIajhSgImQEyHC1EQcgMkOFoIQpCZoAMRwtREDIDZDhaiIKQGSDD0UIUhMwAGY4WoiBkBshwfgM4I8VlDpzkEgAAAABJRU5ErkJggg==",
     "localVars": {
         "air_laser": "310868",
         "air_metalshop": "310870",
@@ -75,7 +75,7 @@
             "size": "330 210",
             "rowSeriesFlag": false,
             "pos": "185 415",
-            "dispName": "cum_sub_metrics.json",
+            "dispName": "cum_sub_air_quality.json",
             "localVars": {
                 "device_id": "$air_woodshop",
                 "room_name": "Woodshop"
@@ -105,7 +105,7 @@
             "size": "330 210",
             "rowSeriesFlag": false,
             "pos": "185 195",
-            "dispName": "cum_sub_metrics.json",
+            "dispName": "cum_sub_air_quality.json",
             "localVars": {
                 "device_id": "$air_woodshop",
                 "room_name": "Metalshop"
@@ -139,7 +139,7 @@
             "size": "330 210",
             "rowSeriesFlag": false,
             "pos": "999 184",
-            "dispName": "cum_sub_metrics.json",
+            "dispName": "cum_sub_air_quality.json",
             "localVars": {
                 "device_id": 310868,
                 "room_name": "Laser area"
@@ -170,7 +170,7 @@
             "size": "330 210",
             "rowSeriesFlag": false,
             "pos": "1008 432",
-            "dispName": "cum_sub_metrics.json",
+            "dispName": "cum_sub_air_quality.json",
             "localVars": {
                 "device_id": "$air_woodshop",
                 "room_name": "Shared area"
