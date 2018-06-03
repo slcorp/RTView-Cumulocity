@@ -262,8 +262,8 @@ var getMeasurements = function(tableName, res, query, result, callback){
     dateTo = new Date(dateTo);
     dateFrom = new Date(dateFrom);
     //console.log('... measurement interval ' + dateFrom + ' to '+ dateTo + " - tr " + tr);
-    url += (tableName == 'current' ? '?pageSize=100' : ('/series?series='+fragPath[name]));
-    /*
+    //url += (tableName == 'current' ? '?pageSize=100' : ('/series?series='+fragPath[name]));
+    /**/
     if (series) {
         seriesPath = name + '.' + series;
         console.log('***** seriesPath = ' + seriesPath);
@@ -272,7 +272,6 @@ var getMeasurements = function(tableName, res, query, result, callback){
         console.log('***** fragment = ' + name);
         url += (tableName == 'current' ? '?pageSize=100' : ('/series?fragmentType='+name));
     }
-    */
     
     if (id != '' && id != '*') {
         url += ('&source=' + id);
@@ -360,8 +359,8 @@ var measurementRow = function(row, rtvdata) {
         var fragment = row[fragname];
         
         var realfragname = fragname;
-        if (fragname.startsWith('c8y_'))
-            realfragname = fragname.substring(4);
+        //if (fragname.startsWith('c8y_'))          // tried to do this for user-friendly, but fails in history
+            //realfragname = fragname.substring(4);
         
         var serieskeys = Object.keys(fragment);
         for (var idxskey in serieskeys) {
@@ -392,7 +391,11 @@ var measurementRowHistory = function(id,name,seriesname,values) {
         rtview_row.push(name);
         rtview_row.push(seriesname);
         var v = values[ts][0];
-        rtview_row.push((v.min+v.max)/2.0);
+        if (v) {
+            rtview_row.push((v.min+v.max)/2.0);
+        } else {
+            rtview_row.push(0.0);
+        }
         rtview_row.push('');
         rtview_result.push(rtview_row);
     }
