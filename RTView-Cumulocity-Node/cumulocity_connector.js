@@ -252,8 +252,9 @@ var getMeasurements = function(tableName, res, query, result, callback){
     var fmap = getValue(query,'fmap',{});
     var id = getValue(fmap,'id','');
     var name = getValue(fmap,'name','');
-    delete fmap['id']; delete fmap['name'];
-
+    var series = getValue(fmap,'series','');
+    delete fmap['id']; delete fmap['name']; delete fmap['series'];  // tell cacheproxy we've handled these filters
+    
     var tr = Number(getValue(query,'tr',10))*1000;
     var dateTo = Number(getValue(query, 'te', (new Date()).getTime()));
     var dateFrom = Number(getValue(query, 'tb', dateTo - tr));
@@ -262,6 +263,17 @@ var getMeasurements = function(tableName, res, query, result, callback){
     dateFrom = new Date(dateFrom);
     //console.log('... measurement interval ' + dateFrom + ' to '+ dateTo + " - tr " + tr);
     url += (tableName == 'current' ? '?pageSize=100' : ('/series?series='+fragPath[name]));
+    /*
+    if (series) {
+        seriesPath = name + '.' + series;
+        console.log('***** seriesPath = ' + seriesPath);
+        url += (tableName == 'current' ? '?pageSize=100' : ('/series?series='+seriesPath));
+    } else {
+        console.log('***** fragment = ' + name);
+        url += (tableName == 'current' ? '?pageSize=100' : ('/series?fragmentType='+name));
+    }
+    */
+    
     if (id != '' && id != '*') {
         url += ('&source=' + id);
     }
@@ -288,7 +300,7 @@ var getMeasurements = function(tableName, res, query, result, callback){
     return;
     }
     // create object to hold info related to this request 
-    urlInfo = { res:res, result:result, tableName:tableName, query:query, url:url, dateFrom:dateFrom, dateTo:dateTo, id:id, name:name }
+    urlInfo = { res:res, result:result, tableName:tableName, query:query, url:url, dateFrom:dateFrom, dateTo:dateTo, id:id, name:name, series:series }
 
     // make request with closure
     var dest = {
@@ -297,6 +309,8 @@ var getMeasurements = function(tableName, res, query, result, callback){
             "Authorization" : auth
         }
     };
+    
+    console.log('^^^^^^^ meas url = ' + url);
     request(dest, getMeasurementsHandler(url, urlInfo));
 
     function getMeasurementsHandler(url, urlInfo) {
@@ -304,14 +318,14 @@ var getMeasurements = function(tableName, res, query, result, callback){
         if (!error && response.statusCode == 200) {
             var b = JSON.parse(body); 
             console.log('... measurement query ' + url);
-            console.log('    measurements: ' + JSON.stringify(b.measurements, 0, 2));
+            //console.log('    measurements: ' + JSON.stringify(b.measurements, 0, 2));
             var rtvdata = [];
             if(urlInfo.tableName == "current")
                 for (var i=0; i < b.measurements.length; i++) {
                     measurementRow(b.measurements[i], rtvdata);
                 }
             else {
-                rtvdata = measurementRowHistory(urlInfo.id, urlInfo.name, b.values);
+                rtvdata = measurementRowHistory(urlInfo.id, urlInfo.name, '', b.values);
             }
             urlInfo.result.data = rtvdata;
             console.log('  ... getMeasurements exec_time: ' + (Date.now() - urlInfo.dateTo) + '  ' +
@@ -326,33 +340,10 @@ var getMeasurements = function(tableName, res, query, result, callback){
     
 };
 
-
-function measurementValue(row) {
-    var fragment = row[row.type];
-    switch(row.type) {
-        case "c8y_TemperatureMeasurement":
-            return [fragment.T.value,fragment.T.unit];
-            break;
-        case "humidity":
-            return [fragment.percent.value,fragment.percent.unit];
-            break;
-        case "noise":
-            return [fragment.decibels.value,fragment.decibels.unit];
-            break;
-        case "pm10":
-        case "pm2_5":
-            return [fragment.density.value,fragment.density.unit];
-            break;
-        default:
-            return [0,'?'];
-            break;
-    }
-}
-
 var measurementRow = function(row, rtvdata) {
 
-    console.log('... row type: ' + row.type);
-    console.log('... row: ' + JSON.stringify(row, 0 , 2));
+    //console.log('... row type: ' + row.type);
+    //console.log('... row: ' + JSON.stringify(row, 0 , 2));
     var fragkeys = Object.keys(row);
     // loop over all fragments in the row (skip common fields)
     for (var idxfkey in fragkeys) {
@@ -362,7 +353,7 @@ var measurementRow = function(row, rtvdata) {
         if (key === 'self') continue;
         if (key === 'source') continue;
         if (key === 'type') continue;
-        console.log('*****!! key: ' + idxfkey + ' ' + key);
+        //console.log('*****!! key: ' + idxfkey + ' ' + key);
         
         // we've determined this key is a 'fragment', loop over series
         var fragname = key;
@@ -376,7 +367,7 @@ var measurementRow = function(row, rtvdata) {
         for (var idxskey in serieskeys) {
             var seriesname = serieskeys[idxskey]
             var series = fragment[seriesname];
-            console.log(' ***^^^^ series = ' + JSON.stringify(series));
+            //console.log(' ***^^^^ series = ' + JSON.stringify(series));
             
             rtview_row = [];
             rtview_row.push(Date.parse(row.time));
@@ -392,13 +383,14 @@ var measurementRow = function(row, rtvdata) {
     }
 }
 
-var measurementRowHistory = function(id,name,values) {
+var measurementRowHistory = function(id,name,seriesname,values) {
     var rtview_result = [];
     for(var ts in values) {
         var rtview_row = [];
         rtview_row.push(Date.parse(ts));
         rtview_row.push(id);
         rtview_row.push(name);
+        rtview_row.push(seriesname);
         var v = values[ts][0];
         rtview_row.push((v.min+v.max)/2.0);
         rtview_row.push('');
