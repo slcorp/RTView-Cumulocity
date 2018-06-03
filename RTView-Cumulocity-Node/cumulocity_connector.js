@@ -18,12 +18,13 @@ var auth = "Basic " + new Buffer(username + ":" + password).toString("base64");
 
 rtvproxy.create_datacache('CumMeasurement',
 {   // cache properties
-    'indexColumnNames': 'id;name',
+    'indexColumnNames': 'id;name;series',
     'historyColumnNames': 'value'
 },[ // column metadata
     { 'time_stamp': 'date' },
     { 'id': 'string' },
     { 'name': 'string' },
+    { 'series': 'string' },
     { 'value': 'double' },
     { 'units': 'string' }
 ]);
@@ -177,7 +178,7 @@ var cumEventUrl = function(query) {
 }
 
 var cumDeviceUrl = function(query) {
-    var url = baseURL + '/inventory/managedObjects?fragmentType=c8y_IsDevice&pageSize=100';
+    var url = baseURL + '/inventory/managedObjects?fragmentType=c8y_IsDevice&pageSize=200';
     var fmap = getValue(query,'fmap',{});
 
     // get filters from query that can be processed by Cumulocity; 
@@ -303,10 +304,11 @@ var getMeasurements = function(tableName, res, query, result, callback){
         if (!error && response.statusCode == 200) {
             var b = JSON.parse(body); 
             console.log('... measurement query ' + url);
+            console.log('    measurements: ' + JSON.stringify(b.measurements, 0, 2));
             var rtvdata = [];
             if(urlInfo.tableName == "current")
                 for (var i=0; i < b.measurements.length; i++) {
-                    rtvdata.push(measurementRow(b.measurements[i]));
+                    measurementRow(b.measurements[i], rtvdata);
                 }
             else {
                 rtvdata = measurementRowHistory(urlInfo.id, urlInfo.name, b.values);
@@ -347,16 +349,47 @@ function measurementValue(row) {
     }
 }
 
-var measurementRow = function(row) {
-    rtview_row = [];
-    rtview_row.push(Date.parse(row.time));
-    rtview_row.push(row.source.id);
-    rtview_row.push(row.type);
-    var v = measurementValue(row);
-    rtview_row.push(v[0]);
-    rtview_row.push(v[1]);
-    //console.log(JSON.stringify(rtview_row));
-    return rtview_row;
+var measurementRow = function(row, rtvdata) {
+
+    console.log('... row type: ' + row.type);
+    console.log('... row: ' + JSON.stringify(row, 0 , 2));
+    var fragkeys = Object.keys(row);
+    // loop over all fragments in the row (skip common fields)
+    for (var idxfkey in fragkeys) {
+        var key = fragkeys[idxfkey]
+        if (key === 'time') continue;
+        if (key === 'id') continue;
+        if (key === 'self') continue;
+        if (key === 'source') continue;
+        if (key === 'type') continue;
+        console.log('*****!! key: ' + idxfkey + ' ' + key);
+        
+        // we've determined this key is a 'fragment', loop over series
+        var fragname = key;
+        var fragment = row[fragname];
+        
+        var realfragname = fragname;
+        if (fragname.startsWith('c8y_'))
+            realfragname = fragname.substring(4);
+        
+        var serieskeys = Object.keys(fragment);
+        for (var idxskey in serieskeys) {
+            var seriesname = serieskeys[idxskey]
+            var series = fragment[seriesname];
+            console.log(' ***^^^^ series = ' + JSON.stringify(series));
+            
+            rtview_row = [];
+            rtview_row.push(Date.parse(row.time));
+            rtview_row.push(row.source.id);
+            rtview_row.push(realfragname);        // 'fragname' is the key in the object (use 'name' in rtview)
+            rtview_row.push(seriesname);         // 'seriesname' is an element within fragment
+            //rtview_row.push(row.type);         // 'type' could possibly be use later as a cache name
+            rtview_row.push(series.value);
+            rtview_row.push(series.unit);
+            //console.log(JSON.stringify(rtview_row));
+            rtvdata.push(rtview_row);
+        }
+    }
 }
 
 var measurementRowHistory = function(id,name,values) {
