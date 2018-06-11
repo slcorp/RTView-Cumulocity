@@ -178,8 +178,37 @@ var cumEventUrl = function(query) {
 }
 
 var cumDeviceUrl = function(query) {
-    var url = baseURL + '/inventory/managedObjects?fragmentType=c8y_IsDevice&pageSize=200';
+    //var url = baseURL + '/inventory/managedObjects?fragmentType=c8y_IsDevice&pageSize=200';
+    var url = baseURL + '/inventory/managedObjects?fragmentType=c8y_IsDevice';
     var fmap = getValue(query,'fmap',{});
+    
+    // DEVNOTE: paging not working correctly, comment out for now
+    // paging parameters are passed on to IoT server
+    /*
+    rp = query.rp; pn = query.pn;
+    if (rp != undefined && rp > 0) {
+        url += ('&pageSize=' + rp + '&Page=' + pn + '&withTotalPages=true')
+        
+        // example of sort parameters used with a different service; doesn't seem available in c8y
+        /*
+        if (query.jsortArray) {           
+            dir = query.jsortArray[0].dir
+            column = query.jsortArray[0].column
+            if (column == 'time_stamp') column = 'last_activity'    // last_activity is mapped to time-stamp
+            if (column == 'name' || column == 'last_activity' || column == 'created' || column == 'serial') {
+                url += ('&dir=' + dir)
+                url += ('&sort=' + column)
+            }
+        }
+        ** //
+        //console.log('**** page size: ' + rp);
+    } else {
+        url += ('&pageSize=' + 1000 + '&Page=' + 1)
+        //console.log('**** page size x: ' + 1000);
+    }
+    */
+    // instead, just use fixed page size of 1000
+    url += ('&pageSize=' + 1000);
 
     // get filters from query that can be processed by Cumulocity; 
     // remove them from fmap so they are ignored by downstream filter processing.
@@ -237,14 +266,7 @@ var isNumber = function(n) {
 
 // *************** Query Measurements *************************************
 
-var getMeasurements = function(tableName, res, query, result, callback){
-    var fragPath = {
-        'c8y_TemperatureMeasurement': 'c8y_TemperatureMeasurement.T',
-        'humidity': 'humidity.percent',
-        'noise': 'noise.decibels',
-        'pm10': 'pm10.density',
-        'pm2_5': 'pm2_5.density'
-    }
+var getMeasurements = function(tableName, res, query, result, callback) {
     var url = baseURL + '/measurement/measurements';
 
     // get 'id' and 'name' filters from query; these can be passed to server 
@@ -253,7 +275,7 @@ var getMeasurements = function(tableName, res, query, result, callback){
     var id = getValue(fmap,'id','');
     var name = getValue(fmap,'name','');
     var series = getValue(fmap,'series','');
-    delete fmap['id']; delete fmap['name']; delete fmap['series'];  // tell cacheproxy we've handled these filters
+    delete fmap['id']; delete fmap['name']; delete fmap['series']; // tell cacheproxy we've handled these filters
     
     var tr = Number(getValue(query,'tr',10))*1000;
     var dateTo = Number(getValue(query, 'te', (new Date()).getTime()));
@@ -262,14 +284,17 @@ var getMeasurements = function(tableName, res, query, result, callback){
     dateTo = new Date(dateTo);
     dateFrom = new Date(dateFrom);
     //console.log('... measurement interval ' + dateFrom + ' to '+ dateTo + " - tr " + tr);
-    //url += (tableName == 'current' ? '?pageSize=100' : ('/series?series='+fragPath[name]));
-    /**/
+
+    // if series name provided as filter, include in query
     if (series) {
         seriesPath = name + '.' + series;
-        console.log('***** seriesPath = ' + seriesPath);
+        //console.log('***** seriesPath = ' + seriesPath);
         url += (tableName == 'current' ? '?pageSize=100' : ('/series?series='+seriesPath));
+        
+    // DEVNOTE: the below fails:    
+    // if no series name provided, TRY to make a query that works ... but it doesn't !!
     } else {
-        console.log('***** fragment = ' + name);
+        //console.log('***** fragment = ' + name);
         url += (tableName == 'current' ? '?pageSize=100' : ('/series?fragmentType='+name));
     }
     
@@ -309,7 +334,7 @@ var getMeasurements = function(tableName, res, query, result, callback){
         }
     };
     
-    console.log('^^^^^^^ meas url = ' + url);
+    //console.log('^^^^^^^ meas url = ' + url);
     request(dest, getMeasurementsHandler(url, urlInfo));
 
     function getMeasurementsHandler(url, urlInfo) {
@@ -425,13 +450,15 @@ var getCacheData = function(arrayName, url, var_meta, var_map, tableName, res, q
             "Authorization" : auth
         }
     };
-    request(dest, getMeasurementsHandler(url, urlInfo));
+    request(dest, getCacheDataHandler(url, urlInfo));
 
-    function getMeasurementsHandler(url, urlInfo) {
+    function getCacheDataHandler(url, urlInfo) {
         return function(error, response, body) {
         if (!error && response.statusCode == 200) {
             var b = JSON.parse(body); 
             console.log('... ' + urlInfo.arrayName + ' query: ' + url);
+            //if(b.statistics)     // print paging stats
+                //console.log('... b.statistics: ' + JSON.stringify(b.statistics, 0, 2));
             var rtvdata = [];
             if(urlInfo.tableName == "current") {
                 var data = b[urlInfo.arrayName];
@@ -440,6 +467,15 @@ var getCacheData = function(arrayName, url, var_meta, var_map, tableName, res, q
                 }
             }
             urlInfo.result.data = rtvdata;
+            // disable paging logic for now, not working properly
+            /*
+            if(b.statistics) {
+                st = b.statistics;
+                paging = { totalRowCount:(st.totalPages * st.pageSize), firstRow:0, lastRow:st.pageSize-1 }
+                urlInfo.result.paging = paging;
+                console.log('^^^^^ paging: ' + JSON.stringify(paging, 0, 2));
+            }
+            */   
             console.log('  ... getData exec_time: ' + (Date.now() - urlInfo.start) + '  ' +
                 urlInfo.arrayName+'.'+urlInfo.tableName + ' ' + urlInfo.result.data.length + ' rows\n');// + JSON.stringify(urlInfo.result)+'\n');
         } else {
@@ -493,14 +529,16 @@ var dataRow = function(row, row_meta, row_map) {
 // *************** Query Devices *************************************
 
 var getDevices = function(tableName, res, query, result, callback){
-    url = baseURL + '/inventory/managedObjects?pageSize=200';
-
+    //url = baseURL + '/inventory/managedObjects?pageSize=200';
+    url = baseURL + '/inventory/managedObjects';
+    
     // paging parameters are passed on to IoT server
     rp = query.rp; pn = query.pn;
     if (rp != undefined && rp > 0) {
-        url += ('?limit=' + rp + '&page=' + pn)
+        url += ('?pageSize=' + rp + '&Page=' + pn)
         
-        // sort parameters are very specific to ATT IoT; only created, last_activity, name, and serial columns
+        // example of sort parameters used with a different service; doesn't seem available in c8y
+        /*
         if (query.jsortArray) {           
             dir = query.jsortArray[0].dir
             column = query.jsortArray[0].column
@@ -510,12 +548,17 @@ var getDevices = function(tableName, res, query, result, callback){
                 url += ('&sort=' + column)
             }
         }
+        */
+        console.log('**** page size: ' + rp);
+    } else {
+        url += ('?pageSize=' + 200 + '&Page=' + 1)
+        console.log('**** page size x: ' + 200);
     }
     
     // append timestamp to query to make it unique
     __init_time = Date.now()
     url += ( ((url.indexOf('?') !== -1) ? '&_=' : '?_=') + __init_time)   
-    //console.log('... devices catalog query url <' + url + '>')
+    console.log('... devices inventory query url <' + url + '>')
     
     // create object to hold info related to this request
     urlInfo = { res:res, query:query, url:url, __init_time:__init_time }
