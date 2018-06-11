@@ -1,5 +1,5 @@
 {
-    "modifiedDate": "2018-05-29T04:23:08.552Z",
+    "modifiedDate": "2018-06-03T08:43:32.217Z",
     "viewport": {
         "x": 0,
         "y": 0,
@@ -13,7 +13,7 @@
         "resizable": false,
         "margin": 20
     },
-    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAACYUlEQVR4Xu2YQUoCYQBGfwUTcdWitbntAHYBYY6l3cgbtPMCbVxO4KpdhoiGY/5CMAmK+o/wwicELZy/z/d6jVkLPlAEaqg1jgkKgf0SKEQhMAKwORaiEBgB2BwLUQiMAGyOhSgERgA2x0IUAiMAm2MhCoERgM2xEIXACMDmWIhCYARgcyxEITACsDkWohAYAdgcC1HIeQRGo9FTlmUP51118NnvrVYrr+isqxyDL2Q+nw/H4/Gg3+//AbDZbMJisTgI5fXtO3x8FiE+7/7uK2TPO6cv7XZ7eBWSFR36L4RsX+vg0te7Xq/DdDoNnU5HIZdCLF8XC4lC6vV6aDQaYblcphxrISn04rW/QuL3UUpRFClHKiSFXlnIbDYLk8kk9Hq9lCMVkkKvLCTenFerVWg2mylHKiSF3r6QPM9Dt9tNOVIhKfT27yGpZ/m2twKC5XdZ8c/Vsf89TvhxFnICpKNP8V1WKsGKr7eQioGmHlcuJPUs7yEVENzeMx63x8SvKh65Hy5WgfGGzsB/uHhDLnYvVSEw4wpRCIwAbI6FKARGADbHQhQCIwCbYyEKgRGAzbEQhcAIwOZYiEJgBGBzLEQhMAKwORaiEBgB2BwLUQiMAGyOhSgERgA2x0IUAiMAm2MhCoERgM2xEIXACMDmWIhCYARgcyxEITACsDkWohAYAdgcC1EIjABsjoUoBEYANsdCFAIjAJtjIQqBEYDNsRCFwAjA5liIQmAEYHMsRCEwArA5FqIQGAHYHAtRCIwAbI6FKARGADbHQhQCIwCbYyEKgRGAzbEQhcAIwOZYCEzID4XDgGUjUayiAAAAAElFTkSuQmCC",
+    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAACaklEQVR4Xu2YTUpCUQBGr4KKOGrQ2Jy2ANuA8Jal7cgdNHMDTRy+wFGzDPEn1LxC8BIU9T7hREcIGvhun+d0eGol+EARqKDWOCYoBPZPoBCFwAjA5liIQmAEYHMsRCEwArA5FqIQGAHYHAtRCIwAbI6FKARGADbHQhQCIwCbYyEKgRGAzbEQhcAIwOZYiEJgBGBzLEQhlxEYDoePWZbdX3bV0We/NZvNvKSzbnIMvpDZbDYYjUb9Xq/3C8B2uw3z+fwolJfXr/D+sQnxeXf1z5A97Z0+t1qtwU1IlnTonxCye639a1/ver0Ok8kktNtthVwLsXhdLCQKqVaroVarheVymXKshaTQi9f+CIm/RymbzSblSIWk0CsKmU6nYTweh263m3KkQlLoFYXEm/NqtQqNRiPlSIWk0DsUkud56HQ6KUcqJIXe4T0k9Szf9pZAsPguq16vh8VikXKqhaTQ811WKr0bXF8sJN7QT306P+PPW8gZkE4+pfg5JPUs7yElENwV8bA7Jv6U8cj9crEMjP/oDPyXi//Ixf6lKgRmXCEKgRGAzbEQhcAIwOZYiEJgBGBzLEQhMAKwORaiEBgB2BwLUQiMAGyOhSgERgA2x0IUAiMAm2MhCoERgM2xEIXACMDmWIhCYARgcyxEITACsDkWohAYAdgcC1EIjABsjoUoBEYANsdCFAIjAJtjIQqBEYDNsRCFwAjA5liIQmAEYHMsRCEwArA5FqIQGAHYHAtRCIwAbI6FKARGADbHQhQCIwCbYyEKgRGAzbEQhcAIwOZYiEJgBGBzLEQhMAKwORaiEBgB2BwLgQn5BoW3gGXJcdc7AAAAAElFTkSuQmCC",
     "localVars": {
         "device_id": "310870",
         "room_name": "Workshop"
@@ -363,16 +363,16 @@
             "bgBorderRadius": 0,
             "bindings": {
                 "component": {
-                    "url": "CUM-IOT-DATA",
                     "cache": "CumMeasurement",
-                    "table": "history",
                     "value": "time_stamp;value",
-                    "timeRange": -1,
+                    "url": "CUM-IOT-DATA",
+                    "table": "current",
                     "filter": {
                         "id": "$device_id",
-                        "name": "pm10"
+                        "name": "pm10",
+                        "series": "density"
                     },
-                    "type": "cache_advanced"
+                    "type": "cache"
                 }
             },
             "imgSrc": "$assets/binders/images/default.png",
@@ -422,16 +422,16 @@
             "bgBorderRadius": 0,
             "bindings": {
                 "component": {
-                    "url": "CUM-IOT-DATA",
                     "cache": "CumMeasurement",
-                    "table": "history",
                     "value": "time_stamp;value",
-                    "timeRange": -1,
+                    "url": "CUM-IOT-DATA",
+                    "table": "current",
                     "filter": {
                         "id": "$device_id",
-                        "name": "noise"
+                        "name": "noise",
+                        "series": "decibels"
                     },
-                    "type": "cache_advanced"
+                    "type": "cache"
                 }
             },
             "imgSrc": "$assets/binders/images/default.png",
@@ -465,16 +465,16 @@
             "bgBorderRadius": 0,
             "bindings": {
                 "component": {
-                    "url": "CUM-IOT-DATA",
                     "cache": "CumMeasurement",
-                    "table": "history",
                     "value": "time_stamp;value",
-                    "timeRange": -1,
+                    "url": "CUM-IOT-DATA",
+                    "table": "current",
                     "filter": {
                         "id": "$device_id",
-                        "name": "humidity"
+                        "name": "humidity",
+                        "series": "percent"
                     },
-                    "type": "cache_advanced"
+                    "type": "cache"
                 }
             },
             "imgSrc": "$assets/binders/images/default.png",
@@ -508,16 +508,16 @@
             "bgBorderRadius": 0,
             "bindings": {
                 "component": {
-                    "url": "CUM-IOT-DATA",
                     "cache": "CumMeasurement",
-                    "table": "history",
                     "value": "time_stamp;value",
-                    "timeRange": -1,
+                    "url": "CUM-IOT-DATA",
+                    "table": "current",
                     "filter": {
                         "id": "$device_id",
-                        "name": "c8y_TemperatureMeasurement"
+                        "name": "c8y_TemperatureMeasurement",
+                        "series": "T"
                     },
-                    "type": "cache_advanced"
+                    "type": "cache"
                 }
             },
             "imgSrc": "$assets/binders/images/default.png",
@@ -551,16 +551,16 @@
             "bgBorderRadius": 0,
             "bindings": {
                 "component": {
-                    "url": "CUM-IOT-DATA",
                     "cache": "CumMeasurement",
-                    "table": "history",
                     "value": "time_stamp;value",
-                    "timeRange": -1,
+                    "url": "CUM-IOT-DATA",
+                    "table": "current",
                     "filter": {
                         "id": "$device_id",
-                        "name": "pm2_5"
+                        "name": "pm2_5",
+                        "series": "density"
                     },
-                    "type": "cache_advanced"
+                    "type": "cache"
                 }
             },
             "imgSrc": "$assets/binders/images/default.png",
