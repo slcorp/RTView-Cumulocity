@@ -5,14 +5,43 @@ console.log('\n--- Cumulocity IoT / RTView Connector ---\n');
 
 var request = require('request');
 var rtvproxy = require('./rtview_cacheproxy.js');
-var userinfo = require("./USERINFO.json");
-//console.log('... userinfo = ' + JSON.stringify(userinfo));
-var username = userinfo.username;
-var password = userinfo.password;
-var baseURL = userinfo.baseURL;
+var userinfo;
+var username;
+var password;
+var baseURL;
 
+/* if a userinfo file is present, use it! */
+try {
+   userinfo = require("./USERINFO.json");
+   username = userinfo.username;
+   password = userinfo.password;
+   baseURL = userinfo.baseURL;
+} catch(err) {}
+
+/********************************************************/
+/* following environment is passed to this node process 
+ * when Cumulocity starts up the docker image as a microservice.
+ */
+username = process.env.C8Y_TENANT && process.env.C8Y_USER ? process.env.C8Y_TENANT + '/' + process.env.C8Y_USER : username;
+password = process.env.C8Y_PASSWORD ? process.env.C8Y_PASSWORD : password;
+baseURL  = process.env.C8Y_BASEURL ? process.env.C8Y_BASEURL : baseURL;
+
+
+//var APPLICATION_NAME = process.env.APPLICATION_NAME;  //unused microservice environment
+
+//console.log("Environment:\n"+JSON.stringify(process.env));
+if(!username || !password || !baseURL) {
+   console.log("***Cumulocity username, password or base URL are not configured!");
+   //process.exit();
+}
+console.log("login: "+username+" "+password+"\t\nURL:"+baseURL);
+
+// Cumulocity URL and authentication are used by 'request' module
+// expected baseURL is something like 'https://' + C8Y_TENANT + '.cumulocity.com';
 var auth = "Basic " + new Buffer(username + ":" + password).toString("base64");
 
+
+/********************************************************/
 // Cache definitions for data requested from Cumulocity IoT Server
 // and returned to RTView.
 
@@ -340,7 +369,9 @@ var getMeasurements = function(tableName, res, query, result, callback) {
     function getMeasurementsHandler(url, urlInfo) {
         return function(error, response, body) {
         if (!error && response.statusCode == 200) {
-            var b = JSON.parse(body); 
+            var b = JSON.parse(body);
+	    urlInfo.res.queryStatus = response.statusCode;
+	    urlInfo.res.queryStatusText = "OK";
             console.log('... measurement query ' + url);
             //console.log('    measurements: ' + JSON.stringify(b.measurements, 0, 2));
             var rtvdata = [];
@@ -355,7 +386,9 @@ var getMeasurements = function(tableName, res, query, result, callback) {
             console.log('  ... getMeasurements exec_time: ' + (Date.now() - urlInfo.dateTo) + '  ' +
                 urlInfo.name+'.'+urlInfo.tableName + ' ' + urlInfo.result.data.length + ' rows\n');// + JSON.stringify(urlInfo.result)+'\n');
         } else {
-            console.log('ERROR: query for: ' + urlInfo.url + ' ' + error + ' resp code: ' + (response ? response.statusCode : 'no response') )
+	    urlInfo.res.queryStatus = response ? response.statusCode : 0;
+	    urlInfo.res.queryStatusText = error;
+            console.log('ERROR: query for: ' + urlInfo.url + ' ' + error + ' resp code: ' + urlInfo.res.queryStatus );
         }
         //if (response == undefined) console.log('WARNING: no response from: ' + urlInfo.url);
         callback(urlInfo.res, urlInfo.result, urlInfo.query);
@@ -455,7 +488,9 @@ var getCacheData = function(arrayName, url, var_meta, var_map, tableName, res, q
     function getCacheDataHandler(url, urlInfo) {
         return function(error, response, body) {
         if (!error && response.statusCode == 200) {
-            var b = JSON.parse(body); 
+            var b = JSON.parse(body);
+	    urlInfo.res.queryStatus = response.statusCode;
+	    urlInfo.res.queryStatusText = "OK";
             console.log('... ' + urlInfo.arrayName + ' query: ' + url);
             //if(b.statistics)     // print paging stats
                 //console.log('... b.statistics: ' + JSON.stringify(b.statistics, 0, 2));
@@ -479,7 +514,9 @@ var getCacheData = function(arrayName, url, var_meta, var_map, tableName, res, q
             console.log('  ... getData exec_time: ' + (Date.now() - urlInfo.start) + '  ' +
                 urlInfo.arrayName+'.'+urlInfo.tableName + ' ' + urlInfo.result.data.length + ' rows\n');// + JSON.stringify(urlInfo.result)+'\n');
         } else {
-            console.log('ERROR: query for: ' + urlInfo.url + ' ' + error + ' resp code: ' + (response ? response.statusCode : 'no response') )
+	    urlInfo.res.queryStatus = response ? response.statusCode : 0;
+	    urlInfo.res.queryStatusText = error;
+            console.log('ERROR: query for: ' + urlInfo.url + ' ' + error + ' resp code: ' + urlInfo.res.queryStatus);
         }
         //if (response == undefined) console.log('WARNING: no response from: ' + urlInfo.url);
         callback(urlInfo.res, urlInfo.result, urlInfo.query);
@@ -623,4 +660,4 @@ var mapDevicesRow = function(row) {
     rtview_row.push(row.url)
     return rtview_row
 }
-  
+

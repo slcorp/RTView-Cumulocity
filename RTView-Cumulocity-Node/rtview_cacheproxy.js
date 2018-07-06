@@ -24,7 +24,7 @@ var path = require('path');
 // CONFIGURATION SETTINGS
 
 // RTView Cache Proxy Server port
-var port = process.env.PORT || 8081
+var port = process.env.RTVIEW_SERVER_PORT || 8081
 
 var verbose = false
 
@@ -45,7 +45,10 @@ router.use(express.json());       // to support JSON-encoded bodies
 // route middleware that will happen on every request
 router.use(function(req, res, next) {
 
-    	// log each request to the console
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+    // log each request to the console
     log = req.url;
 
     if (verbose) {
@@ -112,7 +115,7 @@ router.use('/rtvquery/cache/_rtvMulti', function(req, res) {
         // process this query
         if (verbose) console.log('**** new query: ' + i + ' ' + JSON.stringify(newquery))
         processCacheQuery(newquery['cache'], newquery['table'], newquery, res, function(res, result, thisQuery){
-            //console.log('... processing part of multi-request ... ' + thisQuery.index)
+            if (verbose) console.log('... processing part of multi-request ... ' + thisQuery.index)
             let resultArray = thisQuery.resultArray;
             result = filterRows(result, thisQuery.fmap)
             result = adjustRowColumns(result, thisQuery.colArray)
@@ -121,7 +124,7 @@ router.use('/rtvquery/cache/_rtvMulti', function(req, res) {
                 if (resultArray[j] === null) done = false; 
             }
             if (done) {
-                //console.log('\n... DONE !')
+        	if (verbose) console.log('**** query result: ' + JSON.stringify(resultArray))
                 formatAndSend(res, thisQuery, resultArray);
             }
         })        
@@ -142,6 +145,11 @@ router.use('/rtvquery/cache/:name/:table', function(req, res) {
         }
     });
 });
+
+// Return diagnostic info for server environment - debug only, not for production use
+//router.use('/env', function(req, res) {
+    //res.send("Environment:\n"+JSON.stringify(process.env));
+//});
 
 // apply the routes to our application
 app.use('/', router);
@@ -223,6 +231,7 @@ var processCacheQuery = function (cacheName, tableName, query, res, callback) {
 // Process cache/RTViewDs query
 var processRTViewDs = function(cacheName, tableName, query, res) {
     if (verbose) console.log('... in RTViewDs, cacheName: ' + cacheName + '/' + tableName);   
+
     if (tableName == 'Tables') {
         metadata = [ { name:'Table', type:'string' }, { name:'Rows', type:'int' } ]
         // if querying for Table;Rows assume it is to get list of caches
@@ -236,6 +245,7 @@ var processRTViewDs = function(cacheName, tableName, query, res) {
         result = { metadata: metadata, metadataFull: metadata, data: data }
         return result
     }
+
     if (tableName == 'CacheDefs') {
         cdMetadata = [{name:'Cache',type:'string'},{name:'Table',type:'string'},{name:'IndexColumns',type:'string'},{name:'AllColumns',type:'string'},{name:'AllColumnTypes',type:'string'}]
         data = []; for (var cacheName in cacheMap) {      
@@ -279,7 +289,26 @@ var processRTViewDs = function(cacheName, tableName, query, res) {
         }
         result = { metadata: cdMetadata, metadataFull: cdMetadata, data: data }
         return result
+    }
+
+    if (tableName == 'CacheObjectProperties') {
+        cdMetadata = [{name:'cacheName',type:'string'},{name:'maxNumberOfHistoryRows',type:'int'},{name:'timestampColumnName',type:'string'},{name:'historyColumnNames',type:'string'}]
+        data = [];
+	for (var cacheName in cacheMap) {      
+            properties = cacheMap[cacheName];
+            //metadata = metadataMap[cacheName];
+            //indexColArray = properties.indexColumnNames;
+            histColArray = properties.historyColumnNames;
+            data.push( { cacheName:cacheName,
+		maxNumberOfHistoryRows:3000,
+                timestampColumnName:"time_stamp",
+                historyColumnNames:histColArray
+            });
+        }
+        result = { metadata: cdMetadata, metadataFull: cdMetadata, data: data }
+        return result
     } 
+
     return null;
 }
 
@@ -400,7 +429,8 @@ var formatAndSend = function (res, query, result) {
             //console.log('... formatting single ... ')
             fmtData += formatTable(result)
         }
-        fmtData += ');} catch (ex) {if (window.console && console.log) console.log(ex);}'  
+    	fmtData += ',"queryStatus":' + res.queryStatus + ', "queryStatusText":"'+res.queryStatusText+'"\n}\n';
+        fmtData += ');} catch (ex) {if (window.console && console.log) console.log(ex);}';
         
         try {
             res.send(fmtData)
@@ -436,7 +466,7 @@ var formatTable = function (table) {
     if (paging !== undefined) {
         fmtData += ',"paging":' + JSON.stringify(paging)
     }
-    fmtData += ',"queryStatus":0, "queryStatusText":"OK"\n}\n';
+    //fmtData += ',"queryStatus":0, "queryStatusText":"OK"\n}\n';
     return fmtData
 }
 
