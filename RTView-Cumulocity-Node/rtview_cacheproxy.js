@@ -183,6 +183,10 @@ var processCacheQuery = function (cacheName, tableName, query, res, callback) {
     // process normal cache query, with asynchronous execution  
     properties = cacheMap[cacheName]
     metadata = metadataMap[cacheName]
+	if (!properties || !metadata) {
+		console.log('ERROR: cannot find cache definition: ' + cacheName);
+        return callback(res, null, query);
+	}
     indexColArray = properties.indexColumnNames.split(';')
     histColArray = properties.historyColumnNames.split(';')
     if (histColArray === undefined || histColArray === null) histColArray = []
