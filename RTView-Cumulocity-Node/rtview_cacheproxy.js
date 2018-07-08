@@ -24,7 +24,7 @@ var path = require('path');
 // CONFIGURATION SETTINGS
 
 // RTView Cache Proxy Server port
-var port = process.env.RTVIEW_SERVER_PORT || 8081
+var port = process.env.RTVIEW_SERVER_PORT || process.env.SERVER_PORT || 8081
 
 var verbose = false
 
