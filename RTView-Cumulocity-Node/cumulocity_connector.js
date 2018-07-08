@@ -370,8 +370,9 @@ var getMeasurements = function(tableName, res, query, result, callback) {
         return function(error, response, body) {
         if (!error && response.statusCode == 200) {
             var b = JSON.parse(body);
-	    urlInfo.res.queryStatus = response.statusCode;
-	    urlInfo.res.queryStatusText = "OK";
+            //urlInfo.res.queryStatus = response.statusCode;
+		    urlInfo.res.queryStatus = 0;
+		    urlInfo.res.queryStatusText = "OK";
             console.log('... measurement query ' + url);
             //console.log('    measurements: ' + JSON.stringify(b.measurements, 0, 2));
             var rtvdata = [];
@@ -386,8 +387,8 @@ var getMeasurements = function(tableName, res, query, result, callback) {
             console.log('  ... getMeasurements exec_time: ' + (Date.now() - urlInfo.dateTo) + '  ' +
                 urlInfo.name+'.'+urlInfo.tableName + ' ' + urlInfo.result.data.length + ' rows\n');// + JSON.stringify(urlInfo.result)+'\n');
         } else {
-	    urlInfo.res.queryStatus = response ? response.statusCode : 0;
-	    urlInfo.res.queryStatusText = error;
+            urlInfo.res.queryStatus = response ? response.statusCode : 0;
+            urlInfo.res.queryStatusText = error;
             console.log('ERROR: query for: ' + urlInfo.url + ' ' + error + ' resp code: ' + urlInfo.res.queryStatus );
         }
         //if (response == undefined) console.log('WARNING: no response from: ' + urlInfo.url);
@@ -489,8 +490,9 @@ var getCacheData = function(arrayName, url, var_meta, var_map, tableName, res, q
         return function(error, response, body) {
         if (!error && response.statusCode == 200) {
             var b = JSON.parse(body);
-	    urlInfo.res.queryStatus = response.statusCode;
-	    urlInfo.res.queryStatusText = "OK";
+            //urlInfo.res.queryStatus = response.statusCode;
+            urlInfo.res.queryStatus = 0;
+            urlInfo.res.queryStatusText = "OK";
             console.log('... ' + urlInfo.arrayName + ' query: ' + url);
             //if(b.statistics)     // print paging stats
                 //console.log('... b.statistics: ' + JSON.stringify(b.statistics, 0, 2));
@@ -514,8 +516,8 @@ var getCacheData = function(arrayName, url, var_meta, var_map, tableName, res, q
             console.log('  ... getData exec_time: ' + (Date.now() - urlInfo.start) + '  ' +
                 urlInfo.arrayName+'.'+urlInfo.tableName + ' ' + urlInfo.result.data.length + ' rows\n');// + JSON.stringify(urlInfo.result)+'\n');
         } else {
-	    urlInfo.res.queryStatus = response ? response.statusCode : 0;
-	    urlInfo.res.queryStatusText = error;
+            urlInfo.res.queryStatus = response ? response.statusCode : 0;
+            urlInfo.res.queryStatusText = error;
             console.log('ERROR: query for: ' + urlInfo.url + ' ' + error + ' resp code: ' + urlInfo.res.queryStatus);
         }
         //if (response == undefined) console.log('WARNING: no response from: ' + urlInfo.url);

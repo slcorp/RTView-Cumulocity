@@ -247,6 +247,7 @@ var processRTViewDs = function(cacheName, tableName, query, res) {
             data.push( { Table: (cacheName + '.history'), Rows: 1000 } );
         }
         result = { metadata: metadata, metadataFull: metadata, data: data }
+        res.queryStatus = 0; res.queryStatusText = 'OK';
         return result
     }
 
@@ -292,27 +293,30 @@ var processRTViewDs = function(cacheName, tableName, query, res) {
             });
         }
         result = { metadata: cdMetadata, metadataFull: cdMetadata, data: data }
+		res.queryStatus = 0; res.queryStatusText = 'OK';
         return result
     }
 
     if (tableName == 'CacheObjectProperties') {
         cdMetadata = [{name:'cacheName',type:'string'},{name:'maxNumberOfHistoryRows',type:'int'},{name:'timestampColumnName',type:'string'},{name:'historyColumnNames',type:'string'}]
         data = [];
-	for (var cacheName in cacheMap) {      
+        for (var cacheName in cacheMap) {      
             properties = cacheMap[cacheName];
             //metadata = metadataMap[cacheName];
             //indexColArray = properties.indexColumnNames;
             histColArray = properties.historyColumnNames;
             data.push( { cacheName:cacheName,
-		maxNumberOfHistoryRows:3000,
+                maxNumberOfHistoryRows:3000,
                 timestampColumnName:"time_stamp",
                 historyColumnNames:histColArray
             });
         }
         result = { metadata: cdMetadata, metadataFull: cdMetadata, data: data }
+		res.queryStatus = 0; res.queryStatusText = 'OK';
         return result
     } 
-
+	
+	res.queryStatus = 0; res.queryStatusText = 'OK';
     return null;
 }
 
@@ -425,15 +429,14 @@ var formatAndSend = function (res, query, result) {
                 //console.log('     ----> row:; ' + r + ' = ' + result[r])
                 if (result[r] !== undefined) {
                     if (r > 0) fmtData += ','
-                    fmtData += formatTable(result[r])
+                    fmtData += formatTable(res, result[r])
                 }
             }
             fmtData += ']'
         } else {
             //console.log('... formatting single ... ')
-            fmtData += formatTable(result)
+            fmtData += formatTable(res, result)
         }
-    	fmtData += ',"queryStatus":' + res.queryStatus + ', "queryStatusText":"'+res.queryStatusText+'"\n}\n';
         fmtData += ');} catch (ex) {if (window.console && console.log) console.log(ex);}';
         
         try {
@@ -457,7 +460,7 @@ var formatAndSend = function (res, query, result) {
 }
 
 // Apply JSONP formatting to table
-var formatTable = function (table) {
+var formatTable = function (res, table) {
     metadata = table.metadata; data = table.data; paging = table.paging;
     //console.log('     +++++++++++ got result: ' + JSON.stringify(metadata))
     //console.log('  ... formatting table of n rows: ' + (table.data ? table.data.length : -1))
@@ -470,7 +473,12 @@ var formatTable = function (table) {
     if (paging !== undefined) {
         fmtData += ',"paging":' + JSON.stringify(paging)
     }
+    // capture the actual response code, instead of forcing OK, but only if not 200
     //fmtData += ',"queryStatus":0, "queryStatusText":"OK"\n}\n';
+    if (res.queryStatus == 200) {
+        res.queryStatus = 0;
+    }
+	fmtData += ',"queryStatus":' + res.queryStatus + ', "queryStatusText":"'+res.queryStatusText+'"\n}\n';
     return fmtData
 }
 
