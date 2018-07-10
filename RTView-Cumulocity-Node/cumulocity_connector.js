@@ -306,7 +306,8 @@ var getMeasurements = function(tableName, res, query, result, callback) {
     var series = getValue(fmap,'series','');
     delete fmap['id']; delete fmap['name']; delete fmap['series']; // tell cacheproxy we've handled these filters
     
-    var tr = Number(getValue(query,'tr',10))*1000;
+    // define a time range for the query; default 300 secs, but for current cache, we'll do 'revert' to get last point
+    var tr = Number(getValue(query,'tr',300))*1000;
     var dateTo = Number(getValue(query, 'te', (new Date()).getTime()));
     var dateFrom = Number(getValue(query, 'tb', dateTo - tr));
     
@@ -315,16 +316,17 @@ var getMeasurements = function(tableName, res, query, result, callback) {
     //console.log('... measurement interval ' + dateFrom + ' to '+ dateTo + " - tr " + tr);
 
     // if series name provided as filter, include in query
+    // DEVNOTE: in either case, for current do NOT use pageSize, since we will be using 'revert' below
     if (series) {
         seriesPath = name + '.' + series;
         //console.log('***** seriesPath = ' + seriesPath);
-        url += (tableName == 'current' ? '?pageSize=100' : ('/series?series='+seriesPath));
+        url += (tableName == 'current' ? '?pageSizeX=100' : ('/series?series='+seriesPath));
         
     // DEVNOTE: the below fails:    
     // if no series name provided, TRY to make a query that works ... but it doesn't !!
     } else {
         //console.log('***** fragment = ' + name);
-        url += (tableName == 'current' ? '?pageSize=100' : ('/series?fragmentType='+name));
+        url += (tableName == 'current' ? '?pageSizeX=100' : ('/series?fragmentType='+name));
     }
     
     if (id != '' && id != '*') {
@@ -350,8 +352,15 @@ var getMeasurements = function(tableName, res, query, result, callback) {
     if(dateFrom >= dateTo) {
         console.log("Error: bad date/time range: "+url);
         console.log('... ' + JSON.stringify(query)+'\n');
-    return;
+        return;
     }
+    
+    // for current table, query measurements in reverse order to get last value, independent of query interval
+    // note: 'revert' must be the last argument of the query for it to work correctly
+    if (tableName == "current") {
+        url += '&revert=true';
+    }
+    
     // create object to hold info related to this request 
     urlInfo = { res:res, result:result, tableName:tableName, query:query, url:url, dateFrom:dateFrom, dateTo:dateTo, id:id, name:name, series:series }
 
@@ -370,8 +379,9 @@ var getMeasurements = function(tableName, res, query, result, callback) {
         return function(error, response, body) {
         if (!error && response.statusCode == 200) {
             var b = JSON.parse(body);
-	    urlInfo.res.queryStatus = response.statusCode;
-	    urlInfo.res.queryStatusText = "OK";
+            //urlInfo.res.queryStatus = response.statusCode;
+		    urlInfo.res.queryStatus = 0;
+		    urlInfo.res.queryStatusText = "OK";
             console.log('... measurement query ' + url);
             //console.log('    measurements: ' + JSON.stringify(b.measurements, 0, 2));
             var rtvdata = [];
@@ -386,8 +396,8 @@ var getMeasurements = function(tableName, res, query, result, callback) {
             console.log('  ... getMeasurements exec_time: ' + (Date.now() - urlInfo.dateTo) + '  ' +
                 urlInfo.name+'.'+urlInfo.tableName + ' ' + urlInfo.result.data.length + ' rows\n');// + JSON.stringify(urlInfo.result)+'\n');
         } else {
-	    urlInfo.res.queryStatus = response ? response.statusCode : 0;
-	    urlInfo.res.queryStatusText = error;
+            urlInfo.res.queryStatus = response ? response.statusCode : 0;
+            urlInfo.res.queryStatusText = error;
             console.log('ERROR: query for: ' + urlInfo.url + ' ' + error + ' resp code: ' + urlInfo.res.queryStatus );
         }
         //if (response == undefined) console.log('WARNING: no response from: ' + urlInfo.url);
@@ -489,8 +499,9 @@ var getCacheData = function(arrayName, url, var_meta, var_map, tableName, res, q
         return function(error, response, body) {
         if (!error && response.statusCode == 200) {
             var b = JSON.parse(body);
-	    urlInfo.res.queryStatus = response.statusCode;
-	    urlInfo.res.queryStatusText = "OK";
+            //urlInfo.res.queryStatus = response.statusCode;
+            urlInfo.res.queryStatus = 0;
+            urlInfo.res.queryStatusText = "OK";
             console.log('... ' + urlInfo.arrayName + ' query: ' + url);
             //if(b.statistics)     // print paging stats
                 //console.log('... b.statistics: ' + JSON.stringify(b.statistics, 0, 2));
@@ -514,8 +525,8 @@ var getCacheData = function(arrayName, url, var_meta, var_map, tableName, res, q
             console.log('  ... getData exec_time: ' + (Date.now() - urlInfo.start) + '  ' +
                 urlInfo.arrayName+'.'+urlInfo.tableName + ' ' + urlInfo.result.data.length + ' rows\n');// + JSON.stringify(urlInfo.result)+'\n');
         } else {
-	    urlInfo.res.queryStatus = response ? response.statusCode : 0;
-	    urlInfo.res.queryStatusText = error;
+            urlInfo.res.queryStatus = response ? response.statusCode : 0;
+            urlInfo.res.queryStatusText = error;
             console.log('ERROR: query for: ' + urlInfo.url + ' ' + error + ' resp code: ' + urlInfo.res.queryStatus);
         }
         //if (response == undefined) console.log('WARNING: no response from: ' + urlInfo.url);
