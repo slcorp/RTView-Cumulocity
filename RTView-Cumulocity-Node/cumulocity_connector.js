@@ -10,6 +10,8 @@ var username;
 var password;
 var baseURL;
 
+var pageSizeForCurrent = 10;
+
 /* if a userinfo file is present, use it! */
 try {
    userinfo = require("./USERINFO.json");
@@ -320,13 +322,13 @@ var getMeasurements = function(tableName, res, query, result, callback) {
     if (series) {
         seriesPath = name + '.' + series;
         //console.log('***** seriesPath = ' + seriesPath);
-        url += (tableName == 'current' ? '?pageSizeX=100' : ('/series?series='+seriesPath));
+        url += (tableName == 'current' ? '?pageSize=' + pageSizeForCurrent : ('/series?series='+seriesPath));
         
     // DEVNOTE: the below fails:    
     // if no series name provided, TRY to make a query that works ... but it doesn't !!
     } else {
         //console.log('***** fragment = ' + name);
-        url += (tableName == 'current' ? '?pageSizeX=100' : ('/series?fragmentType='+name));
+        url += (tableName == 'current' ? '?pageSize=' + pageSizeForCurrent : ('/series?fragmentType='+name));
     }
     
     if (id != '' && id != '*') {
@@ -385,13 +387,37 @@ var getMeasurements = function(tableName, res, query, result, callback) {
             console.log('... measurement query ' + url);
             //console.log('    measurements: ' + JSON.stringify(b.measurements, 0, 2));
             var rtvdata = [];
-            if(urlInfo.tableName == "current")
+            
+            // process 'current' measurement data
+            if(urlInfo.tableName == "current") {
+                //console.log('\n===> received: ' + JSON.stringify(b.measurements, '', 2) + '\n');
+                
+                // Simplistic logic for obtaining latest value of current data:
+                // Loop over each measurement; for current, we use 'revert' so we assume the
+                // most recent items are at beginning of array.  Get type of first item.
+                // break out of loop as soon as encounter the same type as first.
+                // Problems:
+                // 1) don't know how many items to query, since measurements (series) can be 
+                // packed into one item of array, or spread out over N items.
+                // 2) the simplistic break when different type encountered assumes that
+                // all measurements are sent at same time;  this may not be the case
+                
+                var firstType;
                 for (var i=0; i < b.measurements.length; i++) {
+                    if (firstType === undefined) firstType = b.measurements[i].type;
+                    //console.log('... type = ' + b.measurements[i].type);
+                    if (i > 0 && b.measurements[i].type == firstType) {
+                        //console.log('... !! break');
+                        break
+                    }
                     measurementRow(b.measurements[i], rtvdata);
                 }
-            else {
+            
+            // process 'history' measurement data
+            } else {
                 rtvdata = measurementRowHistory(urlInfo.id, urlInfo.name, '', b.values);
             }
+            
             urlInfo.result.data = rtvdata;
             console.log('  ... getMeasurements exec_time: ' + (Date.now() - urlInfo.dateTo) + '  ' +
                 urlInfo.name+'.'+urlInfo.tableName + ' ' + urlInfo.result.data.length + ' rows\n');// + JSON.stringify(urlInfo.result)+'\n');
