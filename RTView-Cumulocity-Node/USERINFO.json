@@ -1,5 +1,5 @@
 {
-    "username": "myaccount/myname@myemail",
-    "password": "mypassword",
-    "baseURL": "https://myaccount.cumulocity.com"
+    "username": "slcorptest/ckominczak@sl.com",
+    "password": "slc0rpt3st",
+    "baseURL": "https://slcorptest.cumulocity.com"
 }
