@@ -174,7 +174,7 @@
             },
             "bindings": {
                 "args.table": {
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "cache": "CumDevice",
                     "table": "current",
                     "value": "id",
@@ -211,7 +211,7 @@
             },
             "bindings": {
                 "args.table": {
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "cache": "CumEvent",
                     "table": "current",
                     "value": "*",

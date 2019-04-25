@@ -45,7 +45,7 @@
             },
             "bindings": {
                 "args.table": {
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "cache": "CumAlarm",
                     "table": "current",
                     "value": "*",

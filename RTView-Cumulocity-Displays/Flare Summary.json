@@ -1,0 +1,974 @@
+{
+    "modifiedDate": "2019-03-30T07:43:08.924Z",
+    "viewport": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+    },
+    "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 960,
+        "height": 614,
+        "resizable": false,
+        "margin": 0
+    },
+    "localVars": {
+        "parkID": "310870",
+        "fireRisk": "1.5"
+    },
+    "styleSheet": {},
+    "linksRoute": "Angled",
+    "portsLayout": "Edge",
+    "bgColor": "#ffffff",
+    "layout": "",
+    "version": "1.58.0",
+    "nodeDataArray": [
+        {
+            "key": -22,
+            "size": "340 270",
+            "category": "General",
+            "bgColor": "#eee",
+            "bgVisible": true,
+            "bgBorderVisible": true,
+            "bgBorderWidth": 1,
+            "labelVisible": true,
+            "labelText": "Flow",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "InsideTop"
+            },
+            "valueVisible": false,
+            "valueText": 12.344444,
+            "valueFormat": "#.##",
+            "valueAlignment": {
+                "horizontal": "Center",
+                "vertical": "InsideBottom"
+            },
+            "pos": "250 254",
+            "labelFont": "normal bold 12pt external:\"Open Sans\"",
+            "labelColor": "#0b83b2",
+            "bgBorderColor": "#3399cc"
+        },
+        {
+            "key": 10,
+            "category": "extern-metric",
+            "size": "120 24",
+            "dispName": "metric_bar",
+            "labelText": "Std Flow (MSCFH)",
+            "miscProps": {
+                "barFgColor": "#4c4c4c",
+                "barBgColor": "#99ccff"
+            },
+            "pos": "168 180",
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "bindings": {
+                "valueText": {
+                    "cache": "Flare",
+                    "value": "Std_Flow",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache"
+                }
+            },
+            "valueFormat": "#,##0.00",
+            "labelColor": "#7a7a7a",
+            "valueAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueColor": "#4c4c4c"
+        },
+        {
+            "key": 12,
+            "category": "extern-metric",
+            "size": "120 40",
+            "dispName": "metric_spark",
+            "labelVisible": false,
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "bgVisFlag": true,
+                "bgType": "discreteColors",
+                "bgColors": "Bg;Bg2;Bg",
+                "traceColor": "FgHi",
+                "traceWidth": "0.667",
+                "axisVisFlag": true,
+                "axisLineVisFlag": true,
+                "axisLineColor": "FgHi",
+                "axisLineWidth": "0.667",
+                "axisLabelVisFlag": true,
+                "axisTextColor": "FgHi"
+            },
+            "pos": "332 180",
+            "bindings": {
+                "valueText": {
+                    "url": "CUMULOCITY-DATA-S",
+                    "cache": "Flare",
+                    "table": "history",
+                    "value": "time_stamp;Std_Flow",
+                    "timeRange": -1,
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "valueFormat": "#,##0.00",
+            "valueVisible": false
+        },
+        {
+            "key": -20,
+            "category": "extern-metric",
+            "size": "120 24",
+            "dispName": "metric_bar",
+            "labelText": "Mass Flow (lb/ft^3)",
+            "miscProps": {
+                "barFgColor": "#4c4c4c",
+                "barBgColor": "#99ccff"
+            },
+            "pos": "168 260",
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "bindings": {
+                "valueText": {
+                    "cache": "Flare",
+                    "value": "Mass_Flow",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache"
+                }
+            },
+            "valueFormat": "#,##0.00",
+            "labelColor": "#7a7a7a",
+            "valueAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueColor": "#4c4c4c"
+        },
+        {
+            "key": -19,
+            "category": "extern-metric",
+            "size": "120 40",
+            "dispName": "metric_spark",
+            "labelVisible": false,
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "bgVisFlag": true,
+                "bgType": "discreteColors",
+                "bgColors": "Bg;Bg2;Bg",
+                "traceColor": "FgHi",
+                "traceWidth": "0.667",
+                "axisVisFlag": true,
+                "axisLineVisFlag": true,
+                "axisLineColor": "FgHi",
+                "axisLineWidth": "0.667",
+                "axisLabelVisFlag": true,
+                "axisTextColor": "FgHi"
+            },
+            "pos": "332 260",
+            "bindings": {
+                "valueText": {
+                    "url": "CUMULOCITY-DATA-S",
+                    "cache": "Flare",
+                    "table": "history",
+                    "value": "time_stamp;Mass_Flow",
+                    "timeRange": -1,
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "valueFormat": "#,##0.00",
+            "valueVisible": false
+        },
+        {
+            "key": 40,
+            "size": "800 160",
+            "category": "General",
+            "bgColor": "#eee",
+            "bgVisible": true,
+            "bgBorderVisible": true,
+            "bgBorderWidth": 1,
+            "labelVisible": true,
+            "labelText": "Gases (lb/hr)",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "InsideTop"
+            },
+            "valueVisible": false,
+            "valueText": 12.344444,
+            "valueFormat": "#.##",
+            "valueAlignment": {
+                "horizontal": "Center",
+                "vertical": "InsideBottom"
+            },
+            "pos": "480 502",
+            "labelFont": "normal bold 12pt external:\"Open Sans\"",
+            "labelColor": "#0b83b2",
+            "bgBorderColor": "#3399cc"
+        },
+        {
+            "key": -23,
+            "size": "340 270",
+            "category": "General",
+            "bgColor": "#eee",
+            "bgVisible": true,
+            "bgBorderVisible": true,
+            "bgBorderWidth": 1,
+            "labelVisible": true,
+            "labelText": "Particles",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "InsideTop"
+            },
+            "valueVisible": false,
+            "valueText": 12.344444,
+            "valueFormat": "#.##",
+            "valueAlignment": {
+                "horizontal": "Center",
+                "vertical": "InsideBottom"
+            },
+            "pos": "712 254.5",
+            "labelFont": "normal bold 12pt external:\"Open Sans\"",
+            "labelColor": "#0b83b2",
+            "bgBorderColor": "#3399cc"
+        },
+        {
+            "key": -24,
+            "category": "extern-metric",
+            "size": "120 24",
+            "dispName": "metric_bullet1",
+            "labelText": "NOX",
+            "pos": "170 484",
+            "bindings": {
+                "valueText": {
+                    "cache": "Flare",
+                    "value": "NOX",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache"
+                }
+            },
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "labelColor": "#7a7a7a",
+            "valueColor": "#4c4c4c",
+            "valueFormat": "#,##0.00"
+        },
+        {
+            "key": -27,
+            "category": "extern-metric",
+            "size": "120 24",
+            "dispName": "metric_bullet1",
+            "labelText": "CO",
+            "pos": "324 484",
+            "bindings": {
+                "valueText": {
+                    "cache": "Flare",
+                    "value": "CO",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache"
+                }
+            },
+            "valueFormat": "#,##0.00",
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "labelColor": "#7a7a7a",
+            "valueColor": "#4c4c4c"
+        },
+        {
+            "key": -28,
+            "category": "extern-metric",
+            "size": "120 24",
+            "dispName": "metric_bullet1",
+            "labelText": "SO2",
+            "pos": "478 484",
+            "bindings": {
+                "valueText": {
+                    "cache": "Flare",
+                    "value": "SO2",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache"
+                }
+            },
+            "valueFormat": "#,##0.00",
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "labelColor": "#7a7a7a",
+            "valueColor": "#4c4c4c"
+        },
+        {
+            "key": -29,
+            "category": "extern-metric",
+            "size": "120 24",
+            "dispName": "metric_bullet1",
+            "labelText": "VOC",
+            "pos": "634 484",
+            "bindings": {
+                "valueText": {
+                    "cache": "Flare",
+                    "value": "VOC",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache"
+                }
+            },
+            "valueFormat": "#,##0.00",
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "labelColor": "#7a7a7a",
+            "valueColor": "#4c4c4c"
+        },
+        {
+            "key": -30,
+            "category": "extern-metric",
+            "size": "120 24",
+            "dispName": "metric_bullet1",
+            "labelText": "H2S",
+            "pos": "790 484",
+            "bindings": {
+                "valueText": {
+                    "cache": "Flare",
+                    "value": "H2S",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache"
+                }
+            },
+            "valueFormat": "#,##0.00",
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "labelColor": "#7a7a7a",
+            "valueColor": "#4c4c4c"
+        },
+        {
+            "key": 14,
+            "category": "extern-metric",
+            "size": "120 40",
+            "dispName": "metric_spark",
+            "labelVisible": false,
+            "valueVisible": false,
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "bgVisFlag": true,
+                "bgType": "discreteColors",
+                "bgColors": "BgOk;BgProcess;BgWarning;BgError",
+                "traceColor": "Fg",
+                "traceWidth": "0.667",
+                "axisVisFlag": true,
+                "axisLineVisFlag": true,
+                "axisLineColor": "FgHi",
+                "axisLineWidth": "0.667",
+                "axisLabelVisFlag": true,
+                "axisTextColor": "FgHi"
+            },
+            "pos": "634 544",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "bindings": {
+                "valueText": {
+                    "url": "CUMULOCITY-DATA-S",
+                    "cache": "Flare",
+                    "table": "history",
+                    "value": "time_stamp;VOC",
+                    "timeRange": -1,
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "valueFormat": "#,##0.00"
+        },
+        {
+            "key": -34,
+            "category": "extern-metric",
+            "size": "120 40",
+            "dispName": "metric_spark",
+            "labelVisible": false,
+            "valueVisible": false,
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "bgVisFlag": true,
+                "bgType": "discreteColors",
+                "bgColors": "BgOk;BgProcess;BgWarning;BgError",
+                "traceColor": "Fg",
+                "traceWidth": "0.667",
+                "axisVisFlag": true,
+                "axisLineVisFlag": true,
+                "axisLineColor": "FgHi",
+                "axisLineWidth": "0.667",
+                "axisLabelVisFlag": true,
+                "axisTextColor": "FgHi"
+            },
+            "pos": "790 544",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "bindings": {
+                "valueText": {
+                    "url": "CUMULOCITY-DATA-S",
+                    "cache": "Flare",
+                    "table": "history",
+                    "value": "time_stamp;H2S",
+                    "timeRange": -1,
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "valueFormat": "#,##0.00"
+        },
+        {
+            "key": -35,
+            "category": "extern-metric",
+            "size": "120 40",
+            "dispName": "metric_spark",
+            "labelVisible": false,
+            "valueVisible": false,
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "bgVisFlag": true,
+                "bgType": "discreteColors",
+                "bgColors": "BgOk;BgProcess;BgWarning;BgError",
+                "traceColor": "Fg",
+                "traceWidth": "0.667",
+                "axisVisFlag": true,
+                "axisLineVisFlag": true,
+                "axisLineColor": "FgHi",
+                "axisLineWidth": "0.667",
+                "axisLabelVisFlag": true,
+                "axisTextColor": "FgHi"
+            },
+            "pos": "478 544",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "bindings": {
+                "valueText": {
+                    "url": "CUMULOCITY-DATA-S",
+                    "cache": "Flare",
+                    "table": "history",
+                    "value": "time_stamp;CO",
+                    "timeRange": -1,
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "valueFormat": "#,##0.00"
+        },
+        {
+            "key": -36,
+            "category": "extern-metric",
+            "size": "120 40",
+            "dispName": "metric_spark",
+            "labelVisible": false,
+            "valueVisible": false,
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "bgVisFlag": true,
+                "bgType": "discreteColors",
+                "bgColors": "BgOk;BgProcess;BgWarning;BgError",
+                "traceColor": "Fg",
+                "traceWidth": "0.667",
+                "axisVisFlag": true,
+                "axisLineVisFlag": true,
+                "axisLineColor": "FgHi",
+                "axisLineWidth": "0.667",
+                "axisLabelVisFlag": true,
+                "axisTextColor": "FgHi"
+            },
+            "pos": "324 544",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "bindings": {
+                "valueText": {
+                    "url": "CUMULOCITY-DATA-S",
+                    "cache": "Flare",
+                    "table": "history",
+                    "value": "time_stamp;CO",
+                    "timeRange": -1,
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "valueFormat": "#,##0.00"
+        },
+        {
+            "key": -37,
+            "category": "extern-metric",
+            "size": "120 40",
+            "dispName": "metric_spark",
+            "labelVisible": false,
+            "valueVisible": false,
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "bgVisFlag": true,
+                "bgType": "discreteColors",
+                "bgColors": "BgOk;BgProcess;BgWarning;BgError",
+                "traceColor": "Fg",
+                "traceWidth": "0.667",
+                "axisVisFlag": true,
+                "axisLineVisFlag": true,
+                "axisLineColor": "FgHi",
+                "axisLineWidth": "0.667",
+                "axisLabelVisFlag": true,
+                "axisTextColor": "FgHi"
+            },
+            "pos": "170 544",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "bindings": {
+                "valueText": {
+                    "url": "CUMULOCITY-DATA-S",
+                    "cache": "Flare",
+                    "table": "history",
+                    "value": "time_stamp;NOX",
+                    "timeRange": -1,
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "valueFormat": "#,##0.00"
+        },
+        {
+            "key": -39,
+            "category": "extern-metric",
+            "size": "120 24",
+            "dispName": "metric_bar",
+            "labelText": "Velocity (MCFH)",
+            "miscProps": {
+                "barFgColor": "#4c4c4c",
+                "barBgColor": "#99ccff"
+            },
+            "pos": "168 340",
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "bindings": {
+                "valueText": {
+                    "cache": "Flare",
+                    "value": "Velocity",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache"
+                }
+            },
+            "valueFormat": "#,##0.00",
+            "labelColor": "#7a7a7a",
+            "valueAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueColor": "#4c4c4c"
+        },
+        {
+            "key": -38,
+            "category": "extern-metric",
+            "size": "120 40",
+            "dispName": "metric_spark",
+            "labelVisible": false,
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "bgVisFlag": true,
+                "bgType": "discreteColors",
+                "bgColors": "Bg;Bg2;Bg",
+                "traceColor": "FgHi",
+                "traceWidth": "0.667",
+                "axisVisFlag": true,
+                "axisLineVisFlag": true,
+                "axisLineColor": "FgHi",
+                "axisLineWidth": "0.667",
+                "axisLabelVisFlag": true,
+                "axisTextColor": "FgHi"
+            },
+            "pos": "331 340",
+            "bindings": {
+                "valueText": {
+                    "url": "CUMULOCITY-DATA-S",
+                    "cache": "Flare",
+                    "table": "history",
+                    "value": "time_stamp;Velocity",
+                    "timeRange": -1,
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "valueFormat": "#,##0.00",
+            "valueVisible": false
+        },
+        {
+            "key": 70,
+            "category": "extern-metric",
+            "size": "100 60",
+            "dispName": "metric_gauge",
+            "labelText": "Heating Value",
+            "bgVisible": false,
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "barWidth": "30%",
+                "barBgVisFlag": true,
+                "barBgColors": "Bg2",
+                "barFgVisFlag": true,
+                "barFgColors": "#33CC33",
+                "barBgBorderVisFlag": true,
+                "barBorderWidth": 0.5,
+                "axisVisFlag": false,
+                "axisLabelVisFlag": false,
+                "axisTickDensity": "extremes",
+                "needleType": "1",
+                "beta": 0
+            },
+            "pos": "624 210",
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "labelColor": "#7a7a7a",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "bindings": {
+                "valueText": {
+                    "cache": "Flare",
+                    "value": "Heating_Value",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache"
+                }
+            },
+            "valueFormat": "#,##0.00"
+        },
+        {
+            "key": -33,
+            "category": "extern-metric",
+            "size": "100 60",
+            "dispName": "metric_gauge",
+            "labelText": "H2S Dry",
+            "bgVisible": false,
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "barWidth": "30%",
+                "barBgVisFlag": true,
+                "barBgColors": "Bg2",
+                "barFgVisFlag": true,
+                "barFgColors": "#33CC33",
+                "barBgBorderVisFlag": true,
+                "barBorderWidth": 0.5,
+                "axisVisFlag": false,
+                "axisLabelVisFlag": false,
+                "axisTickDensity": "extremes",
+                "needleType": "1",
+                "beta": 0
+            },
+            "pos": "624 330",
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "labelColor": "#7a7a7a",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "bindings": {
+                "valueText": {
+                    "cache": "Flare",
+                    "value": "H2S_Dry",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache"
+                }
+            },
+            "valueFormat": "#,##0.00"
+        },
+        {
+            "key": -31,
+            "category": "extern-metric",
+            "size": "100 60",
+            "dispName": "metric_gauge",
+            "labelText": "Total Sulfur",
+            "bgVisible": false,
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "barWidth": "30%",
+                "barBgVisFlag": true,
+                "barBgColors": "Bg2",
+                "barFgVisFlag": true,
+                "barFgColors": "#33CC33",
+                "barBgBorderVisFlag": true,
+                "barBorderWidth": 0.5,
+                "axisVisFlag": false,
+                "axisLabelVisFlag": false,
+                "axisTickDensity": "extremes",
+                "needleType": "1",
+                "beta": 0
+            },
+            "pos": "802 210",
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "labelColor": "#7a7a7a",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "bindings": {
+                "valueText": {
+                    "cache": "Flare",
+                    "value": "Total_Sulfur",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache"
+                }
+            },
+            "valueFormat": "#,##0.00"
+        },
+        {
+            "key": -32,
+            "category": "extern-metric",
+            "size": "100 60",
+            "dispName": "metric_gauge",
+            "labelText": "H2S Dry 3-Hr Avg",
+            "bgVisible": false,
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "barWidth": "30%",
+                "barBgVisFlag": true,
+                "barBgColors": "Bg2",
+                "barFgVisFlag": true,
+                "barFgColors": "#33CC33",
+                "barBgBorderVisFlag": true,
+                "barBorderWidth": 0.5,
+                "axisVisFlag": false,
+                "axisLabelVisFlag": false,
+                "axisTickDensity": "extremes",
+                "needleType": "1",
+                "beta": 0
+            },
+            "pos": "802 330",
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "labelColor": "#7a7a7a",
+            "valueFont": "normal normal 10pt external:\"Open Sans\"",
+            "bindings": {
+                "valueText": {
+                    "cache": "Flare",
+                    "value": "H2S_Dry_3Hr_Avg",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$flare",
+                        "id": "*",
+                        "Plant": "$plant"
+                    },
+                    "type": "cache"
+                }
+            },
+            "valueFormat": "#,##0.00"
+        },
+        {
+            "key": 21,
+            "size": "92 126",
+            "fixedAspect": true,
+            "bgBorderVisible": true,
+            "bgBorderRadius": 5,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/a6e8775f-0104-14af-0909-ba8b72e7119f/images/a1cf2069-20c6-4d65-8a87-390c1686b1d3/flare_1.jpg",
+            "pos": "481 254",
+            "bgBorderWidth": 1,
+            "bgBorderColor": "#3399cc"
+        },
+        {
+            "key": -21,
+            "size": "201.62 32.9",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Flare - Summary View",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal bold 14pt external:\"Open Sans\"",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "480 30",
+            "labelColor": "#4c4c4c"
+        },
+        {
+            "key": -11,
+            "category": "extern-ctrl",
+            "size": "120 24",
+            "dispName": "ddbutton",
+            "localVars": {
+                "display": "Flare History Table.json",
+                "font": "bold 12px Arial",
+                "label": "History Table",
+                "style": "background-color: #f5f5f5; color: #636363;",
+                "target": ""
+            },
+            "pos": "100 30"
+        },
+        {
+            "key": -9,
+            "figure": "Rectangle",
+            "size": "120 24",
+            "category": "General",
+            "bgColor": "#ededed",
+            "bgVisible": true,
+            "bgBorderColor": "#bcbcbc",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "Flare",
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "",
+            "valueAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "pos": "310 70",
+            "bindings": {
+                "valueText": {
+                    "name": "flare",
+                    "type": "variable"
+                }
+            }
+        },
+        {
+            "key": -8,
+            "figure": "Rectangle",
+            "size": "100 24",
+            "category": "General",
+            "bgColor": "#ededed",
+            "bgVisible": true,
+            "bgBorderColor": "#bcbcbc",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "Plant",
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "",
+            "valueAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "pos": "130 70",
+            "bindings": {
+                "valueText": {
+                    "name": "plant",
+                    "type": "variable"
+                }
+            }
+        },
+        {
+            "key": 17,
+            "category": "extern-ctrl",
+            "size": "120 24",
+            "dispName": "ddbutton",
+            "localVars": {
+                "display": "Flare History Chart.json",
+                "font": "bold 12px Arial",
+                "label": "History Chart",
+                "style": "background-color: #f5f5f5; color: #636363;",
+                "target": ""
+            },
+            "pos": "230 30"
+        },
+        {
+            "key": -9007199254740838,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "setMyProjectName",
+            "func": "setProjectName",
+            "args": {
+                "projectName": "incdemo"
+            },
+            "bindings": {}
+        }
+    ],
+    "linkDataArray": []
+}

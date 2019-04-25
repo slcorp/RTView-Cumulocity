@@ -1,5 +1,5 @@
 {
-    "modifiedDate": "2018-05-30T00:19:37.990Z",
+    "modifiedDate": "2019-03-20T01:32:35.514Z",
     "viewport": {
         "x": 0,
         "y": 0,
@@ -13,7 +13,6 @@
         "resizable": false,
         "margin": 20
     },
-    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAACaUlEQVR4Xu2UMU7DUBQE/09JXCOlS0tHlxKOwhE4ChXnIXUa+nQ5g+sYgYSEkCg21sgvaFxv1qsZv/TmU4pAL7XGMU0hxT4ChSikGIFic7wQhRQjUGyOF6KQYgSKzfFCFFKMQLE5XohCihEoNscLUUgxAsXmeCEKKUag2BwvRCHFCBSb44UopBiBYnO8EIUUI1BsjheikGIEis3xQhRSjECxOdd8IZ/bp2I8Z8+5WiHH4/F1s9nc/STQe79prd221vbr9fppNp0FCq5WyDiOb733h29mh8Oh7Xa7dj6f2zRN+2EYHhfgOfuV/0bI6XRq2+1WIbM/iQsLfl/IarX6kvH5eCEXQp3zs3EcX1pr9390vA/D8Dynf6nfXu1f1lLA6PcqhCYc9iskBEbHFUITDvsVEgKj4wqhCYf9CgmB0XGF0ITDfoWEwOi4QmjCYb9CQmB0XCE04bBfISEwOq4QmnDYr5AQGB1XCE047FdICIyOK4QmHPYrJARGxxVCEw77FRICo+MKoQmH/QoJgdFxhdCEw36FhMDouEJowmG/QkJgdFwhNOGwXyEhMDquEJpw2K+QEBgdVwhNOOxXSAiMjiuEJhz2KyQERscVQhMO+xUSAqPjCqEJh/0KCYHRcYXQhMN+hYTA6LhCaMJhv0JCYHRcITThsF8hITA6rhCacNivkBAYHVcITTjsV0gIjI4rhCYc9iskBEbHFUITDvsVEgKj4wqhCYf9CgmB0XGF0ITDfoWEwOi4QmjCYb9CQmB0XCE04bBfISEwOq4QmnDYr5AQGB1XCE047FdICIyOK4QmHPYrJARGxz8AQbkyZS48u8EAAAAASUVORK5CYII=",
     "localVars": {
         "device_id": "310870",
         "room_name": "Metalshop"
@@ -21,8 +20,9 @@
     "styleSheet": {},
     "linksRoute": "Angled",
     "portsLayout": "Edge",
+    "bgColor": "#ffffff",
     "layout": "",
-    "version": "1.38.0",
+    "version": "1.58.0",
     "nodeDataArray": [
         {
             "key": 14,
@@ -403,6 +403,26 @@
                     "type": "function"
                 }
             }
+        },
+        {
+            "key": 2,
+            "size": "480 40",
+            "figure": "Rectangle",
+            "category": "General",
+            "bgVisible": true,
+            "bgBorderVisible": false,
+            "labelVisible": false,
+            "valueVisible": true,
+            "valueText": "custom css (for disabling banner) defined in Script on this object",
+            "valueWrap": true,
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "labelFont": "normal normal 12pt sans-serif",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "254 242",
+            "script": "var inIFrame = false;\ntry {\n\tinIFrame = (window.self !== window.top);\n} catch (e) {\n\tinIFrame = true;\n}\n\nif (inIFrame) {\n\tvar rule = '.nav-overlay {pointer-events: none}';\n\tvar style = document.createElement('style');\n\tdocument.head.appendChild(style);\n\tstyle.sheet.insertRule(rule, 0);\n\tconsole.log('adding css rule ' + rule);\n}\n"
         }
     ],
     "linkDataArray": []

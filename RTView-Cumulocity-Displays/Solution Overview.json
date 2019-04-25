@@ -1,0 +1,392 @@
+{
+    "modifiedDate": "2019-03-30T08:18:04.013Z",
+    "viewport": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+    },
+    "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1140,
+        "height": 640,
+        "resizable": false,
+        "margin": 0
+    },
+    "localVars": {
+        "_rtvRefreshSec": "5"
+    },
+    "styleSheet": {},
+    "linksRoute": "Spline with straight arrows",
+    "portsLayout": "Center",
+    "bgColor": "#ffffff",
+    "layout": "",
+    "version": "1.58.0",
+    "nodeDataArray": [
+        {
+            "key": -27,
+            "size": "429 318",
+            "category": "General",
+            "bgBorderRadius": 10,
+            "bgVisible": true,
+            "bgColor": "#f5f5f5",
+            "pos": "580.5 307.5",
+            "bgBorderVisible": true,
+            "bgBorderColor": "#bcbcbc"
+        },
+        {
+            "key": 13,
+            "size": "260 520",
+            "category": "General",
+            "bgBorderRadius": 10,
+            "bgVisible": true,
+            "bgColor": "#f5f5f5",
+            "pos": "180 350",
+            "bgBorderVisible": true,
+            "bgBorderColor": "#bcbcbc"
+        },
+        {
+            "key": 14,
+            "size": "1080 0.5",
+            "category": "General",
+            "bgBorderRadius": 10,
+            "bgVisible": true,
+            "bgColor": "#f5f5f5",
+            "pos": "570 60",
+            "bgBorderVisible": true
+        },
+        {
+            "key": -44,
+            "size": "159 48",
+            "figure": "Rectangle",
+            "category": "General",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": false,
+            "valueVisible": true,
+            "valueText": "​Devices Deployed​\n​in Physical Plants​",
+            "valueWrap": true,
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "labelFont": "normal bold 20pt external:\"Open Sans\"",
+            "valueFont": "normal bold 14pt external:\"Open Sans\"",
+            "pos": "180 160",
+            "labelText": "",
+            "valueColor": "#0b83b2"
+        },
+        {
+            "key": 16,
+            "size": "4 4",
+            "category": "General",
+            "figure": "Ellipse",
+            "fixedAspect": true,
+            "bgVisible": true,
+            "bgColor": "#497ee7",
+            "pos": "160 576",
+            "bgBorderVisible": true
+        },
+        {
+            "key": -59,
+            "size": "4 4",
+            "category": "General",
+            "figure": "Ellipse",
+            "fixedAspect": true,
+            "bgVisible": true,
+            "bgColor": "#497ee7",
+            "pos": "180 576",
+            "bgBorderVisible": true
+        },
+        {
+            "key": -60,
+            "size": "4 4",
+            "category": "General",
+            "figure": "Ellipse",
+            "fixedAspect": true,
+            "bgVisible": true,
+            "bgColor": "#497ee7",
+            "pos": "200 576",
+            "bgBorderVisible": true
+        },
+        {
+            "key": 1,
+            "size": "318.27 36.17",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Cumulocity / RTView Solution ",
+            "labelAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal bold 16pt external:\"Open Sans\"",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "30 30",
+            "labelColor": "#151515"
+        },
+        {
+            "key": -80,
+            "size": "202 146",
+            "fixedAspect": true,
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/a6e8775f-0104-14af-0909-ba8b72e7119f/images/c8d0bbc1-1beb-4311-b96e-96962466593a/cumulocity-iot-1.png",
+            "pos": "490 320"
+        },
+        {
+            "key": -28,
+            "size": "159 48",
+            "figure": "Rectangle",
+            "category": "General",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": false,
+            "valueVisible": true,
+            "valueText": "Cumulocity Connected IoT",
+            "valueWrap": true,
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "labelFont": "normal bold 22pt external:\"Open Sans\"",
+            "valueFont": "normal bold 14pt external:\"Open Sans\"",
+            "pos": "490 200",
+            "labelText": "",
+            "valueColor": "#0b83b2"
+        },
+        {
+            "key": -35,
+            "size": "146 180",
+            "category": "General",
+            "bgBorderRadius": 10,
+            "bgVisible": true,
+            "bgColor": "#f5f5f5",
+            "pos": "700 310",
+            "bgBorderVisible": true,
+            "bgBorderColor": "#bcbcbc"
+        },
+        {
+            "key": -34,
+            "size": "91 56",
+            "fixedAspect": true,
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/5c5e1f3e-fa2e-9b45-acf6-8caa39e6f57f/588e8b18-fd3d-49dc-a7e3-7648b8955fa6/SL-LogoRTView.png",
+            "pos": "700 350"
+        },
+        {
+            "key": -33,
+            "size": "159 48",
+            "figure": "Rectangle",
+            "category": "General",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": false,
+            "valueVisible": true,
+            "valueText": "​RTView​\nReal-Time​\n​Dashboards​",
+            "valueWrap": true,
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "labelFont": "normal bold 20pt external:\"Open Sans\"",
+            "valueFont": "normal bold 12pt external:\"Open Sans\"",
+            "pos": "700 260",
+            "labelText": "",
+            "valueColor": "#0b83b2"
+        },
+        {
+            "key": -38,
+            "size": "223 145",
+            "fixedAspect": true,
+            "bgBorderVisible": true,
+            "bgBorderRadius": 0,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/5c5e1f3e-fa2e-9b45-acf6-8caa39e6f57f/1279bae2-b615-43d2-8773-a4f4bf19fc7e/xdk_device_summary2_s.png",
+            "pos": "967 172",
+            "bgBorderColor": "#969696",
+            "bgBorderWidth": 1,
+            "drilldown": "Plant Views.json"
+        },
+        {
+            "key": -22,
+            "size": "329.11 32.9",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "--  Data Collection and Visualization",
+            "labelAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal bold 14pt external:\"Open Sans\"",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "360 30",
+            "labelColor": "#1c1c1c"
+        },
+        {
+            "key": -23,
+            "size": "234 152",
+            "fixedAspect": true,
+            "bgBorderVisible": true,
+            "bgBorderRadius": 0,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/5c5e1f3e-fa2e-9b45-acf6-8caa39e6f57f/5d9bdf94-f465-4490-9002-3aa18aa7996e/xdk_device_history2_s.png",
+            "pos": "971 406",
+            "bgBorderColor": "#969696",
+            "bgBorderWidth": 1,
+            "drilldown": "Plant Views.json"
+        },
+        {
+            "key": -20,
+            "size": "89 119",
+            "fixedAspect": true,
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/a6e8775f-0104-14af-0909-ba8b72e7119f/images/b7b89609-6b58-48af-b146-2a87ab32e491/incinerator_1_s.jpg",
+            "pos": "130 280"
+        },
+        {
+            "key": -21,
+            "size": "89 119",
+            "fixedAspect": true,
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/a6e8775f-0104-14af-0909-ba8b72e7119f/images/b7b89609-6b58-48af-b146-2a87ab32e491/incinerator_1_s.jpg",
+            "pos": "240 310"
+        },
+        {
+            "key": -24,
+            "size": "76 109",
+            "fixedAspect": true,
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/a6e8775f-0104-14af-0909-ba8b72e7119f/images/0387435b-ddff-416a-9e28-8c26dc8935a2/flare_1_s.jpg",
+            "pos": "130 470"
+        },
+        {
+            "key": -25,
+            "size": "76 109",
+            "fixedAspect": true,
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/a6e8775f-0104-14af-0909-ba8b72e7119f/images/0387435b-ddff-416a-9e28-8c26dc8935a2/flare_1_s.jpg",
+            "pos": "240 450"
+        },
+        {
+            "key": -26,
+            "size": "159 48",
+            "figure": "Rectangle",
+            "category": "General",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": false,
+            "valueVisible": true,
+            "valueText": "Incinerators",
+            "valueWrap": true,
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "valueFont": "normal bold 11pt external:\"Open Sans\"",
+            "pos": "120 370",
+            "labelText": "",
+            "valueColor": "#0b83b2"
+        },
+        {
+            "key": -30,
+            "size": "159 48",
+            "figure": "Rectangle",
+            "category": "General",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": false,
+            "valueVisible": true,
+            "valueText": "Flares",
+            "valueWrap": true,
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "labelFont": "normal bold 10pt external:\"Open Sans\"",
+            "valueFont": "normal bold 11pt external:\"Open Sans\"",
+            "pos": "230 540",
+            "labelText": "",
+            "valueColor": "#0b83b2"
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": -35,
+            "to": -23,
+            "fromPort": "background",
+            "toPort": "background",
+            "points": [
+                "773.75 324.26",
+                "805.51 330.4",
+                "831.94 339.76",
+                "853.05 349.82"
+            ]
+        },
+        {
+            "from": -35,
+            "to": -38,
+            "fromPort": "background",
+            "toPort": "background",
+            "points": [
+                "773.7 257.68",
+                "793.32 243.76",
+                "820.26 229.83",
+                "854.53 216.32"
+            ]
+        },
+        {
+            "from": 13,
+            "to": -27,
+            "fromPort": "background",
+            "toPort": "background",
+            "points": [
+                "310.75 364.72",
+                "331 367",
+                "347 356",
+                "365.26 352.21"
+            ],
+            "strokeColor": "#458c70",
+            "customRouted": true
+        },
+        {
+            "from": -80,
+            "to": -35,
+            "fromPort": "background",
+            "toPort": "background",
+            "points": [
+                "591 300.74",
+                "601.99 298.65",
+                "613.74 298.09",
+                "626.25 299.82"
+            ]
+        }
+    ]
+}

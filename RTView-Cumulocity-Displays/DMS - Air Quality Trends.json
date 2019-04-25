@@ -365,7 +365,7 @@
                 "component": {
                     "cache": "CumMeasurement",
                     "value": "time_stamp;value",
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "table": "current",
                     "filter": {
                         "id": "$device_id",
@@ -424,7 +424,7 @@
                 "component": {
                     "cache": "CumMeasurement",
                     "value": "time_stamp;value",
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "table": "current",
                     "filter": {
                         "id": "$device_id",
@@ -467,7 +467,7 @@
                 "component": {
                     "cache": "CumMeasurement",
                     "value": "time_stamp;value",
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "table": "current",
                     "filter": {
                         "id": "$device_id",
@@ -510,7 +510,7 @@
                 "component": {
                     "cache": "CumMeasurement",
                     "value": "time_stamp;value",
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "table": "current",
                     "filter": {
                         "id": "$device_id",
@@ -553,7 +553,7 @@
                 "component": {
                     "cache": "CumMeasurement",
                     "value": "time_stamp;value",
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "table": "current",
                     "filter": {
                         "id": "$device_id",
@@ -621,7 +621,7 @@
                 "args.table": {
                     "cache": "CumMeasurement",
                     "value": "id;name;value",
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "table": "current",
                     "filter": {
                         "id": "$device_id"

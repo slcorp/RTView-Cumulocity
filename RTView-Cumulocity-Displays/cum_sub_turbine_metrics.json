@@ -1,5 +1,5 @@
 {
-    "modifiedDate": "2018-05-18T18:58:23.629Z",
+    "modifiedDate": "2018-06-28T19:07:17.458Z",
     "viewport": {
         "x": 0,
         "y": 0,
@@ -22,7 +22,7 @@
     "linksRoute": "Angled",
     "portsLayout": "Edge",
     "layout": "",
-    "version": "1.37.0",
+    "version": "1.40.0",
     "nodeDataArray": [
         {
             "key": 30,
@@ -45,18 +45,6 @@
             "pos": "92 95.5",
             "valueVisible": false,
             "bindings": {
-                "valueText": {
-                    "url": "CUM-IOT-DATA",
-                    "cache": "CumMeasurement",
-                    "table": "current",
-                    "value": "value",
-                    "timeRange": 300,
-                    "filter": {
-                        "id": "$device_id",
-                        "name": "noise"
-                    },
-                    "type": "cache_advanced"
-                },
                 "labelText": {
                     "name": "test_fixture",
                     "type": "variable"
@@ -93,7 +81,7 @@
                 "args.table": {
                     "cache": "CumMeasurement",
                     "value": "id;name;value",
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "table": "current",
                     "filter": {
                         "id": "$device_id"
@@ -125,13 +113,14 @@
             "pos": "90 44",
             "bindings": {
                 "valueText": {
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "cache": "CumMeasurement",
                     "table": "history",
                     "value": "time_stamp;value",
                     "timeRange": 300,
                     "filter": {
                         "id": "$device_id",
+                        "series": "T",
                         "name": "c8y_TemperatureMeasurement"
                     },
                     "type": "cache_advanced"
@@ -171,13 +160,14 @@
             "pos": "90 84",
             "bindings": {
                 "valueText": {
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "cache": "CumMeasurement",
                     "table": "history",
                     "value": "time_stamp;value",
                     "timeRange": 300,
                     "filter": {
                         "id": "$device_id",
+                        "series": "percent",
                         "name": "humidity"
                     },
                     "type": "cache_advanced"
@@ -217,13 +207,14 @@
             "pos": "90 164",
             "bindings": {
                 "valueText": {
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "cache": "CumMeasurement",
                     "table": "history",
                     "value": "time_stamp;value",
                     "timeRange": 300,
                     "filter": {
                         "id": "$device_id",
+                        "series": "density",
                         "name": "pm2_5"
                     },
                     "type": "cache_advanced"
@@ -263,13 +254,14 @@
             "pos": "90 124",
             "bindings": {
                 "valueText": {
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "cache": "CumMeasurement",
                     "table": "history",
                     "value": "time_stamp;value",
                     "timeRange": 300,
                     "filter": {
                         "id": "$device_id",
+                        "series": "density",
                         "name": "pm10"
                     },
                     "type": "cache_advanced"

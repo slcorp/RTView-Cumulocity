@@ -1,0 +1,165 @@
+{
+    "modifiedDate": "2019-03-27T00:45:30.671Z",
+    "viewport": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+    },
+    "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 960,
+        "height": 614,
+        "resizable": false,
+        "margin": 0
+    },
+    "localVars": {
+        "_rtvRefreshSec": "2"
+    },
+    "styleSheet": {},
+    "linksRoute": "Angled",
+    "portsLayout": "Edge",
+    "bgColor": "#ffffff",
+    "layout": "",
+    "version": "1.58.0",
+    "nodeDataArray": [
+        {
+            "key": -3,
+            "category": "extern-custom-table",
+            "bgVisible": true,
+            "size": "880 480",
+            "rowSeriesFlag": true,
+            "bgBorderVisible": true,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0,
+            "pos": "480 350",
+            "bindings": {
+                "component": {
+                    "cache": "Incinerator",
+                    "value": "Plant;name;id;State;NOX;CO;SO2;VOC;H2S;SO2 1 Hr Max;SO2 1 Hr Avg;SO2 3 Hr Avg;SO2 12 Hr Avg;Expired;time_stamp",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$incineratorFilter",
+                        "id": "*",
+                        "Plant": "$plantFilter"
+                    },
+                    "type": "cache"
+                }
+            },
+            "drilldown": {
+                "name": "Incinerator Summary.json",
+                "vars": {
+                    "incinerator": {
+                        "column": "name"
+                    },
+                    "plant": {
+                        "column": "Plant"
+                    }
+                }
+            },
+            "columns": {
+                "name": {
+                    "title": "Incinerator<br>Name",
+                    "width": 120
+                },
+                "Plant": {
+                    "title": "Plant<br>Name"
+                },
+                "id": {
+                    "title": "ID"
+                }
+            }
+        },
+        {
+            "key": 1,
+            "size": "276.19 32.9",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Device Table - All Incinerators",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal bold 14pt external:\"Open Sans\"",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "510 30"
+        },
+        {
+            "key": -9007199254740990,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "setProject",
+            "func": "setProjectName",
+            "args": {
+                "projectName": "incdemo"
+            },
+            "bindings": {}
+        },
+        {
+            "key": 7,
+            "figure": "Rectangle",
+            "size": "100 24",
+            "category": "General",
+            "bgColor": "#ededed",
+            "bgVisible": true,
+            "bgBorderColor": "#bcbcbc",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "Incinerator",
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "",
+            "valueAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "pos": "320 80",
+            "bindings": {
+                "valueText": {
+                    "name": "incineratorFilter",
+                    "type": "variable"
+                }
+            }
+        },
+        {
+            "key": -9,
+            "figure": "Rectangle",
+            "size": "100 24",
+            "category": "General",
+            "bgColor": "#ededed",
+            "bgVisible": true,
+            "bgBorderColor": "#bcbcbc",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "Plant",
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "",
+            "valueAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "pos": "130 80",
+            "bindings": {
+                "valueText": {
+                    "name": "plantFilter",
+                    "type": "variable"
+                }
+            }
+        }
+    ],
+    "linkDataArray": []
+}

@@ -36,7 +36,7 @@
             },
             "bindings": {
                 "args.table": {
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "cache": "CumDevice",
                     "table": "current",
                     "value": "",
@@ -182,7 +182,7 @@
             "bindings": {
                 "component": {
                     "cache": "CumMeasurement",
-                    "url": "CUM-IOT-DATA",
+                    "url": "CUMULOCITY-DATA",
                     "table": "current",
                     "filter": {
                         "id": "$device_id",
