@@ -1,0 +1,211 @@
+{
+    "modifiedDate": "2019-03-30T07:41:35.827Z",
+    "viewport": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+    },
+    "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 960,
+        "height": 614,
+        "resizable": false,
+        "margin": 0
+    },
+    "localVars": {
+        "_rtvRefreshSec": "2"
+    },
+    "styleSheet": {},
+    "linksRoute": "Angled",
+    "portsLayout": "Edge",
+    "bgColor": "#ffffff",
+    "layout": "",
+    "version": "1.58.0",
+    "nodeDataArray": [
+        {
+            "key": 13,
+            "category": "extern-trendchart",
+            "bgVisible": true,
+            "size": "880 480",
+            "fillFlag": false,
+            "legendVisFlag": true,
+            "legendPos": "right",
+            "scrollFlag": true,
+            "stripFlag": true,
+            "pos": "480 340",
+            "bgBorderVisible": false,
+            "bgBorderColor": "#cccccc",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 0,
+            "bindings": {
+                "component": {
+                    "cache": "Incinerator",
+                    "value": "",
+                    "url": "CUMULOCITY-DATA-S",
+                    "table": "current",
+                    "filter": {
+                        "name": "$incinerator",
+                        "Plant": "$plant",
+                        "id": "*"
+                    },
+                    "type": "cache"
+                }
+            }
+        },
+        {
+            "key": 1,
+            "size": "245.42 32.87",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Incinerator - History Chart",
+            "labelAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal bold 14pt external:\"Open Sans\"",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "510 30"
+        },
+        {
+            "key": -9007199254740990,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "setProject",
+            "func": "setProjectName",
+            "args": {
+                "projectName": "incdemo"
+            },
+            "bindings": {}
+        },
+        {
+            "key": -8,
+            "category": "extern-timectrl",
+            "bgVisible": true,
+            "size": "40 40",
+            "timeRange": 900,
+            "pos": "890 70"
+        },
+        {
+            "key": -7,
+            "size": "72.7 25.65",
+            "figure": "Rectangle",
+            "category": "GeneralText",
+            "bgVisible": false,
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "Time Range",
+            "labelAlignment": {
+                "horizontal": "InsideRight",
+                "vertical": "Center"
+            },
+            "valueVisible": false,
+            "labelFont": "normal normal 10pt external:\"Open Sans\"",
+            "valueFont": "normal normal 12pt sans-serif",
+            "pos": "870 70"
+        },
+        {
+            "key": 7,
+            "figure": "Rectangle",
+            "size": "120 24",
+            "category": "General",
+            "bgColor": "#ededed",
+            "bgVisible": true,
+            "bgBorderColor": "#bcbcbc",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "Incinerator",
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "",
+            "valueAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "pos": "330 70",
+            "bindings": {
+                "valueText": {
+                    "name": "incinerator",
+                    "type": "variable"
+                }
+            }
+        },
+        {
+            "key": -9,
+            "figure": "Rectangle",
+            "size": "100 24",
+            "category": "General",
+            "bgColor": "#ededed",
+            "bgVisible": true,
+            "bgBorderColor": "#bcbcbc",
+            "bgBorderVisible": true,
+            "labelVisible": true,
+            "labelText": "Plant",
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "",
+            "valueAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "pos": "130 70",
+            "bindings": {
+                "valueText": {
+                    "name": "plant",
+                    "type": "variable"
+                }
+            }
+        },
+        {
+            "key": 17,
+            "category": "extern-ctrl",
+            "size": "120 24",
+            "dispName": "ddbutton",
+            "localVars": {
+                "display": "Incinerator History Table.json",
+                "font": "bold 12px Arial",
+                "label": "History Table",
+                "style": "background-color: #f5f5f5; color: #636363;",
+                "target": ""
+            },
+            "pos": "230 30"
+        },
+        {
+            "key": -11,
+            "category": "extern-ctrl",
+            "size": "120 24",
+            "dispName": "ddbutton",
+            "localVars": {
+                "display": "Incinerator Summary.json",
+                "font": "bold 12px Arial",
+                "label": "Summary View",
+                "style": "background-color: #f5f5f5; color: #636363;",
+                "target": ""
+            },
+            "pos": "100 30"
+        },
+        {
+            "key": 21,
+            "size": "60 80",
+            "fixedAspect": true,
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/a6e8775f-0104-14af-0909-ba8b72e7119f/images/b7b89609-6b58-48af-b146-2a87ab32e491/incinerator_1_s.jpg",
+            "pos": "750 50"
+        }
+    ],
+    "linkDataArray": []
+}

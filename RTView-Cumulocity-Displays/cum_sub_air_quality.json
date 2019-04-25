@@ -1,0 +1,409 @@
+{
+    "modifiedDate": "2018-05-30T00:19:37.990Z",
+    "viewport": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+    },
+    "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 330,
+        "height": 210,
+        "resizable": false,
+        "margin": 20
+    },
+    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAACaUlEQVR4Xu2UMU7DUBQE/09JXCOlS0tHlxKOwhE4ChXnIXUa+nQ5g+sYgYSEkCg21sgvaFxv1qsZv/TmU4pAL7XGMU0hxT4ChSikGIFic7wQhRQjUGyOF6KQYgSKzfFCFFKMQLE5XohCihEoNscLUUgxAsXmeCEKKUag2BwvRCHFCBSb44UopBiBYnO8EIUUI1BsjheikGIEis3xQhRSjECxOdd8IZ/bp2I8Z8+5WiHH4/F1s9nc/STQe79prd221vbr9fppNp0FCq5WyDiOb733h29mh8Oh7Xa7dj6f2zRN+2EYHhfgOfuV/0bI6XRq2+1WIbM/iQsLfl/IarX6kvH5eCEXQp3zs3EcX1pr9390vA/D8Dynf6nfXu1f1lLA6PcqhCYc9iskBEbHFUITDvsVEgKj4wqhCYf9CgmB0XGF0ITDfoWEwOi4QmjCYb9CQmB0XCE04bBfISEwOq4QmnDYr5AQGB1XCE047FdICIyOK4QmHPYrJARGxxVCEw77FRICo+MKoQmH/QoJgdFxhdCEw36FhMDouEJowmG/QkJgdFwhNOGwXyEhMDquEJpw2K+QEBgdVwhNOOxXSAiMjiuEJhz2KyQERscVQhMO+xUSAqPjCqEJh/0KCYHRcYXQhMN+hYTA6LhCaMJhv0JCYHRcITThsF8hITA6rhCacNivkBAYHVcITTjsV0gIjI4rhCYc9iskBEbHFUITDvsVEgKj4wqhCYf9CgmB0XGF0ITDfoWEwOi4QmjCYb9CQmB0XCE04bBfISEwOq4QmnDYr5AQGB1XCE047FdICIyOK4QmHPYrJARGxz8AQbkyZS48u8EAAAAASUVORK5CYII=",
+    "localVars": {
+        "device_id": "310870",
+        "room_name": "Metalshop"
+    },
+    "styleSheet": {},
+    "linksRoute": "Angled",
+    "portsLayout": "Edge",
+    "layout": "",
+    "version": "1.38.0",
+    "nodeDataArray": [
+        {
+            "key": 14,
+            "size": "324 204",
+            "category": "General",
+            "bgBorderRadius": 8,
+            "bgVisible": true,
+            "bgColor": "#f5f5f5",
+            "pos": "164 103",
+            "bgBorderVisible": true,
+            "bgBorderColor": "#969696",
+            "labelVisible": true,
+            "labelAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "InsideTop"
+            },
+            "bindings": {
+                "labelText": {
+                    "name": "room_name",
+                    "type": "variable"
+                }
+            },
+            "labelFont": "normal normal 12pt sans-serif"
+        },
+        {
+            "key": -3,
+            "size": "48 48",
+            "fixedAspect": true,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images/3df3581a-ef69-4c47-8bc8-20c470d2e0ef/i_pm10_5.png",
+            "pos": "194 62",
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": -4,
+            "size": "48 48",
+            "fixedAspect": true,
+            "category": "Image",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images/ec7cbffc-a446-41f7-922d-0f8afaf91a8e/i_pm2.5_5.png",
+            "pos": "191 116",
+            "bgBorderVisible": false,
+            "bgBorderRadius": 0
+        },
+        {
+            "key": 7,
+            "figure": "Rectangle",
+            "size": "72 24",
+            "category": "General",
+            "bgColor": "#f5f5f5",
+            "bgVisible": true,
+            "bgBorderColor": "#cccccc",
+            "bgBorderVisible": false,
+            "labelVisible": true,
+            "labelText": "ID:",
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "valueVisible": true,
+            "valueFormat": "",
+            "valueAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "pos": "275 17",
+            "bindings": {
+                "valueText": {
+                    "name": "device_id",
+                    "type": "variable"
+                }
+            },
+            "labelFont": "normal normal 9pt sans-serif",
+            "labelColor": "#636363",
+            "valueFont": "normal normal 9pt sans-serif",
+            "valueColor": "#636363"
+        },
+        {
+            "key": -9007199254740990,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "deviceStreamData",
+            "description": "protect in case cumulocity query returns two measurements per sensor",
+            "func": "firstRows",
+            "args": {
+                "indexColumns": "id;name",
+                "rowCount": "1"
+            },
+            "bindings": {
+                "args.table": {
+                    "cache": "CumMeasurement",
+                    "value": "id;name;value",
+                    "url": "CUMULOCITY-DATA",
+                    "table": "current",
+                    "filter": {
+                        "id": "$device_id"
+                    },
+                    "type": "cache"
+                }
+            }
+        },
+        {
+            "key": 40,
+            "category": "extern-metric",
+            "size": "150 50",
+            "dispName": "metric_card",
+            "labelText": "%",
+            "labelFont": "normal normal 12pt Arial, Helvetica Neue, Helvetica, sans-serif",
+            "labelAlignment": {
+                "horizontal": "InsideRight",
+                "vertical": "Center"
+            },
+            "valueFormat": "#,###0.0",
+            "valueFont": "normal bold 16pt Muli,sans-serif",
+            "valueAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "bgVisible": true,
+            "bgColor": "#ffffff",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 5,
+            "bgBorderVisible": true,
+            "bgBorderColor": "#aaa",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images/daeb8d1e-3d9d-4a7a-a61d-effcf3a02012/humidity_rwlcla_2_40x40.png",
+            "imgAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "miscProps": {
+                "alerts": [
+                    {
+                        "value": 30,
+                        "comp": ">",
+                        "bgColor": "#f7bb4f"
+                    },
+                    {
+                        "value": 50,
+                        "comp": ">",
+                        "bgColor": "#e87474"
+                    }
+                ]
+            },
+            "pos": "85 117",
+            "bindings": {
+                "valueText": {
+                    "name": "deviceStreamData",
+                    "value": "value",
+                    "filter": {
+                        "name": "humidity"
+                    },
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": -14,
+            "category": "extern-metric",
+            "size": "150 50",
+            "dispName": "metric_card",
+            "labelText": "°C",
+            "labelFont": "normal normal 12pt Arial, Helvetica Neue, Helvetica, sans-serif",
+            "labelAlignment": {
+                "horizontal": "InsideRight",
+                "vertical": "Center"
+            },
+            "valueFormat": "#,###0.0",
+            "valueFont": "normal bold 16pt Muli,sans-serif",
+            "valueAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "bgVisible": true,
+            "bgColor": "#ffffff",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 5,
+            "bgBorderVisible": true,
+            "bgBorderColor": "#aaa",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images/2abf2498-3bae-4839-92a8-2461b5adc811/temperature_nppxgr_2_40x40.png",
+            "imgAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "miscProps": {
+                "alerts": [
+                    {
+                        "value": 35,
+                        "comp": ">",
+                        "bgColor": "#f7bb4f"
+                    },
+                    {
+                        "value": 40,
+                        "comp": ">",
+                        "bgColor": "#E87474"
+                    }
+                ]
+            },
+            "pos": "85 61.5",
+            "bindings": {
+                "valueText": {
+                    "name": "deviceStreamData",
+                    "value": "value",
+                    "filter": {
+                        "name": "c8y_TemperatureMeasurement"
+                    },
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": -16,
+            "category": "extern-metric",
+            "size": "150 50",
+            "dispName": "metric_card",
+            "labelText": " µg/m³",
+            "labelFont": "normal normal 12pt Arial, Helvetica Neue, Helvetica, sans-serif",
+            "labelAlignment": {
+                "horizontal": "InsideRight",
+                "vertical": "Center"
+            },
+            "valueFormat": "#,###0.0",
+            "valueFont": "normal bold 16pt Muli,sans-serif",
+            "valueAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "bgVisible": false,
+            "bgColor": "#ffffff",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 5,
+            "bgBorderVisible": true,
+            "bgBorderColor": "#aaa",
+            "imgVisible": false,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images/3df3581a-ef69-4c47-8bc8-20c470d2e0ef/i_pm10_5.png",
+            "imgAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "miscProps": {
+                "alerts": [
+                    {
+                        "value": 50,
+                        "comp": ">",
+                        "imgSrc": "assets/images/i_fa_warning_24.png"
+                    },
+                    {
+                        "value": 75,
+                        "comp": ">",
+                        "imgSrc": "assets/images/i_fa_alert_24.png"
+                    }
+                ]
+            },
+            "pos": "242 61.5",
+            "bindings": {
+                "valueText": {
+                    "name": "deviceStreamData",
+                    "value": "value",
+                    "filter": {
+                        "name": "pm10"
+                    },
+                    "type": "function"
+                }
+            }
+        },
+        {
+            "key": -15,
+            "category": "extern-metric",
+            "size": "150 50",
+            "dispName": "metric_card",
+            "labelText": "dB",
+            "labelFont": "normal normal 12pt Arial, Helvetica Neue, Helvetica, sans-serif",
+            "labelAlignment": {
+                "horizontal": "InsideRight",
+                "vertical": "Center"
+            },
+            "valueFormat": "#,###0.0",
+            "valueFont": "normal bold 16pt Muli,sans-serif",
+            "valueAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "bgVisible": true,
+            "bgColor": "#ffffff",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 5,
+            "bgBorderVisible": true,
+            "bgBorderColor": "#aaa",
+            "imgVisible": true,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images/fb2a8878-2f95-4621-bb96-97be8c077c95/i_decibel_40x40.png",
+            "imgAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "miscProps": {
+                "alerts": [
+                    {
+                        "value": 60,
+                        "comp": ">",
+                        "bgColor": "#f7bb4f"
+                    },
+                    {
+                        "value": 65,
+                        "comp": ">=",
+                        "bgColor": "#e87474"
+                    }
+                ]
+            },
+            "pos": "85 172.5",
+            "bindings": {
+                "valueText": {
+                    "name": "deviceStreamData",
+                    "value": "value",
+                    "filter": {
+                        "name": "noise"
+                    },
+                    "type": "function"
+                }
+            },
+            "scaleImage": false,
+            "maxHeight": 50
+        },
+        {
+            "key": -12,
+            "category": "extern-metric",
+            "size": "150 50",
+            "dispName": "metric_card",
+            "labelText": " µg/m³",
+            "labelFont": "normal normal 12pt Arial, Helvetica Neue, Helvetica, sans-serif",
+            "labelAlignment": {
+                "horizontal": "InsideRight",
+                "vertical": "Center"
+            },
+            "valueFormat": "#,###0.0",
+            "valueFont": "normal bold 16pt Muli,sans-serif",
+            "valueAlignment": {
+                "horizontal": "Center",
+                "vertical": "Center"
+            },
+            "bgVisible": false,
+            "bgColor": "#ffffff",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 5,
+            "bgBorderVisible": true,
+            "bgBorderColor": "#aaa",
+            "imgVisible": false,
+            "imgSrc": "https://rtviews3production.s3-us-west-1.amazonaws.com/caa33fde-5711-deee-6766-d5bbbc0574cb/Images/3df3581a-ef69-4c47-8bc8-20c470d2e0ef/i_pm10_5.png",
+            "imgAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "Center"
+            },
+            "miscProps": {
+                "alerts": [
+                    {
+                        "value": 50,
+                        "comp": ">",
+                        "imgSrc": "assets/images/i_fa_warning_24.png"
+                    },
+                    {
+                        "value": 75,
+                        "comp": ">",
+                        "imgSrc": "assets/images/i_fa_alert_24.png"
+                    }
+                ]
+            },
+            "pos": "241 117",
+            "bindings": {
+                "valueText": {
+                    "name": "deviceStreamData",
+                    "value": "value",
+                    "filter": {
+                        "name": "pm2_5"
+                    },
+                    "type": "function"
+                }
+            }
+        }
+    ],
+    "linkDataArray": []
+}

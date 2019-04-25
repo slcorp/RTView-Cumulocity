@@ -1,0 +1,189 @@
+{
+    "modifiedDate": "2018-06-28T19:06:31.745Z",
+    "viewport": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+    },
+    "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 186,
+        "height": 110,
+        "resizable": false,
+        "margin": 20
+    },
+    "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAABhUlEQVR4Xu3TwQnDQBTE0DHkmP47zS2QXFLCghV4LuBbSDvXfCkDV4oGzASJPQJBBIkZiOFYiCAxAzEcCxEkZiCGYyGCxAzEcCxEkJiBGI6FCBIzEMOxEEFiBmI4FiJIzEAMx0IEiRmI4ViIIDEDMRwLESRmIIZjIYLEDMRwLESQowYe295HL9587N8X8tz22va52eOx3/97kGMiKocEqZT4cQgiSMxADMdCBIkZiOFYiCAxAzEcCxEkZiCGYyGCxAzEcCxEkJiBGI6FCBIzEMOxEEFiBmI4FiJIzEAMx0IEiRmI4ViIIDEDMRwLESRmIIZjIYLEDMRwLESQmIEYjoUIEjMQw7EQQWIGYjgWIkjMQAzHQgSJGYjhWIggMQMxHAsRJGYghmMhgsQMxHAsRJCYgRiOhQgSMxDDsRBBYgZiOBYiSMxADMdCBIkZiOFYiCAxAzEcCxEkZiCGYyGCxAzEcCxEkJiBGI6FCBIzEMOxEEFiBmI4FiJIzEAMx0IEiRmI4XwBfpYDZdPzmQ8AAAAASUVORK5CYII=",
+    "localVars": {
+        "test_fixture": "test 1",
+        "device_id": "310869"
+    },
+    "styleSheet": {},
+    "linksRoute": "Angled",
+    "portsLayout": "Edge",
+    "layout": "",
+    "version": "1.40.0",
+    "nodeDataArray": [
+        {
+            "key": 30,
+            "category": "extern-metric",
+            "size": "185 108",
+            "dispName": "metric_card",
+            "labelFont": "normal normal 12pt Muli,sans-serif",
+            "labelAlignment": {
+                "horizontal": "InsideLeft",
+                "vertical": "InsideTop"
+            },
+            "valueFormat": "#",
+            "valueFont": "normal bold 16pt Muli,sans-serif",
+            "bgVisible": true,
+            "bgColor": "#7bc97d",
+            "bgBorderWidth": 1,
+            "bgBorderRadius": 5,
+            "bgBorderVisible": true,
+            "bgBorderColor": "#aaa",
+            "pos": "93 55",
+            "valueVisible": false,
+            "bindings": {
+                "labelText": {
+                    "name": "test_fixture",
+                    "type": "variable"
+                }
+            },
+            "miscProps": {
+                "alerts": [
+                    {
+                        "value": 30,
+                        "comp": ">",
+                        "bgColor": "#f7bb4f"
+                    },
+                    {
+                        "value": 80,
+                        "comp": ">",
+                        "bgColor": "#e87474"
+                    }
+                ]
+            }
+        },
+        {
+            "key": -9007199254740990,
+            "category": "extern-func",
+            "size": "0 0",
+            "pos": "0 0",
+            "name": "deviceStreamData",
+            "description": "protect in case cumulocity query returns two measurements per sensor",
+            "func": "firstRows",
+            "args": {
+                "indexColumns": "id;name",
+                "rowCount": "1"
+            },
+            "bindings": {
+                "args.table": {
+                    "cache": "CumMeasurement",
+                    "value": "id;name;value",
+                    "url": "CUMULOCITY-DATA",
+                    "table": "current",
+                    "filter": {
+                        "id": "$device_id"
+                    },
+                    "type": "cache"
+                }
+            }
+        },
+        {
+            "key": 12,
+            "category": "extern-metric",
+            "size": "122 32",
+            "dispName": "metric_spark",
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "bgVisFlag": true,
+                "bgType": "discreteColors",
+                "bgColors": "Bg;Bg2;Bg",
+                "traceColor": "FgHi",
+                "traceWidth": "0.667",
+                "axisVisFlag": false,
+                "axisLineVisFlag": true,
+                "axisLineColor": "FgHi",
+                "axisLineWidth": "0.667",
+                "axisLabelVisFlag": false,
+                "axisTextColor": "FgHi"
+            },
+            "pos": "89 44",
+            "bindings": {
+                "valueText": {
+                    "url": "CUMULOCITY-DATA",
+                    "cache": "CumMeasurement",
+                    "table": "history",
+                    "value": "time_stamp;value",
+                    "timeRange": 300,
+                    "filter": {
+                        "id": "$device_id",
+                        "series": "density",
+                        "name": "pm2_5"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "labelText": "T?",
+            "valueAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueFormat": "#,###0.0"
+        },
+        {
+            "key": -4,
+            "category": "extern-metric",
+            "size": "118 32",
+            "dispName": "metric_spark",
+            "figure": "Rectangle",
+            "bgBorderVisible": false,
+            "miscProps": {
+                "bgVisFlag": true,
+                "bgType": "discreteColors",
+                "bgColors": "Bg;Bg2;Bg",
+                "traceColor": "FgHi",
+                "traceWidth": "0.667",
+                "axisVisFlag": false,
+                "axisLineVisFlag": true,
+                "axisLineColor": "FgHi",
+                "axisLineWidth": "0.667",
+                "axisLabelVisFlag": false,
+                "axisTextColor": "FgHi"
+            },
+            "pos": "89 84",
+            "bindings": {
+                "valueText": {
+                    "url": "CUMULOCITY-DATA",
+                    "cache": "CumMeasurement",
+                    "table": "history",
+                    "value": "time_stamp;value",
+                    "timeRange": 300,
+                    "filter": {
+                        "id": "$device_id",
+                        "series": "decibels",
+                        "name": "noise"
+                    },
+                    "type": "cache_advanced"
+                }
+            },
+            "labelAlignment": {
+                "horizontal": "Left",
+                "vertical": "Center"
+            },
+            "labelText": "p?",
+            "valueAlignment": {
+                "horizontal": "Right",
+                "vertical": "Center"
+            },
+            "valueFormat": "#,###0.0"
+        }
+    ],
+    "linkDataArray": []
+}

@@ -1,5 +1,11 @@
 {
+<<<<<<< HEAD
     "username": "MehranS",
     "password": "cummeh17",
     "baseURL": "https://edgeanalytics.cumulocity.com"
+=======
+    "username": "slcorptest/ckominczak@sl.com",
+    "password": "slc0rpt3st",
+    "baseURL": "https://slcorptest.cumulocity.com"
+>>>>>>> 0ef5ce21b656cabfecaeb6e9391af062d4205b62
 }
