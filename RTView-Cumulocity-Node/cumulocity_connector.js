@@ -10,7 +10,7 @@ var username;
 var password;
 var baseURL;
 
-var pageSizeForCurrent = 10;
+var pageSizeForCurrent = 100;
 
 /* if a userinfo file is present, use it! */
 try {
@@ -403,14 +403,24 @@ var getMeasurements = function(tableName, res, query, result, callback) {
                 // all measurements are sent at same time;  this may not be the case
                 
                 var firstType;
+                var typesFound = {}; // only use the first occurrence of each type 
                 for (var i=0; i < b.measurements.length; i++) {
                     if (firstType === undefined) firstType = b.measurements[i].type;
                     //console.log('... type = ' + b.measurements[i].type);
+                    /*
                     if (i > 0 && b.measurements[i].type == firstType) {
                         //console.log('... !! break');
                         break
                     }
+                    */
+                    // if this type already encountered, skip it (must be older data)
+                    if (typesFound[b.measurements[i].type])
+                        continue;
+                    
+                    // mark this type as found an add to return table
+                    typesFound[b.measurements[i].type] = b.measurements[i].type;
                     measurementRow(b.measurements[i], rtvdata);
+                    
                 }
             
             // process 'history' measurement data
