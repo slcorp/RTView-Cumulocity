@@ -395,32 +395,22 @@ var getMeasurements = function(tableName, res, query, result, callback) {
                 // Simplistic logic for obtaining latest value of current data:
                 // Loop over each measurement; for current, we use 'revert' so we assume the
                 // most recent items are at beginning of array.  Get type of first item.
-                // break out of loop as soon as encounter the same type as first.
+                // Only pull the first entry of any type that is encountered.
                 // Problems:
                 // 1) don't know how many items to query, since measurements (series) can be 
                 // packed into one item of array, or spread out over N items.
-                // 2) the simplistic break when different type encountered assumes that
-                // all measurements are sent at same time;  this may not be the case
                 
-                var firstType;
                 var typesFound = {}; // only use the first occurrence of each type 
                 for (var i=0; i < b.measurements.length; i++) {
-                    if (firstType === undefined) firstType = b.measurements[i].type;
                     //console.log('... type = ' + b.measurements[i].type);
-                    /*
-                    if (i > 0 && b.measurements[i].type == firstType) {
-                        //console.log('... !! break');
-                        break
-                    }
-                    */
+
                     // if this type already encountered, skip it (must be older data)
                     if (typesFound[b.measurements[i].type])
                         continue;
                     
-                    // mark this type as found an add to return table
+                    // mark this type as found and add to return table
                     typesFound[b.measurements[i].type] = b.measurements[i].type;
-                    measurementRow(b.measurements[i], rtvdata);
-                    
+                    measurementRow(b.measurements[i], rtvdata);     
                 }
             
             // process 'history' measurement data
@@ -440,7 +430,6 @@ var getMeasurements = function(tableName, res, query, result, callback) {
         callback(urlInfo.res, urlInfo.result, urlInfo.query);
         };
     }
-    
 };
 
 var measurementRow = function(row, rtvdata) {
